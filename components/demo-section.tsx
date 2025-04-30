@@ -20,7 +20,7 @@ export function DemoSection() {
               Demandez une <span className="text-[#3eab35]">Démonstration</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-xl">
-              Découvrez la puissance de ProSensor en action. Demandez une démonstration pour voir comment nos sondes de chaleur peuvent révolutionner votre production de compotes et optimiser vos processus.
+              Découvrez la puissance de ProSensor en action. Demandez une démonstration pour voir comment nos sondes de chaleur peuvent révolutionner votre production de compost et optimiser vos processus.
             </p>
             <motion.div 
               className="space-y-4 pt-4"

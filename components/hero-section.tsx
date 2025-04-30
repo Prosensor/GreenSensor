@@ -42,7 +42,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <span className="text-[#3eab35]">Contrôle Précis</span> de la Température pour vos Compotes
+              <span className="text-[#3eab35]">Contrôle Précis</span> de la Température pour le Compost
             </motion.h1>
             <motion.p 
               className="text-xl text-gray-600 max-w-xl"
@@ -50,7 +50,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              ProSensor révolutionne la production de compotes avec des sondes de chaleur intelligentes. 
+              ProSensor révolutionne la production et le suivi du compost avec des sondes de température et humidité. 
               Optimisez votre processus et garantissez la qualité de vos produits.
             </motion.p>
             <div className="flex flex-wrap gap-6">

@@ -36,7 +36,7 @@ export function SiteHeader() {
 
   return (
     <motion.header 
-      className="sticky top-0 z-50 w-full bg-white shadow-sm"
+      className="sticky top-0 py-4 z-50 w-full bg-white shadow-sm"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -52,8 +52,8 @@ export function SiteHeader() {
               <Image
                 src="/GreenSensor_Logo.png"
                 alt="Green Sensor Logo"
-                width={150}
-                height={40}
+                width={175}
+                height={70}
               />
             </Link>
           </motion.div>

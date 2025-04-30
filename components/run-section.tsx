@@ -26,7 +26,7 @@ export function RunSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Optimisez votre <span className="text-[#3eab35]">production</span> de compotes
+              Optimisez votre <span className="text-[#3eab35]">production</span> de compost
               <br />
               avec une précision inégalée
             </motion.h2>
@@ -39,7 +39,7 @@ export function RunSection() {
             >
               ProSensor vous offre tous les outils nécessaires pour simplifier votre processus de production
               et automatiser les tâches chronophages dans votre flux de travail, garantissant ainsi
-              une qualité constante de vos compotes.
+              une qualité constante de vos compost.
             </motion.p>
             <motion.ul 
               className="space-y-4"

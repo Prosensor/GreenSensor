@@ -62,11 +62,6 @@ export function KeyFeaturesSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className="text-gray-600 text-lg">
-                Intégrez de manière transparente des solutions de pointe pour le contrôle de la température 
-                dans votre processus de production. Diffusez dynamiquement des informations de classe mondiale 
-                tout en exploitant les potentialités du marché.
-              </p>
-              <p className="text-gray-600 text-lg">
                 Conceptualisez rapidement des portails de gestion fiables pour votre production. 
                 Faites évoluer de manière interactive vos modèles synergiques plutôt que de vous 
                 contenter d'initiatives révolutionnaires. Optimisez de manière unique la qualité 

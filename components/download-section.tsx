@@ -8,9 +8,9 @@ import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
 
 const fonctionnalites = [
-  { icon: Thermometer, titre: "Contrôle Précis", description: "Surveillez la température de vos compotes en temps réel" },
+  { icon: Thermometer, titre: "Contrôle Précis", description: "Surveillez la température de vos compost en temps réel" },
   { icon: BarChart, titre: "Analyse de Données", description: "Obtenez des insights pour optimiser votre production" },
-  { icon: Bell, titre: "Alertes Instantanées", description: "Soyez notifié immédiatement en cas d'anomalies" },
+  { icon: Bell, titre: "Alertes Instantanées", description: "Soyez notifié immédiatement en cas d'anomalie" },
 ]
 
 const ArrierePlanVideo = () => {
@@ -30,7 +30,7 @@ const ArrierePlanVideo = () => {
     return (
       <Image
         src="/image.jpg"
-        alt="Arrière-plan de production de compotes"
+        alt="Arrière-plan de production de compost"
         layout="fill"
         objectFit="cover"
       />
@@ -70,11 +70,11 @@ export function DownloadSection() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl font-bold tracking-tight text-white lg:text-5xl mb-6">
-            Optimisez Votre Production de Compotes
+            Optimisez Votre Production de Compost
           </h2>
           <p className="text-xl text-gray-300 mb-8">
             Transformez votre processus de production avec ProSensor. 
-            Surveillez, analysez et améliorez la qualité de vos compotes comme jamais auparavant.
+            Surveillez, analysez et améliorez la qualité de vos compost comme jamais auparavant.
           </p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

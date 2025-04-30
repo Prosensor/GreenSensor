@@ -9,17 +9,17 @@ const fonctionnalites = [
   {
     icon: Thermometer,
     titre: "Mesure Précise",
-    description: "Obtenez des lectures de température précises au degré près pour vos compotes.",
+    description: "Obtenez des lectures de température précises au degré près pour votre compost.",
   },
   {
     icon: Bell,
     titre: "Alertes Personnalisées",
-    description: "Configurez des notifications pour être informé lorsque la température idéale est atteinte.",
+    description: "Configurez des notifications par mail ou par sms pour être informé lorsque la température dépasse les limites définies.",
   },
   {
     icon: ShieldCheck,
     titre: "Sécurité Alimentaire",
-    description: "Assurez-vous que vos compotes atteignent la température de sécurité requise.",
+    description: "Assurez-vous que vos compost atteignent la température de sécurité requise.",
   },
   {
     icon: BarChart,
@@ -43,7 +43,7 @@ export function FeaturesSection() {
             Fonctionnalités clés pour une <span className="text-[#3eab35]">Production Intelligente</span>
           </h2>
           <p className="text-gray-600 text-lg">
-            Découvrez comment ProSensor révolutionne le contrôle de la température dans la production de compotes
+            Découvrez comment ProSensor révolutionne le contrôle de la température dans la production de compost
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
