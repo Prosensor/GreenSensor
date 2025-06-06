@@ -1,5 +1,38 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Politique de confidentialité - GreenSensor",
+  description: "Découvrez la politique de confidentialité de GreenSensor : gestion des données, droits RGPD, contact et sécurité.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Politique de confidentialité - GreenSensor",
+    description: "Découvrez la politique de confidentialité de GreenSensor : gestion des données, droits RGPD, contact et sécurité.",
+    url: "https://greensensor.fr/politique-confidentialite",
+    siteName: "GreenSensor",
+    locale: "fr_FR",
+    type: "article",
+  },
+  other: {
+    "script:type": "application/ld+json",
+    "script:innerHTML": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Politique de confidentialité - GreenSensor",
+      "description": "Découvrez la politique de confidentialité de GreenSensor : gestion des données, droits RGPD, contact et sécurité.",
+      "url": "https://greensensor.fr/politique-confidentialite",
+      "publisher": {
+        "@type": "Organization",
+        "name": "GreenSensor",
+        "url": "https://greensensor.fr"
+      }
+    })
+  }
+}
 
 export default function PolitiqueConfidentialite() {
   return (

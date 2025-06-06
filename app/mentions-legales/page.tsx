@@ -1,5 +1,38 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Mentions légales - GreenSensor",
+  description: "Consultez les mentions légales du site GreenSensor : éditeur, hébergeur, propriété intellectuelle, responsabilité et contact.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Mentions légales - GreenSensor",
+    description: "Consultez les mentions légales du site GreenSensor : éditeur, hébergeur, propriété intellectuelle, responsabilité et contact.",
+    url: "https://greensensor.fr/mentions-legales",
+    siteName: "GreenSensor",
+    locale: "fr_FR",
+    type: "article",
+  },
+  other: {
+    "script:type": "application/ld+json",
+    "script:innerHTML": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Mentions légales - GreenSensor",
+      "description": "Consultez les mentions légales du site GreenSensor : éditeur, hébergeur, propriété intellectuelle, responsabilité et contact.",
+      "url": "https://greensensor.fr/mentions-legales",
+      "publisher": {
+        "@type": "Organization",
+        "name": "GreenSensor",
+        "url": "https://greensensor.fr"
+      }
+    })
+  }
+}
 
 export default function MentionsLegales() {
   return (
@@ -12,7 +45,7 @@ export default function MentionsLegales() {
           <p>
             <strong>GreenSensor</strong><br />
             contact@greensensor.fr<br />
-            EcoParc, 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France
+            123 rue de l'Innovation, 75000 Paris, France
           </p>
         </section>
         <section className="mb-6">

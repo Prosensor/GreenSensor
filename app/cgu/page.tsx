@@ -1,5 +1,38 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Conditions Générales d'Utilisation - GreenSensor",
+  description: "Consultez les conditions générales d'utilisation du site GreenSensor : accès, propriété intellectuelle, responsabilité, droit applicable.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Conditions Générales d'Utilisation - GreenSensor",
+    description: "Consultez les conditions générales d'utilisation du site GreenSensor : accès, propriété intellectuelle, responsabilité, droit applicable.",
+    url: "https://greensensor.fr/cgu",
+    siteName: "GreenSensor",
+    locale: "fr_FR",
+    type: "article",
+  },
+  other: {
+    "script:type": "application/ld+json",
+    "script:innerHTML": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Conditions Générales d'Utilisation - GreenSensor",
+      "description": "Consultez les conditions générales d'utilisation du site GreenSensor : accès, propriété intellectuelle, responsabilité, droit applicable.",
+      "url": "https://greensensor.fr/cgu",
+      "publisher": {
+        "@type": "Organization",
+        "name": "GreenSensor",
+        "url": "https://greensensor.fr"
+      }
+    })
+  }
+}
 
 export default function CGU() {
   return (
