@@ -42,14 +42,18 @@ export function DemoForm() {
   async function onSubmit(values: z.infer<typeof schemaFormulaire>) {
     setChargement(true)
     try {
-      // Simulation d'un appel API
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      toast.success("Demande de démonstration envoyée avec succès !")
-      form.reset()
+      const res = await fetch("/api/send-demo-mail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (!res.ok) throw new Error("Erreur lors de l'envoi");
+      toast.success("Demande de présentation envoyée avec succès !");
+      form.reset();
     } catch (error) {
-      toast.error("Une erreur est survenue. Veuillez réessayer.")
+      toast.error("Une erreur est survenue. Veuillez réessayer.");
     } finally {
-      setChargement(false)
+      setChargement(false);
     }
   }
 
@@ -128,7 +132,7 @@ export function DemoForm() {
           )}
         />
         <Button type="submit" className="w-full bg-[#3eab35] hover:bg-[#dd234b]" disabled={chargement}>
-          {chargement ? "Envoi en cours..." : "Demander une démonstration"}
+          {chargement ? "Envoi en cours..." : "Envoyer"}
         </Button>
       </form>
     </Form>

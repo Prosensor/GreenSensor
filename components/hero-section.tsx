@@ -14,11 +14,11 @@ const caracteristiques = [
   },
   {
     icon: Bell,
-    titre: "Alertes en temps réel",
+    titre: "Alertes par SMS / Email",
   },
   {
     icon: MapPin,
-    titre: "Localisation des sondes",
+    titre: "Affection des sondes à un lieu",
   },
 ]
 
@@ -42,7 +42,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <span className="text-[#3eab35]">Contrôle Précis</span> de la Température pour le Compost
+              <span className="text-[#3eab35]">Suivi du process</span> de Compostage
             </motion.h1>
             <motion.p 
               className="text-xl text-gray-600 max-w-xl"
@@ -50,7 +50,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              ProSensor révolutionne la production et le suivi du compost avec des sondes de température et humidité. 
+              ProSensor révolutionne la production et le suivi du compost avec des sondes de température. 
               Optimisez votre processus et garantissez la qualité de vos produits.
             </motion.p>
             <div className="flex flex-wrap gap-6">
@@ -81,7 +81,7 @@ export function HeroSection() {
                 className="bg-[#3eab35] text-white hover:bg-[#dd234b]"
                 onClick={scrollToDemo}
               >
-                Demander une Démo
+                Demander une présentation
               </Button>
             </motion.div>
           </div>

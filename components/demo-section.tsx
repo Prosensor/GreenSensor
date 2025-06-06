@@ -1,5 +1,6 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
 import { DemoForm } from "./demo-form"
@@ -17,10 +18,10 @@ export function DemoSection() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-4xl font-bold tracking-tight text-gray-900">
-              Demandez une <span className="text-[#3eab35]">Démonstration</span>
+              Demandez une <span className="text-[#3eab35]">Présentation</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-xl">
-              Découvrez la puissance de ProSensor en action. Demandez une démonstration pour voir comment nos sondes de chaleur peuvent révolutionner votre production de compost et optimiser vos processus.
+              Découvrez la puissance de ProSensor en action. Demandez une présentation pour voir comment nos sondes de chaleur peuvent révolutionner votre production de compost et optimiser vos processus.
             </p>
             <motion.div 
               className="space-y-4 pt-4"
@@ -30,9 +31,9 @@ export function DemoSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <div>
-                <h3 className="font-semibold mb-1 text-gray-800">Siège Social</h3>
+                <h3 className="font-semibold mb-1 text-gray-800">Siège Social : <b>Prosensor</b></h3>
                 <p className="text-gray-600">
-                  15 Rue de Montvaux, 57865 Amanvillers
+                  EcoParc, 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur
                 </p>
               </div>
               <div>
@@ -44,7 +45,7 @@ export function DemoSection() {
                     href="mailto:contact@prosensor.com"
                     className="text-[#3eab35] hover:underline"
                   >
-                    contact@prosensor.com
+                    info@prosensor.com
                   </a>
                 </p>
               </div>
@@ -57,7 +58,6 @@ export function DemoSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <h3 className="text-2xl font-semibold mb-6 text-gray-900">Demandez votre démonstration</h3>
             <DemoForm />
           </motion.div>
         </div>

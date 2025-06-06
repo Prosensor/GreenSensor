@@ -4,28 +4,38 @@ import Image from "next/image"
 import { Thermometer, BarChart, Bell, Lock } from 'lucide-react'
 import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { useCallback } from 'react'
 
 const fonctionnalites = [
   {
     icon: Thermometer,
-    titre: "Mesure Précise",
+    titre: "Mesure",
   },
   {
     icon: BarChart,
-    titre: "Analyse en Temps Réel",
+    titre: "Analyse",
   },
   {
     icon: Bell,
-    titre: "Alertes Personnalisées",
+    titre: "Alertes",
   },
   {
     icon: Lock,
-    titre: "Sécurité des Données",
+    titre: "Sécurité ",
     highlight: true,
   },
 ]
 
 export function KeyFeaturesSection() {
+  const scrollToDemo = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    const demoSection = document.getElementById('demo')
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [])
+
   return (
     <AnimatedSection id="analyse" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,7 +62,7 @@ export function KeyFeaturesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Fonctionnalités <span className="text-[#3eab35]">Clés</span> de ProSensor
+              Fonctionnalités <span className="text-[#3eab35]">Clés</span> de GreenSensor
             </motion.h2>
             <motion.div 
               className="space-y-4"
@@ -62,10 +72,8 @@ export function KeyFeaturesSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className="text-gray-600 text-lg">
-                Conceptualisez rapidement des portails de gestion fiables pour votre production. 
-                Faites évoluer de manière interactive vos modèles synergiques plutôt que de vous 
-                contenter d'initiatives révolutionnaires. Optimisez de manière unique la qualité 
-                de vos produits grâce à nos vecteurs de contrôle omniprésents.
+                Création de campagnes de fermentation ou de maturation, affection de sondes à des andains, suivi des objectifs dans le déroulement des campagnes, export de données, impression de rapports,
+                alertes SMS/Email en cas d'anomalie.
               </p>
             </motion.div>
             <motion.div 
@@ -101,6 +109,21 @@ export function KeyFeaturesSection() {
             </motion.div>
           </div>
         </div>
+        <motion.div
+          className="flex justify-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <Button 
+            size="lg" 
+            className="bg-[#3eab35] text-white hover:bg-[#dd234b]"
+            onClick={scrollToDemo}
+          >
+            Demander une présentation
+          </Button>
+        </motion.div>
       </div>
     </AnimatedSection>
   )

@@ -35,8 +35,7 @@ export function SiteFooter() {
               />
             </Link>
             <p className="text-sm">
-              ProSensor révolutionne le contrôle de température dans l'industrie alimentaire. 
-              Nos solutions innovantes garantissent une qualité optimale pour vos compotes.
+              GreenSensor est une solution innovante pour le suivi des températures dans le processus de compostage.
             </p>
             <div className="flex space-x-4">
               {liensSociaux.map((social, index) => (

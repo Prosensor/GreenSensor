@@ -9,27 +9,37 @@ import {
 } from "@/components/ui/accordion"
 import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { useCallback } from 'react'
 
 const faqList = [
   {
-    question: "Quelle est la précision de mesure des sondes ProSensor ?",
-    reponse: "Les sondes ProSensor offrent une précision de mesure exceptionnelle, avec une marge d'erreur de seulement ±0,1°C. Cette précision permet un contrôle optimal de la température dans le processus de production de compotes.",
+    question: "Quelle est la précision de mesure des sondes GreenSensor ?",
+    reponse: "Les sondes ProSensor offrent une précision de mesure exceptionnelle, avec une marge d'erreur de seulement ±0,5°C. Cette précision permet un contrôle optimal de la température dans le processus de production de composts.",
   },
   {
-    question: "Comment puis-je intégrer ProSensor à mon système de production actuel ?",
-    reponse: "ProSensor est conçu pour s'intégrer facilement à la plupart des systèmes de production existants. Notre équipe technique vous guidera tout au long du processus d'installation et d'intégration pour assurer une transition en douceur.",
+    question: "Comment puis-je intégrer GreenSensor à mon système de production actuel ?",
+    reponse: "GreenSensor est conçu pour s'intégrer facilement à la plupart des systèmes de production existants. Notre équipe technique vous guidera tout au long du processus d'installation et d'intégration pour assurer une transition en douceur.",
   },
   {
     question: "Quelles sont les options de rapport et d'analyse disponibles ?",
-    reponse: "ProSensor offre une suite complète d'outils de rapport et d'analyse. Vous pouvez accéder à des graphiques en temps réel, des rapports détaillés sur l'historique des températures, et des analyses prédictives pour optimiser votre production.",
+    reponse: "GreenSensor offre une suite complète d'outils de rapport et d'analyse. Vous pouvez accéder à des graphiques en temps réel, des rapports détaillés sur l'historique des températures, et des analyses prédictives pour optimiser votre production.",
   },
   {
     question: "Comment configurer les alertes de température ?",
-    reponse: "La configuration des alertes est simple et personnalisable. Dans l'interface ProSensor, naviguez vers Paramètres > Alertes pour définir vos seuils de température et choisir vos méthodes de notification préférées (SMS, email, notifications push).",
+    reponse: "La configuration des alertes est simple et personnalisable. Dans l'interface GreenSensor, à la création de la campagne, naviguez vers Paramètres > Alertes pour définir vos seuils de température et choisir vos méthodes de notification préférées (SMS, email, notifications push).",
   },
 ]
 
 export function FaqSection() {
+  const scrollToDemo = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    const demoSection = document.getElementById('demo')
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [])
+
   return (
     <AnimatedSection id="faq" className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,6 +98,21 @@ export function FaqSection() {
             </Accordion>
           </div>
         </div>
+        <motion.div
+          className="flex justify-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <Button 
+            size="lg" 
+            className="bg-[#3eab35] text-white hover:bg-[#dd234b]"
+            onClick={scrollToDemo}
+          >
+            Demander une présentation
+          </Button>
+        </motion.div>
       </div>
     </AnimatedSection>
   )

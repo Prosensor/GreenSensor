@@ -6,11 +6,11 @@ import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
 
 const avantages = [
-  "Mesure précise de la température jusqu'à 0,1°C près",
+  "Mesure précise de la température jusqu'à 0,5°C près",
   "Interface intuitive pour un suivi en temps réel",
   "Alertes personnalisables pour chaque étape de la production",
-  "Génération automatique de rapports de qualité",
-  "Intégration facile avec vos systèmes de production existants",
+  "Génération de rapports de campagnes et exportation des données",
+  "Installation facile et prise en main rapide",
 ]
 
 export function RunSection() {

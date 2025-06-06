@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Thermometer, Bell, ShieldCheck, BarChart } from 'lucide-react'
 import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { useCallback } from 'react'
 
 const fonctionnalites = [
   {
@@ -18,7 +20,7 @@ const fonctionnalites = [
   },
   {
     icon: ShieldCheck,
-    titre: "Sécurité Alimentaire",
+    titre: "Hygiène",
     description: "Assurez-vous que vos compost atteignent la température de sécurité requise.",
   },
   {
@@ -29,6 +31,14 @@ const fonctionnalites = [
 ]
 
 export function FeaturesSection() {
+  const scrollToDemo = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    const demoSection = document.getElementById('demo')
+    if (demoSection) {
+      demoSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [])
+
   return (
     <AnimatedSection className="py-24 bg-gray-50" id="fonctionnalites">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,10 +50,10 @@ export function FeaturesSection() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl font-bold mb-4">
-            Fonctionnalités clés pour une <span className="text-[#3eab35]">Production Intelligente</span>
+            Fonctionnalités clés pour simplifier<span className="text-[#3eab35]"> votre production</span>
           </h2>
           <p className="text-gray-600 text-lg">
-            Découvrez comment ProSensor révolutionne le contrôle de la température dans la production de compost
+            Découvrez le suivi des températures dans le processus de compostage avec GreenSensor
           </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -69,6 +79,21 @@ export function FeaturesSection() {
             </motion.div>
           ))}
         </div>
+        <motion.div
+          className="flex justify-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <Button 
+            size="lg" 
+            className="bg-[#3eab35] text-white hover:bg-[#dd234b]"
+            onClick={scrollToDemo}
+          >
+            Demander une présentation
+          </Button>
+        </motion.div>
       </div>
     </AnimatedSection>
   )
