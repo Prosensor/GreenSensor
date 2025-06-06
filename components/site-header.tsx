@@ -70,13 +70,8 @@ export function SiteHeader() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
                       <NavigationMenuItem>
-                        <Link href={`#${item.id}`} legacyBehavior passHref>
-                          <NavigationMenuLink 
-                            className="text-sm font-medium text-primary hover:text-[#3eab35] transition-colors"
-                            onClick={(e) => scrollToSection(e, item.id)}
-                          >
-                            {item.name}
-                          </NavigationMenuLink>
+                        <Link href={`/#${item.id}`} className="text-sm font-medium text-primary hover:text-[#3eab35] transition-colors">
+                          {item.name}
                         </Link>
                       </NavigationMenuItem>
                     </motion.div>
@@ -125,9 +120,8 @@ export function SiteHeader() {
                   transition={{ delay: index * 0.1, duration: 0.3 }}
                 >
                   <Link
-                    href={`#${item.id}`}
+                    href={`/#${item.id}`}
                     className="block px-3 py-2 rounded-md text-base font-medium text-primary hover:text-primary/80 hover:bg-gray-50"
-                    onClick={(e) => scrollToSection(e, item.id)}
                   >
                     {item.name}
                   </Link>

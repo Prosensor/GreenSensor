@@ -1,8 +1,12 @@
+"use client"
+
+
 import Link from "next/link"
 import { Thermometer } from 'lucide-react'
 import { Facebook, Twitter, LinkedinIcon as LinkedIn, Youtube } from 'lucide-react'
 import { DottedWorldMap } from "./dotted-world-map"
 import Image from "next/image"
+import { useCallback } from "react"
 
 
 const liensFooter = [
@@ -20,13 +24,21 @@ const liensSociaux = [
 ]
 
 export function SiteFooter() {
+  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
   return (
     <footer className="bg-gray-900 text-gray-400">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Logo et Description */}
           <div className="space-y-4">
-          <Link href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
               <Image
                 src="/GreenSensor_Logo.png"
                 alt="Green Sensor Logo"
@@ -37,42 +49,39 @@ export function SiteFooter() {
             <p className="text-sm">
               GreenSensor est une solution innovante pour le suivi des températures dans le processus de compostage.
             </p>
-            <div className="flex space-x-4">
-              {liensSociaux.map((social, index) => (
-                <Link
-                  key={index}
-                  href={social.href}
-                  className="hover:text-blue-600 transition-colors"
-                >
-                  <social.icon className="h-5 w-5" />
-                </Link>
-              ))}
-            </div>
           </div>
 
-          {/* Autres Liens */}
+          {/* Liens utiles */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Liens utiles</h3>
             <ul className="space-y-2">
-              {liensFooter.map((lien, index) => (
-                <li key={index}>
-                  <Link
-                    href={lien.href}
-                    className="hover:text-[#3eab35] transition-colors"
-                  >
-                    {lien.titre}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/#hero" className="hover:text-[#3eab35] transition-colors">Accueil</Link>
+              </li>
+              <li>
+                <Link href="/#fonctionnalites" className="hover:text-[#3eab35] transition-colors">Fonctionnalités</Link>
+              </li>
+              <li>
+                <Link href="/#specifications" className="hover:text-[#3eab35] transition-colors">Spécifications</Link>
+              </li>
+              <li>
+                <Link href="/#analyse" className="hover:text-[#3eab35] transition-colors">Analyse</Link>
+              </li>
+              <li>
+                <Link href="/#faq" className="hover:text-[#3eab35] transition-colors">FAQ</Link>
+              </li>
+              <li>
+                <Link href="/#demo" className="hover:text-[#3eab35] transition-colors">Contact</Link>
+              </li>
             </ul>
           </div>
 
-          {/* Localisation */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Notre présence</h3>
-            <div className="relative h-40">
-              <DottedWorldMap />
-            </div>
+          {/* Liens légaux */}
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-white">Informations légales</h3>
+            <Link href="/mentions-legales" className="hover:text-[#3eab35] transition-colors block">Mentions légales</Link>
+            <Link href="/politique-confidentialite" className="hover:text-[#3eab35] transition-colors block">Politique de confidentialité</Link>
+            <Link href="/cgu" className="hover:text-[#3eab35] transition-colors block">Conditions Générales d'Utilisation</Link>
           </div>
         </div>
       </div>
@@ -81,10 +90,7 @@ export function SiteFooter() {
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <p className="text-sm text-center">
-            © 2025 ProSensor. Tous droits réservés.{" "}
-            <Link href="#" className="text-[#3eab35] hover:underline">
-              Mentions légales
-            </Link>
+            © 2025 ProSensor. Tous droits réservés.
           </p>
         </div>
       </div>
