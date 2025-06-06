@@ -12,7 +12,7 @@ export default function MentionsLegales() {
           <p>
             <strong>GreenSensor</strong><br />
             contact@greensensor.fr<br />
-            123 rue de l'Innovation, 75000 Paris, France
+            EcoParc, 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France
           </p>
         </section>
         <section className="mb-6">
