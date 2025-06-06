@@ -79,7 +79,7 @@ export default function CGU() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Contact</h2>
           <p>
-            Pour toute question concernant les CGU, contactez-nous à <a href="mailto:contact@greensensor.fr" className="text-[#3eab35] underline">contact@greensensor.fr</a>.
+            Pour toute question concernant les CGU, contactez-nous à <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a>.
           </p>
         </section>
       </main>

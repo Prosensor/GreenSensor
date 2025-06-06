@@ -61,13 +61,13 @@ export default function PolitiqueConfidentialite() {
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2">Droits des utilisateurs</h2>
           <p>
-            Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition concernant vos données. Pour exercer ces droits, contactez-nous à <a href="mailto:contact@greensensor.fr" className="text-[#3eab35] underline">contact@greensensor.fr</a>.
+            Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition concernant vos données. Pour exercer ces droits, contactez-nous à <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a>.
           </p>
         </section>
         <section>
           <h2 className="text-xl font-semibold mb-2">Contact</h2>
           <p>
-            Pour toute question relative à la confidentialité de vos données, vous pouvez nous écrire à <a href="mailto:contact@greensensor.fr" className="text-[#3eab35] underline">contact@greensensor.fr</a>.
+            Pour toute question relative à la confidentialité de vos données, vous pouvez nous écrire à <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a>.
           </p>
         </section>
       </main>

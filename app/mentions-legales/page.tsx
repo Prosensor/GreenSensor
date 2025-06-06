@@ -43,9 +43,10 @@ export default function MentionsLegales() {
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2">Éditeur du site</h2>
           <p>
-            <strong>GreenSensor</strong><br />
-            contact@greensensor.fr<br />
-            123 rue de l'Innovation, 75000 Paris, France
+            <strong> Greensensor – l’innovation signée Prosensor </strong><br />
+            info@prosensor.com<br />
+            5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France<br />
+            RCS : Metz 451 740 187
           </p>
         </section>
         <section className="mb-6">
@@ -71,7 +72,7 @@ export default function MentionsLegales() {
         <section>
           <h2 className="text-xl font-semibold mb-2">Contact</h2>
           <p>
-            Pour toute question, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:contact@greensensor.fr" className="text-[#3eab35] underline">contact@greensensor.fr</a>
+            Pour toute question, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a>
           </p>
         </section>
       </main>
