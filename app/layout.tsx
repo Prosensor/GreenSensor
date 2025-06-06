@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GreenSensor - Suivi intelligent du compostage",
+  title: "GreenSensor - Suivi du compostage",
   description: "GreenSensor révolutionne le suivi de température et l'analyse des processus de compostage grâce à des sondes connectées et une plateforme cloud intuitive.",
   keywords: [
     "GreenSensor",
