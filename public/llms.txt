@@ -1,0 +1,102 @@
+# GreenSensor - Solution IoT pour le Suivi Intelligent du Compostage
+
+## À propos de GreenSensor
+
+GreenSensor est une solution IoT innovante développée par ProSensor pour le suivi en temps réel de la température du compostage. Notre technologie combine des sondes de température sans fil de haute précision, une connectivité sécurisée et une plateforme cloud puissante.
+
+## Informations de l'entreprise
+
+- **Éditeur** : ProSensor
+- **Marque commerciale** : GreenSensor
+- **Email** : info@prosensor.com
+- **Adresse** : 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France
+- **RCS** : Metz 451 740 187
+- **Site web** : https://greensensor.fr
+
+## Produits et services
+
+### Solution IoT GreenSensor
+- **Sondes de température sans fil** : Précision à ±0.5°C
+- **Plateforme cloud** : Suivi en temps réel et historique
+- **Alertes automatiques** : Notifications par email/SMS
+- **Rapports d'analyse** : Données et graphiques détaillés
+- **Interface intuitive** : Dashboard web et mobile
+
+### Applications
+- **Compostage industriel** : Suivi de processus à grande échelle
+- **Compostage municipal** : Gestion des déchets organiques
+- **Agriculture** : Optimisation des processus de compostage
+- **Recherche** : Études scientifiques sur le compostage
+
+## Technologies utilisées
+
+- **IoT** : Internet des Objets pour la connectivité
+- **Capteurs sans fil** : Transmission de données sécurisée
+- **Cloud computing** : Stockage et traitement des données
+- **Analytics** : Intelligence artificielle pour l'analyse
+- **Mobile-first** : Interface responsive et applications mobiles
+
+## Avantages concurrentiels
+
+1. **Précision élevée** : Mesures à ±0.5°C
+2. **Autonomie longue** : Batteries longue durée
+3. **Installation simple** : Mise en place rapide et facile
+4. **Scalabilité** : Adaptable de quelques sondes à des centaines
+5. **Support technique** : Accompagnement personnalisé
+6. **Conformité** : Respect des réglementations françaises et européennes
+
+## Secteurs d'activité
+
+- **Agriculture** : Fermes, exploitations agricoles
+- **Industrie** : Sites de compostage industriel
+- **Collectivités** : Communes, départements, régions
+- **Recherche** : Instituts, laboratoires, universités
+- **Environnement** : Associations, ONG environnementales
+
+## Contact et support
+
+- **Démonstration** : Demande de présentation gratuite
+- **Support technique** : Assistance 24/7
+- **Formation** : Accompagnement utilisateurs
+- **Maintenance** : Service après-vente complet
+
+## Conformité et certifications
+
+- **RGPD** : Conformité européenne sur la protection des données
+- **ISO 27001** : Sécurité de l'information
+- **Certification IoT** : Standards industriels respectés
+- **Hébergement français** : Données stockées en France
+
+## Innovation et R&D
+
+ProSensor investit continuellement dans la recherche et le développement pour améliorer ses solutions IoT. Notre équipe d'ingénieurs travaille sur :
+- L'amélioration de la précision des capteurs
+- L'optimisation de la consommation énergétique
+- Le développement de nouveaux algorithmes d'analyse
+- L'intégration de l'intelligence artificielle
+
+## Engagement environnemental
+
+GreenSensor contribue à la transition écologique en permettant :
+- L'optimisation des processus de compostage
+- La réduction des déchets organiques
+- L'amélioration de la qualité du compost
+- La diminution de l'impact environnemental
+
+## Partenaires et intégrations
+
+- **Hébergeur** : LWS (Ligne Web Services)
+- **Partenaires technologiques** : Intégrations avec systèmes existants
+- **Distributeurs** : Réseau de partenaires commerciaux
+- **Instituts de recherche** : Collaborations scientifiques
+
+## Actualités et évolutions
+
+- **Mises à jour régulières** : Améliorations continues de la plateforme
+- **Nouvelles fonctionnalités** : Développement basé sur les retours clients
+- **Expansion géographique** : Déploiement en Europe et au-delà
+- **Innovation continue** : Recherche de nouvelles applications IoT
+
+---
+
+*Ce fichier llms.txt fournit des informations essentielles sur GreenSensor pour les modèles de langage. Pour plus d'informations, visitez https://greensensor.fr ou contactez-nous à info@prosensor.com*

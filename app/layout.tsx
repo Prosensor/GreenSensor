@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GreenSensor - Suivi du compostage",
-  description: "GreenSensor révolutionne le suivi de température et l'analyse des processus de compostage grâce à des sondes connectées et une plateforme cloud intuitive.",
+  title: "GreenSensor - Solution IoT pour le Suivi Intelligent du Compostage | ProSensor",
+  description: "Découvrez GreenSensor, la solution IoT révolutionnaire pour le suivi en temps réel de la température du compostage. Sondes connectées, plateforme cloud et alertes automatiques pour optimiser vos processus de compostage.",
   keywords: [
     "GreenSensor",
     "compostage",
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     nocache: false,
   },
   openGraph: {
-    title: "GreenSensor - Suivi intelligent du compostage",
-    description: "GreenSensor révolutionne le suivi de température et l'analyse des processus de compostage grâce à des sondes connectées et une plateforme cloud intuitive.",
+    title: "GreenSensor - Solution IoT pour le Suivi Intelligent du Compostage",
+    description: "Découvrez GreenSensor, la solution IoT révolutionnaire pour le suivi en temps réel de la température du compostage. Sondes connectées, plateforme cloud et alertes automatiques.",
     url: "https://greensensor.fr",
     siteName: "GreenSensor",
     images: [
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GreenSensor - Suivi intelligent du compostage",
-    description: "GreenSensor révolutionne le suivi de température et l'analyse des processus de compostage grâce à des sondes connectées et une plateforme cloud intuitive.",
+    title: "GreenSensor - Solution IoT pour le Suivi Intelligent du Compostage",
+    description: "Découvrez GreenSensor, la solution IoT révolutionnaire pour le suivi en temps réel de la température du compostage. Sondes connectées, plateforme cloud et alertes automatiques.",
     images: ["https://greensensor.fr/GreenSensor_Logo.jpg"],
     creator: "@greensensor",
   },
