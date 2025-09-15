@@ -401,7 +401,7 @@ export function DownloadSection() {
                 <CloudPlatform
                   ref={cloudRef}
                   className="border-[#d5f5e3]"
-                  imageUrl="/dashboard.png"
+                  imageUrl="/application_plaquette.png"
                 />
               </div>
 

@@ -48,7 +48,7 @@ export function KeyFeaturesSection() {
             transition={{ duration: 0.8 }}
           >
             <Image
-              src="/visu.jpg"
+              src="/application_datasheet.png"
               alt="Interface ProSensor pour le contrôle de la température"
               fill
               className="object-contain"
