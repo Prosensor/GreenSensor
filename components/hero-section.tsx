@@ -42,7 +42,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <span className="text-[#3eab35]">Suivi du process</span> de Compostage
+              <span className="text-[#3eab35]">Sonde de température</span> a Compost
             </motion.h1>
             <motion.p 
               className="text-xl text-gray-600 max-w-xl"
