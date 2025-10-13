@@ -42,7 +42,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <span className="text-[#3eab35]">Sonde de température</span> à Compost
+              Sonde de température à <span className="text-[#3eab35]">Compost</span>
             </motion.h1>
             <motion.p 
               className="text-xl text-gray-600 max-w-xl"
@@ -50,8 +50,8 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              ProSensor révolutionne la production et le suivi du compost avec des sondes de température. 
-              Optimisez votre processus et garantissez la qualité de vos produits.
+              ProSensor révolutionne la production et le suivi du processus du compostage avec des sondes de température. 
+              Grâce à une  interface de gestion intuitive, optimisez votre processus de compostage et garantissez la qualité de votre production.
             </motion.p>
             <div className="flex flex-wrap gap-6">
               {caracteristiques.map((carac, index) => (
