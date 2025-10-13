@@ -37,12 +37,12 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <motion.h1 
-              className="text-4xl font-bold tracking-tight text-gray-900 lg:text-5xl"
+              className="text-4xl font-bold tracking-tight text-gray-900 lg:text-4xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <span className="text-[#3eab35]">Sonde de température</span> a Compost
+              <span className="text-[#3eab35]">Sonde de température</span> à Compost
             </motion.h1>
             <motion.p 
               className="text-xl text-gray-600 max-w-xl"
