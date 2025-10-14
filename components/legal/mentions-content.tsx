@@ -79,11 +79,88 @@ export function MentionsContent() {
     )
   }
 
-  // French default content (existing text condensed where appropriate)
+  // French content (full)
   return (
     <div className="prose prose-lg max-w-none">
       <h1 className="text-4xl font-bold mb-8 text-gray-800">Mentions légales</h1>
-      {/* The full FR content is already present in the page version; we keep the condensed client version here */}
+
+      <div className="bg-blue-50 p-6 rounded-lg mb-8">
+        <p className="text-gray-700 mb-0">
+          <strong>Site web :</strong> GreenSensor - Sonde de température à Compost<br />
+          <strong>Dernière mise à jour :</strong> Décembre 2024<br />
+          <strong>Éditeur :</strong> ProSensor
+        </p>
+      </div>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">1. Éditeur du site</h2>
+        <div className="bg-gray-50 p-6 rounded-lg mb-4">
+          <p className="text-gray-700 mb-2">
+            <strong>Raison sociale :</strong> ProSensor<br />
+            <strong>Marque commerciale :</strong> GreenSensor<br />
+            <strong>Email :</strong> <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a><br />
+            <strong>Adresse :</strong> 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France<br />
+            <strong>RCS :</strong> Metz 451 740 187<br />
+            <strong>SIRET :</strong> 451 740 187 00012<br />
+            <strong>Code APE :</strong> 6201Z (Programmation informatique)
+          </p>
+        </div>
+        <p className="text-gray-700 mb-4">
+          ProSensor est une société française spécialisée dans le développement de solutions IoT pour l'agriculture et l'environnement.
+          Notre expertise permet de concevoir des systèmes innovants de suivi et d'analyse des processus naturels, notamment le compostage.
+        </p>
+        <p className="text-gray-700">
+          La marque GreenSensor représente notre solution de suivi intelligent du compostage par IoT : sondes de température connectées,
+          plateforme cloud sécurisée et outils d'analyse avancés.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">2. Hébergement du site</h2>
+        <div className="bg-gray-50 p-6 rounded-lg mb-4">
+          <p className="text-gray-700 mb-2">
+            <strong>Hébergeur :</strong> LWS (Ligne Web Services)<br />
+            <strong>Adresse :</strong> 10, RUE PENTHIEVRE, 75008 PARIS, FRANCE<br />
+            <strong>Site web :</strong> <a href="https://www.lws.fr" className="text-[#3eab35] underline" target="_blank" rel="noopener noreferrer">www.lws.fr</a><br />
+            <strong>Téléphone :</strong> 01 77 62 30 03
+          </p>
+        </div>
+        <p className="text-gray-700 mb-4">
+          LWS est un hébergeur français reconnu. Nos serveurs sont situés en France afin d'assurer conformité et performance.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">3. Propriété intellectuelle</h2>
+        <p className="text-gray-700 mb-4">
+          L'ensemble du contenu du site GreenSensor (textes, images, graphismes, logo, icônes, vidéos, logiciels, bases de données, etc.)
+          est la propriété exclusive de ProSensor, sauf mention contraire. Toute reproduction, représentation ou adaptation est interdite
+          sans autorisation écrite préalable.
+        </p>
+        <p className="text-gray-700 mb-4">
+          Les marques "GreenSensor" et "ProSensor" ainsi que leurs logos sont des marques déposées. Toute utilisation non autorisée est interdite.
+        </p>
+        <p className="text-gray-700">
+          Les technologies IoT développées par ProSensor (algorithmes, protocoles de communication, interfaces) sont protégées par des brevets
+          et des secrets de fabrication.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">4. Responsabilité et limitations</h2>
+        <p className="text-gray-700 mb-4">
+          Les informations du site sont fournies à titre indicatif et peuvent être mises à jour sans préavis. ProSensor ne saurait être tenu responsable
+          des omissions, inexactitudes ou carences, ni des dommages directs ou indirects liés à l'utilisation du site.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">5. Données personnelles</h2>
+        <p className="text-gray-700">
+          Le traitement des données personnelles est régi par notre <a href="/politique-confidentialite" className="text-[#3eab35] underline">Politique de Confidentialité</a>,
+          conforme au RGPD et à la loi française.
+        </p>
+      </section>
     </div>
   )
 }

@@ -64,7 +64,66 @@ export function CguContent() {
     )
   }
 
-  return null
+  // French content (full)
+  return (
+    <div className="prose prose-lg max-w-none">
+      <h1 className="text-4xl font-bold mb-8 text-gray-800">Conditions Générales d'Utilisation</h1>
+      <div className="bg-blue-50 p-6 rounded-lg mb-8">
+        <p className="text-gray-700 mb-0">
+          <strong>Dernière mise à jour :</strong> Décembre 2024<br />
+          <strong>Version :</strong> 1.0<br />
+          <strong>Éditeur :</strong> ProSensor - GreenSensor
+        </p>
+      </div>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">1. Objet et champ d'application</h2>
+        <p className="text-gray-700 mb-4">Les présentes CGU régissent l'utilisation du site web GreenSensor, propriété de ProSensor.</p>
+        <p className="text-gray-700">Le site présente notre solution de suivi intelligent du compostage par IoT.</p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">2. Accès et utilisation du site</h2>
+        <p className="text-gray-700 mb-4">Accès gratuit. L'utilisation implique l'acceptation pleine et entière des CGU.</p>
+        <p className="text-gray-700">Toute utilisation contraire à l'ordre public ou aux droits de tiers est interdite.</p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">3. Propriété intellectuelle</h2>
+        <p className="text-gray-700">Contenus protégés par le droit d'auteur et propriété de ProSensor (sauf mention contraire).</p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">4. Responsabilité et garanties</h2>
+        <p className="text-gray-700">Informations fournies à titre indicatif. Utilisation sous la responsabilité de l'utilisateur.</p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">5. Données personnelles et confidentialité</h2>
+        <p className="text-gray-700">Voir la <a href="/politique-confidentialite" className="text-[#3eab35] underline">Politique de Confidentialité</a>.</p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">6. Liens externes</h2>
+        <p className="text-gray-700">ProSensor n'est pas responsable du contenu des sites tiers.</p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">7. Évolution des conditions</h2>
+        <p className="text-gray-700">ProSensor peut modifier les CGU à tout moment. L'utilisation vaut acceptation.</p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">8. Droit applicable</h2>
+        <p className="text-gray-700">Droit français. Tribunaux français compétents.</p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">9. Contact</h2>
+        <p className="text-gray-700">Contact&nbsp;: <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a>.</p>
+      </section>
+    </div>
+  )
 }
 
 
