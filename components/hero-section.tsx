@@ -92,7 +92,7 @@ export function HeroSection() {
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             <Image
-              src="/sonde.png"
+              src="/sonde hero.png"
               alt="Sonde ProSensor pour compote"
               fill
               className="object-contain"
