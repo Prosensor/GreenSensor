@@ -20,6 +20,7 @@ export function KeyFeaturesSection() {
   const keyT = (t as any).keyFeatures as {
     heading: string
     heading_highlight: string
+    connector: string
     paragraph: string
     items: { iconKey: keyof typeof iconMap; label: string; highlight?: boolean }[]
     cta: string
@@ -58,7 +59,7 @@ export function KeyFeaturesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              {keyT.heading} <span className="text-[#3eab35]">{keyT.heading_highlight}</span> de GreenSensor
+              {keyT.heading} <span className="text-[#3eab35]">{keyT.heading_highlight}</span> {keyT.connector} GreenSensor
             </motion.h2>
             <motion.div 
               className="space-y-4"

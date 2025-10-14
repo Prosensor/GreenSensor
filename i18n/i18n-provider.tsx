@@ -31,6 +31,7 @@ type Translations = {
   keyFeatures: {
     heading: string
     heading_highlight: string
+    connector: string
     paragraph: string
     items: { iconKey: "thermometer" | "chart" | "bell" | "lock"; label: string; highlight?: boolean }[]
     cta: string
@@ -142,6 +143,7 @@ const fr: Translations = {
   keyFeatures: {
     heading: "Fonctionnalités",
     heading_highlight: "Clés",
+    connector: "de",
     paragraph: "Création de campagnes de fermentation ou de maturation, affection de sondes à des andains, suivi des objectifs dans le déroulement des campagnes, export de données, impression de rapports, alertes SMS/Email en cas d'anomalie.",
     items: [
       { iconKey: "thermometer", label: "Mesure" },
@@ -273,6 +275,7 @@ const en: Translations = {
   keyFeatures: {
     heading: "Key",
     heading_highlight: "Features",
+    connector: "of",
     paragraph: "Create fermentation/maturation campaigns, assign probes to windrows, track goals, export data, print reports, and receive SMS/Email alerts in case of anomalies.",
     items: [
       { iconKey: "thermometer", label: "Measurement" },
