@@ -105,6 +105,9 @@ type Translations = {
       error: string
     }
   }
+  header?: {
+    appButton: string
+  }
 }
 
 const fr: Translations = {
@@ -119,7 +122,7 @@ const fr: Translations = {
   hero: {
     title_highlight: "Compost",
     title_rest: "Sonde de température à",
-    subtitle_line1: "ProSensor révolutionne la production et le suivi du processus du compostage avec des sondes de température.",
+    subtitle_line1: "Prosensor révolutionne la production et le suivi du processus du compostage avec des sondes de température.",
     subtitle_line2: "Grâce à une  interface de gestion intuitive, optimisez votre processus de compostage et garantissez la qualité de votre production.",
     cta: "Demander une présentation",
     features: [
@@ -157,7 +160,7 @@ const fr: Translations = {
     heading: "Questions",
     heading_highlight: "Fréquentes",
     items: [
-      { q: "Quelle est la précision de mesure des sondes GreenSensor ?", a: "Les sondes ProSensor offrent une précision de mesure exceptionnelle, avec une marge d'erreur de seulement ±0,5°C. Cette précision permet un contrôle optimal de la température dans le processus de production de composts." },
+      { q: "Quelle est la précision de mesure des sondes GreenSensor ?", a: "Les sondes Prosensor offrent une précision de mesure exceptionnelle, avec une marge d'erreur de seulement ±0,5°C. Cette précision permet un contrôle optimal de la température dans le processus de production de composts." },
       { q: "Comment puis-je intégrer GreenSensor à mon système de production actuel ?", a: "GreenSensor est conçu pour s'intégrer facilement à la plupart des systèmes de production existants. Notre équipe technique vous guidera tout au long du processus d'installation et d'intégration pour assurer une transition en douceur." },
       { q: "Quelles sont les options de rapport et d'analyse disponibles ?", a: "GreenSensor offre une suite complète d'outils de rapport et d'analyse. Vous pouvez accéder à des graphiques en temps réel, des rapports détaillés sur l'historique des températures, et des analyses prédictives pour optimiser votre production." },
       { q: "Comment configurer les alertes de température ?", a: "La configuration des alertes est simple et personnalisable. Dans l'interface GreenSensor, à la création de la campagne, naviguez vers Paramètres > Alertes pour définir vos seuils de température et choisir vos méthodes de notification préférées (SMS, email, notifications push)." },
@@ -167,7 +170,7 @@ const fr: Translations = {
   demo: {
     heading: "Demandez une",
     heading_highlight: "Présentation",
-    paragraph: "Découvrez la puissance de ProSensor en action. Demandez une présentation pour voir comment nos sondes de chaleur peuvent révolutionner votre production de compost et optimiser vos processus.",
+    paragraph: "Découvrez la puissance de Prosensor en action. Demandez une présentation pour voir comment nos sondes de chaleur peuvent révolutionner votre production de compost et optimiser vos processus.",
     hq_title: "Siège Social : ",
     hq_company: "Prosensor",
     address: "EcoParc, 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur",
@@ -192,7 +195,7 @@ const fr: Translations = {
     heading_line1: "Optimisez votre",
     heading_highlight: "production",
     heading_line2: "de compost",
-    paragraph_line1: "ProSensor vous offre tous les outils nécessaires pour simplifier votre processus de production",
+    paragraph_line1: "Prosensor vous offre tous les outils nécessaires pour simplifier votre processus de production",
     paragraph_line2: "et automatiser les tâches chronophages dans votre flux de travail, garantissant ainsi une qualité constante de vos compost.",
     advantages: [
       "Mesure précise de la température jusqu'à 0,5°C près",
@@ -201,7 +204,7 @@ const fr: Translations = {
       "Génération de rapports de campagnes et exportation des données",
       "Installation facile et prise en main rapide",
     ],
-    image_alt: "Sonde ProSensor en action dans la production de compotes",
+    image_alt: "Sonde Prosensor en action dans la production de compotes",
   },
   footer: {
     description: "GreenSensor est une solution innovante pour le suivi des températures dans le processus de compostage.",
@@ -209,7 +212,7 @@ const fr: Translations = {
     legal_info: "Informations légales",
     nav: { home: "Accueil", features: "Fonctionnalités", specs: "Spécifications", analytics: "Analyse", faq: "FAQ", contact: "Contact" },
     legal: { mentions: "Mentions légales", privacy: "Politique de confidentialité", terms: "Conditions Générales d'Utilisation", prosensor_site: "Site de Prosensor" },
-    copyright: "© 2025 ProSensor. Tous droits réservés.",
+    copyright: "© 2025 Prosensor. Tous droits réservés.",
   },
   form: {
     labels: {
@@ -237,6 +240,7 @@ const fr: Translations = {
       error: "Une erreur est survenue. Veuillez réessayer.",
     }
   },
+  header: { appButton: "Interface" },
 }
 
 const en: Translations = {
@@ -251,7 +255,7 @@ const en: Translations = {
   hero: {
     title_highlight: "Compost",
     title_rest: "Temperature probe for",
-    subtitle_line1: "ProSensor transforms composting monitoring with reliable temperature probes.",
+    subtitle_line1: "Prosensor transforms composting monitoring with reliable temperature probes.",
     subtitle_line2: "With an intuitive dashboard, optimize your process and ensure quality output.",
     cta: "Request a demo",
     features: [
@@ -289,7 +293,7 @@ const en: Translations = {
     heading: "Frequently",
     heading_highlight: "Asked Questions",
     items: [
-      { q: "What is the measurement accuracy of GreenSensor probes?", a: "ProSensor probes offer ±0.5°C accuracy, enabling optimal temperature control during compost production." },
+      { q: "What is the measurement accuracy of GreenSensor probes?", a: "Prosensor probes offer ±0.5°C accuracy, enabling optimal temperature control during compost production." },
       { q: "How can I integrate GreenSensor into my current production system?", a: "GreenSensor integrates easily with most existing setups. Our technical team will guide you through installation and integration for a smooth transition." },
       { q: "What reporting and analytics options are available?", a: "GreenSensor offers real-time charts, detailed temperature history reports, and predictive analytics to optimize your production." },
       { q: "How do I configure temperature alerts?", a: "Alerts are simple to set up. In the GreenSensor interface when creating a campaign, go to Settings > Alerts to define thresholds and notification methods (SMS, email, push)." },
@@ -299,7 +303,7 @@ const en: Translations = {
   demo: {
     heading: "Request a",
     heading_highlight: "Demo",
-    paragraph: "See ProSensor in action. Request a demo to learn how our temperature probes can transform your compost production and optimize your processes.",
+    paragraph: "See Prosensor in action. Request a demo to learn how our temperature probes can transform your compost production and optimize your processes.",
     hq_title: "Headquarters: ",
     hq_company: "Prosensor",
     address: "EcoParc, 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur",
@@ -324,7 +328,7 @@ const en: Translations = {
     heading_line1: "Optimize your",
     heading_highlight: "production",
     heading_line2: "of compost",
-    paragraph_line1: "ProSensor provides all the tools you need to simplify production",
+    paragraph_line1: "Prosensor provides all the tools you need to simplify production",
     paragraph_line2: "and automate time‑consuming tasks, ensuring consistent compost quality.",
     advantages: [
       "Accurate temperature measurement up to ±0.5°C",
@@ -333,7 +337,7 @@ const en: Translations = {
       "Campaign reports and data export",
       "Easy installation and quick onboarding",
     ],
-    image_alt: "ProSensor probe in action for compost production",
+    image_alt: "Prosensor probe in action for compost production",
   },
   footer: {
     description: "GreenSensor is an innovative solution for temperature monitoring in the composting process.",
@@ -341,7 +345,7 @@ const en: Translations = {
     legal_info: "Legal information",
     nav: { home: "Home", features: "Features", specs: "Specifications", analytics: "Analytics", faq: "FAQ", contact: "Contact" },
     legal: { mentions: "Legal notice", privacy: "Privacy policy", terms: "Terms of use", prosensor_site: "Prosensor website" },
-    copyright: "© 2025 ProSensor. All rights reserved.",
+    copyright: "© 2025 Prosensor. All rights reserved.",
   },
   form: {
     labels: {
@@ -369,6 +373,7 @@ const en: Translations = {
       error: "An error occurred. Please try again.",
     }
   },
+  header: { appButton: "Open App" },
 }
 
 const dictionaries: Record<Language, Translations> = { fr, en }

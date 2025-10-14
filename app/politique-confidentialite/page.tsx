@@ -24,15 +24,15 @@ export async function generateMetadata(): Promise<Metadata> {
     }
   }
   return {
-    title: "Politique de Confidentialité GreenSensor - Protection des Données RGPD | ProSensor",
-    description: "Découvrez la politique de confidentialité complète de GreenSensor par ProSensor. Protection des données personnelles, conformité RGPD, droits des utilisateurs et sécurité de nos solutions IoT pour le compostage.",
+    title: "Politique de Confidentialité GreenSensor - Protection des Données RGPD | Prosensor",
+    description: "Découvrez la politique de confidentialité complète de GreenSensor par Prosensor. Protection des données personnelles, conformité RGPD, droits des utilisateurs et sécurité de nos solutions IoT pour le compostage.",
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
       title: "Politique de Confidentialité GreenSensor - Protection des Données RGPD",
-      description: "Découvrez la politique de confidentialité complète de GreenSensor par ProSensor. Protection des données personnelles, conformité RGPD, droits des utilisateurs et sécurité de nos solutions IoT.",
+      description: "Découvrez la politique de confidentialité complète de GreenSensor par Prosensor. Protection des données personnelles, conformité RGPD, droits des utilisateurs et sécurité de nos solutions IoT.",
       url: "https://greensensor.fr/politique-confidentialite",
       siteName: "GreenSensor",
       locale: "fr_FR",

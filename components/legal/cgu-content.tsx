@@ -12,7 +12,7 @@ export function CguContent() {
           <p className="text-gray-700 mb-0">
             <strong>Last updated:</strong> December 2024<br />
             <strong>Version:</strong> 1.0<br />
-            <strong>Publisher:</strong> ProSensor - GreenSensor
+            <strong>Publisher:</strong> Prosensor - GreenSensor
           </p>
         </div>
 
@@ -28,12 +28,12 @@ export function CguContent() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">3. Intellectual property</h2>
-          <p className="text-gray-700 mb-4">All content is protected by copyright and is the exclusive property of ProSensor unless stated otherwise. Any reproduction or adaptation requires prior written consent.</p>
+          <p className="text-gray-700 mb-4">All content is protected by copyright and is the exclusive property of Prosensor unless stated otherwise. Any reproduction or adaptation requires prior written consent.</p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">4. Liability and warranties</h2>
-          <p className="text-gray-700 mb-4">Information provided may not be exhaustive or up to date at all times. Use of the site is at the user's own risk. ProSensor cannot be held liable for direct or indirect damages.</p>
+          <p className="text-gray-700 mb-4">Information provided may not be exhaustive or up to date at all times. Use of the site is at the user's own risk. Prosensor cannot be held liable for direct or indirect damages.</p>
         </section>
 
         <section className="mb-8">
@@ -43,12 +43,12 @@ export function CguContent() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">6. External links</h2>
-          <p className="text-gray-700">The site may include links to external websites; ProSensor is not responsible for their content or privacy practices.</p>
+          <p className="text-gray-700">The site may include links to external websites; Prosensor is not responsible for their content or privacy practices.</p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">7. Changes</h2>
-          <p className="text-gray-700">ProSensor may update these Terms at any time. Continued use after changes constitutes acceptance of the revised Terms.</p>
+          <p className="text-gray-700">Prosensor may update these Terms at any time. Continued use after changes constitutes acceptance of the revised Terms.</p>
         </section>
 
         <section className="mb-8">
@@ -72,13 +72,13 @@ export function CguContent() {
         <p className="text-gray-700 mb-0">
           <strong>Dernière mise à jour :</strong> Décembre 2024<br />
           <strong>Version :</strong> 1.0<br />
-          <strong>Éditeur :</strong> ProSensor - GreenSensor
+          <strong>Éditeur :</strong> Prosensor - GreenSensor
         </p>
       </div>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">1. Objet et champ d'application</h2>
-        <p className="text-gray-700 mb-4">Les présentes CGU régissent l'utilisation du site web GreenSensor, propriété de ProSensor.</p>
+        <p className="text-gray-700 mb-4">Les présentes CGU régissent l'utilisation du site web GreenSensor, propriété de Prosensor.</p>
         <p className="text-gray-700">Le site présente notre solution de suivi intelligent du compostage par IoT.</p>
       </section>
 
@@ -90,7 +90,7 @@ export function CguContent() {
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">3. Propriété intellectuelle</h2>
-        <p className="text-gray-700">Contenus protégés par le droit d'auteur et propriété de ProSensor (sauf mention contraire).</p>
+        <p className="text-gray-700">Contenus protégés par le droit d'auteur et propriété de Prosensor (sauf mention contraire).</p>
       </section>
 
       <section className="mb-8">
@@ -105,12 +105,12 @@ export function CguContent() {
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">6. Liens externes</h2>
-        <p className="text-gray-700">ProSensor n'est pas responsable du contenu des sites tiers.</p>
+        <p className="text-gray-700">Prosensor n'est pas responsable du contenu des sites tiers.</p>
       </section>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">7. Évolution des conditions</h2>
-        <p className="text-gray-700">ProSensor peut modifier les CGU à tout moment. L'utilisation vaut acceptation.</p>
+        <p className="text-gray-700">Prosensor peut modifier les CGU à tout moment. L'utilisation vaut acceptation.</p>
       </section>
 
       <section className="mb-8">

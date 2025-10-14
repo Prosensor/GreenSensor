@@ -24,8 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
     }
   }
   return {
-    title: "CGU GreenSensor - Conditions Générales d'Utilisation | ProSensor",
-    description: "Consultez les conditions générales d'utilisation complètes du site GreenSensor par ProSensor. Découvrez nos règles d'accès, propriété intellectuelle, responsabilité et droit applicable pour une utilisation transparente de nos services IoT.",
+    title: "CGU GreenSensor - Conditions Générales d'Utilisation | Prosensor",
+    description: "Consultez les conditions générales d'utilisation complètes du site GreenSensor par Prosensor. Découvrez nos règles d'accès, propriété intellectuelle, responsabilité et droit applicable pour une utilisation transparente de nos services IoT.",
     robots: {
       index: true,
       follow: true,

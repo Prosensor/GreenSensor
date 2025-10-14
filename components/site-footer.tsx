@@ -93,6 +93,15 @@ export function SiteFooter() {
             <Link href="/politique-confidentialite" className="hover:text-[#3eab35] transition-colors block">{ft.legal.privacy}</Link>
             <Link href="/cgu" className="hover:text-[#3eab35] transition-colors block">{ft.legal.terms}</Link>
             <Link href="https://www.prosensor.fr/" className="hover:text-[#3eab35] transition-colors block">{ft.legal.prosensor_site}</Link>
+            <div className="mt-4">
+              <Image
+                src="/prosensor-hq.jpg"
+                alt="Prosensor, siège social"
+                width={240}
+                height={120}
+                className="rounded-md object-cover border border-gray-800"
+              />
+            </div>
           </div>
         </div>
       </div>

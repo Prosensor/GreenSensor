@@ -24,8 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
     }
   }
   return {
-    title: "Mentions Légales GreenSensor - Informations Éditeur et Hébergement | ProSensor",
-    description: "Consultez les mentions légales complètes du site GreenSensor par ProSensor. Découvrez nos informations éditeur, hébergement, propriété intellectuelle et responsabilité pour une transparence totale sur nos services IoT.",
+    title: "Mentions Légales GreenSensor - Informations Éditeur et Hébergement | Prosensor",
+    description: "Consultez les mentions légales complètes du site GreenSensor par Prosensor. Découvrez nos informations éditeur, hébergement, propriété intellectuelle et responsabilité pour une transparence totale sur nos services IoT.",
     robots: {
       index: true,
       follow: true,

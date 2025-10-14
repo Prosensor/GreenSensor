@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "plateforme cloud",
     "alertes température",
     "rapport compost",
-    "ProSensor"
+    "Prosensor"
   ],
   robots: {
     index: true,

@@ -2,11 +2,11 @@
 
 ## À propos de GreenSensor
 
-GreenSensor est une sonde de température à Compost innovante développée par ProSensor pour le suivi en temps réel de la température du compostage. Notre technologie combine des sondes de température sans fil de haute précision, une connectivité sécurisée et une plateforme cloud puissante.
+GreenSensor est une sonde de température à Compost innovante développée par Prosensor pour le suivi en temps réel de la température du compostage. Notre technologie combine des sondes de température sans fil de haute précision, une connectivité sécurisée et une plateforme cloud puissante.
 
 ## Informations de l'entreprise
 
-- **Éditeur** : ProSensor
+- **Éditeur** : Prosensor
 - **Marque commerciale** : GreenSensor
 - **Email** : info@prosensor.com
 - **Adresse** : 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France
@@ -69,7 +69,7 @@ GreenSensor est une sonde de température à Compost innovante développée par 
 
 ## Innovation et R&D
 
-ProSensor investit continuellement dans la recherche et le développement pour améliorer ses solutions IoT. Notre équipe d'ingénieurs travaille sur :
+Prosensor investit continuellement dans la recherche et le développement pour améliorer ses solutions IoT. Notre équipe d'ingénieurs travaille sur :
 - L'amélioration de la précision des capteurs
 - L'optimisation de la consommation énergétique
 - Le développement de nouveaux algorithmes d'analyse

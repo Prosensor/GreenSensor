@@ -44,7 +44,7 @@ export function FaqSection() {
           >
             <Image
               src="/faq.jpg"
-              alt="Sonde ProSensor en action"
+              alt="Sonde Prosensor en action"
               fill
               className="rounded-lg shadow-lg object-cover"
             />

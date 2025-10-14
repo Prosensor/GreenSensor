@@ -12,7 +12,7 @@ export function PrivacyContent() {
           <p className="text-gray-700 mb-0">
             <strong>Last updated:</strong> December 2024<br />
             <strong>Version:</strong> 1.0<br />
-            <strong>Controller:</strong> ProSensor - GreenSensor
+            <strong>Controller:</strong> Prosensor - GreenSensor
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export function PrivacyContent() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">2. Data controller</h2>
-          <p className="text-gray-700">ProSensor is the data controller for personal data collected via the GreenSensor website and IoT solutions. Contact: <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a>.</p>
+          <p className="text-gray-700">Prosensor is the data controller for personal data collected via the GreenSensor website and IoT solutions. Contact: <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a>.</p>
         </section>
 
         <section className="mb-8">
@@ -77,14 +77,14 @@ export function PrivacyContent() {
         <p className="text-gray-700 mb-0">
           <strong>Dernière mise à jour :</strong> Décembre 2024<br />
           <strong>Version :</strong> 1.0<br />
-          <strong>Responsable du traitement :</strong> ProSensor - GreenSensor
+          <strong>Responsable du traitement :</strong> Prosensor - GreenSensor
         </p>
       </div>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">1. Introduction et engagement</h2>
         <p className="text-gray-700 mb-4">
-          ProSensor, éditeur du site GreenSensor, s'engage à protéger la vie privée et les données personnelles de ses utilisateurs.
+        Prosensor, éditeur du site GreenSensor, s'engage à protéger la vie privée et les données personnelles de ses utilisateurs.
           Cette politique de confidentialité explique comment nous collectons, utilisons, stockons et protégeons vos informations
           personnelles conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi française « Informatique et Libertés ».
         </p>
@@ -102,7 +102,7 @@ export function PrivacyContent() {
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">2. Responsable du traitement</h2>
         <div className="bg-gray-50 p-6 rounded-lg mb-4">
           <p className="text-gray-700 mb-2">
-            <strong>Responsable du traitement :</strong> ProSensor<br />
+            <strong>Responsable du traitement :</strong> Prosensor<br />
             <strong>Marque commerciale :</strong> GreenSensor<br />
             <strong>Email :</strong> <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a><br />
             <strong>Adresse :</strong> 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France<br />
@@ -110,7 +110,7 @@ export function PrivacyContent() {
           </p>
         </div>
         <p className="text-gray-700">
-          ProSensor est le responsable du traitement des données personnelles collectées via le site GreenSensor et nos solutions IoT.
+        Prosensor est le responsable du traitement des données personnelles collectées via le site GreenSensor et nos solutions IoT.
           Nous nous engageons à traiter vos données de manière transparente et sécurisée.
         </p>
       </section>
@@ -236,7 +236,7 @@ export function PrivacyContent() {
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">12. Contact</h2>
         <div className="bg-gray-50 p-6 rounded-lg mb-4">
           <p className="text-gray-700 mb-2">
-            <strong>ProSensor - GreenSensor</strong><br />
+            <strong>Prosensor - GreenSensor</strong><br />
             <strong>Email :</strong> <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a><br />
             <strong>Adresse :</strong> 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France<br />
             <strong>RCS :</strong> Metz 451 740 187

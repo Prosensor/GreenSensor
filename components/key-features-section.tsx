@@ -46,7 +46,7 @@ export function KeyFeaturesSection() {
           >
             <Image
               src="/application_datasheet.png"
-              alt="Interface ProSensor pour le contrôle de la température"
+              alt="Interface Prosensor pour le contrôle de la température"
               fill
               className="object-contain"
             />

@@ -12,7 +12,7 @@ export function MentionsContent() {
           <p className="text-gray-700 mb-0">
             <strong>Website:</strong> GreenSensor - Temperature probe for Compost<br />
             <strong>Last updated:</strong> December 2024<br />
-            <strong>Publisher:</strong> ProSensor
+            <strong>Publisher:</strong> Prosensor
           </p>
         </div>
 

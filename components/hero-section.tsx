@@ -90,7 +90,7 @@ export function HeroSection() {
           >
             <Image
               src="/sonde hero.png"
-              alt="Sonde ProSensor pour compote"
+              alt="Sonde Prosensor pour compote"
               fill
               className="object-contain"
               priority

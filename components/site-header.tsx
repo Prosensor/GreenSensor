@@ -26,6 +26,7 @@ const navIds = [
 export function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { language, setLanguage, t } = useI18n()
+  const appButtonLabel = (t as any).header?.appButton ?? (language === 'fr' ? 'Interface' : 'Open App')
 
   const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value as 'fr' | 'en'
@@ -103,6 +104,17 @@ export function SiteHeader() {
               </select>
             </div>
 
+            <div className="hidden md:block">
+              <Link
+                href="https://greensensor.prosensor.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-white bg-[#3eab35] hover:bg-[#2f8a29] transition-colors rounded-md px-3 py-2"
+              >
+                {appButtonLabel}
+              </Link>
+            </div>
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -150,6 +162,16 @@ export function SiteHeader() {
                   </Link>
                 </motion.div>
               ))}
+              <div className="pt-2">
+                <Link
+                  href="https://greensensor.prosensor.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-white bg-[#3eab35] hover:bg-[#2f8a29]"
+                >
+                  {appButtonLabel}
+                </Link>
+              </div>
               <div className="pt-2 px-3">
                 <label htmlFor="language-select-mobile" className="block text-sm text-gray-600 mb-1">Langue</label>
                 <select
