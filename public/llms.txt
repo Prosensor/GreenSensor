@@ -1,8 +1,8 @@
-# GreenSensor - Solution IoT pour le Suivi Intelligent du Compostage
+# GreenSensor - Sonde de température à Compost
 
 ## À propos de GreenSensor
 
-GreenSensor est une solution IoT innovante développée par ProSensor pour le suivi en temps réel de la température du compostage. Notre technologie combine des sondes de température sans fil de haute précision, une connectivité sécurisée et une plateforme cloud puissante.
+GreenSensor est une sonde de température à Compost innovante développée par ProSensor pour le suivi en temps réel de la température du compostage. Notre technologie combine des sondes de température sans fil de haute précision, une connectivité sécurisée et une plateforme cloud puissante.
 
 ## Informations de l'entreprise
 

@@ -44,7 +44,7 @@ export default function MentionsLegales() {
           
           <div className="bg-blue-50 p-6 rounded-lg mb-8">
             <p className="text-gray-700 mb-0">
-              <strong>Site web :</strong> GreenSensor - Solution IoT pour le compostage<br />
+              <strong>Site web :</strong> GreenSensor - Sonde de température à Compost<br />
               <strong>Dernière mise à jour :</strong> Décembre 2024<br />
               <strong>Éditeur :</strong> ProSensor
             </p>
