@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -16,16 +16,51 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
+import { useI18n } from "@/i18n/i18n-provider"
 
-const schemaFormulaire = z.object({
-  nom: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
-  email: z.string().email("Adresse email invalide"),
-  telephone: z.string().min(10, "Le numéro de téléphone doit contenir au moins 10 chiffres"),
-  entreprise: z.string().min(2, "Le nom de l'entreprise doit contenir au moins 2 caractères"),
-  message: z.string().optional(),
-})
+function buildSchema(messages: {
+  name_min: string
+  email_invalid: string
+  phone_min: string
+  company_min: string
+}) {
+  return z.object({
+    nom: z.string().min(2, messages.name_min),
+    email: z.string().email(messages.email_invalid),
+    telephone: z.string().min(10, messages.phone_min),
+    entreprise: z.string().min(2, messages.company_min),
+    message: z.string().optional(),
+  })
+}
 
 export function DemoForm() {
+  const { t } = useI18n()
+  const formT = useMemo(() => ({
+    labels: {
+      name: (t as any).form?.labels?.name ?? "Nom",
+      email: (t as any).form?.labels?.email ?? "Email",
+      phone: (t as any).form?.labels?.phone ?? "Numéro de téléphone",
+      company: (t as any).form?.labels?.company ?? "Entreprise",
+      message: (t as any).form?.labels?.message ?? "Message (Optionnel)",
+      submit: (t as any).form?.labels?.submit ?? "Envoyer",
+      sending: (t as any).form?.labels?.sending ?? "Envoi en cours...",
+      placeholder_name: (t as any).form?.placeholders?.name ?? "Entrez votre nom",
+      placeholder_email: (t as any).form?.placeholders?.email ?? "Entrez votre email",
+      placeholder_phone: (t as any).form?.placeholders?.phone ?? "Votre numéro",
+      placeholder_company: (t as any).form?.placeholders?.company ?? "Votre entreprise",
+      placeholder_message: (t as any).form?.placeholders?.message ?? "Parlez-nous de vos besoins en matière de contrôle de température...",
+    },
+    messages: {
+      name_min: (t as any).form?.messages?.name_min ?? "Le nom doit contenir au moins 2 caractères",
+      email_invalid: (t as any).form?.messages?.email_invalid ?? "Adresse email invalide",
+      phone_min: (t as any).form?.messages?.phone_min ?? "Le numéro de téléphone doit contenir au moins 10 chiffres",
+      company_min: (t as any).form?.messages?.company_min ?? "Le nom de l'entreprise doit contenir au moins 2 caractères",
+      success: (t as any).form?.messages?.success ?? "Demande de présentation envoyée avec succès !",
+      error: (t as any).form?.messages?.error ?? "Une erreur est survenue. Veuillez réessayer.",
+    }
+  }), [t])
+
+  const schemaFormulaire = useMemo(() => buildSchema(formT.messages), [formT.messages])
   const [chargement, setChargement] = useState(false)
 
   const form = useForm<z.infer<typeof schemaFormulaire>>({
@@ -47,11 +82,11 @@ export function DemoForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
-      if (!res.ok) throw new Error("Erreur lors de l'envoi");
-      toast.success("Demande de présentation envoyée avec succès !");
+      if (!res.ok) throw new Error("send_error");
+      toast.success(formT.messages.success);
       form.reset();
     } catch (error) {
-      toast.error("Une erreur est survenue. Veuillez réessayer.");
+      toast.error(formT.messages.error);
     } finally {
       setChargement(false);
     }
@@ -66,9 +101,9 @@ export function DemoForm() {
             name="nom"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Nom</FormLabel>
+                <FormLabel>{formT.labels.name}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Entrez votre nom" {...field} />
+                  <Input placeholder={formT.labels.placeholder_name} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -79,9 +114,9 @@ export function DemoForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>{formT.labels.email}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Entrez votre email" type="email" {...field} />
+                  <Input placeholder={formT.labels.placeholder_email} type="email" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -92,9 +127,9 @@ export function DemoForm() {
             name="telephone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Numéro de téléphone</FormLabel>
+                <FormLabel>{formT.labels.phone}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Votre numéro" type="tel" {...field} />
+                  <Input placeholder={formT.labels.placeholder_phone} type="tel" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -105,9 +140,9 @@ export function DemoForm() {
             name="entreprise"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Entreprise</FormLabel>
+                <FormLabel>{formT.labels.company}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Votre entreprise" {...field} />
+                  <Input placeholder={formT.labels.placeholder_company} {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -119,10 +154,10 @@ export function DemoForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message (Optionnel)</FormLabel>
+              <FormLabel>{formT.labels.message}</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Parlez-nous de vos besoins en matière de contrôle de température..."
+                  placeholder={formT.labels.placeholder_message}
                   className="min-h-[120px]"
                   {...field}
                 />
@@ -132,7 +167,7 @@ export function DemoForm() {
           )}
         />
         <Button type="submit" className="w-full bg-[#3eab35] hover:bg-[#dd234b]" disabled={chargement}>
-          {chargement ? "Envoi en cours..." : "Envoyer"}
+          {chargement ? formT.labels.sending : formT.labels.submit}
         </Button>
       </form>
     </Form>

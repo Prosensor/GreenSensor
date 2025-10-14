@@ -6,28 +6,24 @@ import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { useCallback } from 'react'
+import { useI18n } from "@/i18n/i18n-provider"
 
-const fonctionnalites = [
-  {
-    icon: Thermometer,
-    titre: "Mesure",
-  },
-  {
-    icon: BarChart,
-    titre: "Analyse",
-  },
-  {
-    icon: Bell,
-    titre: "Alertes",
-  },
-  {
-    icon: Lock,
-    titre: "Sécurité ",
-    highlight: true,
-  },
-]
+const iconMap = {
+  thermometer: Thermometer,
+  chart: BarChart,
+  bell: Bell,
+  lock: Lock,
+} as const
 
 export function KeyFeaturesSection() {
+  const { t } = useI18n()
+  const keyT = (t as any).keyFeatures as {
+    heading: string
+    heading_highlight: string
+    paragraph: string
+    items: { iconKey: keyof typeof iconMap; label: string; highlight?: boolean }[]
+    cta: string
+  }
   const scrollToDemo = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const demoSection = document.getElementById('demo')
@@ -62,7 +58,7 @@ export function KeyFeaturesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Fonctionnalités <span className="text-[#3eab35]">Clés</span> de GreenSensor
+              {keyT.heading} <span className="text-[#3eab35]">{keyT.heading_highlight}</span> de GreenSensor
             </motion.h2>
             <motion.div 
               className="space-y-4"
@@ -72,8 +68,7 @@ export function KeyFeaturesSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className="text-gray-600 text-lg">
-                Création de campagnes de fermentation ou de maturation, affection de sondes à des andains, suivi des objectifs dans le déroulement des campagnes, export de données, impression de rapports,
-                alertes SMS/Email en cas d'anomalie.
+                {keyT.paragraph}
               </p>
             </motion.div>
             <motion.div 
@@ -83,9 +78,11 @@ export function KeyFeaturesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              {fonctionnalites.map((fonctionnalite, index) => (
+              {keyT.items.map((item, index) => {
+                const Icon = iconMap[item.iconKey]
+                return (
                 <motion.div
-                  key={fonctionnalite.titre}
+                  key={item.label}
                   className="flex flex-col items-center gap-3 text-center"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -94,18 +91,19 @@ export function KeyFeaturesSection() {
                 >
                   <div
                     className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                      fonctionnalite.highlight
+                      item.highlight
                         ? "bg-[#3eab35] text-white"
                         : "bg-gray-100 text-gray-600"
                     }`}
                   >
-                    <fonctionnalite.icon className="w-6 h-6" />
+                    <Icon className="w-6 h-6" />
                   </div>
                   <span className="text-sm font-medium text-gray-700">
-                    {fonctionnalite.titre}
+                    {item.label}
                   </span>
                 </motion.div>
-              ))}
+                )
+              })}
             </motion.div>
           </div>
         </div>
@@ -121,7 +119,7 @@ export function KeyFeaturesSection() {
             className="bg-[#3eab35] text-white hover:bg-[#dd234b]"
             onClick={scrollToDemo}
           >
-            Demander une présentation
+            {keyT.cta}
           </Button>
         </motion.div>
       </div>

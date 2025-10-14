@@ -11,27 +11,18 @@ import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { useCallback } from 'react'
+import { useI18n } from "@/i18n/i18n-provider"
 
-const faqList = [
-  {
-    question: "Quelle est la précision de mesure des sondes GreenSensor ?",
-    reponse: "Les sondes ProSensor offrent une précision de mesure exceptionnelle, avec une marge d'erreur de seulement ±0,5°C. Cette précision permet un contrôle optimal de la température dans le processus de production de composts.",
-  },
-  {
-    question: "Comment puis-je intégrer GreenSensor à mon système de production actuel ?",
-    reponse: "GreenSensor est conçu pour s'intégrer facilement à la plupart des systèmes de production existants. Notre équipe technique vous guidera tout au long du processus d'installation et d'intégration pour assurer une transition en douceur.",
-  },
-  {
-    question: "Quelles sont les options de rapport et d'analyse disponibles ?",
-    reponse: "GreenSensor offre une suite complète d'outils de rapport et d'analyse. Vous pouvez accéder à des graphiques en temps réel, des rapports détaillés sur l'historique des températures, et des analyses prédictives pour optimiser votre production.",
-  },
-  {
-    question: "Comment configurer les alertes de température ?",
-    reponse: "La configuration des alertes est simple et personnalisable. Dans l'interface GreenSensor, à la création de la campagne, naviguez vers Paramètres > Alertes pour définir vos seuils de température et choisir vos méthodes de notification préférées (SMS, email, notifications push).",
-  },
-]
+const faqList: never[] = []
 
 export function FaqSection() {
+  const { t } = useI18n()
+  const faqT = (t as any).faq as {
+    heading: string
+    heading_highlight: string
+    items: { q: string; a: string }[]
+    cta: string
+  }
   const scrollToDemo = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const demoSection = document.getElementById('demo')
@@ -66,10 +57,10 @@ export function FaqSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Questions <span className="text-[#3eab35]">Fréquentes</span>
+              {faqT.heading} <span className="text-[#3eab35]">{faqT.heading_highlight}</span>
             </motion.h2>
             <Accordion type="single" collapsible className="w-full">
-              {faqList.map((faq, index) => (
+              {faqT.items.map((faq, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -86,11 +77,11 @@ export function FaqSection() {
                         <span className="text-[#3eab35] font-mono">
                           {String(index + 1).padStart(2, "0")}
                         </span>
-                        {faq.question}
+                        {faq.q}
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="px-6 py-4 text-gray-600">
-                      {faq.reponse}
+                      {faq.a}
                     </AccordionContent>
                   </AccordionItem>
                 </motion.div>
@@ -110,7 +101,7 @@ export function FaqSection() {
             className="bg-[#3eab35] text-white hover:bg-[#dd234b]"
             onClick={scrollToDemo}
           >
-            Demander une présentation
+            {faqT.cta}
           </Button>
         </motion.div>
       </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, type ChangeEvent } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from 'lucide-react'
@@ -12,18 +12,28 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
 import { motion, AnimatePresence } from "framer-motion"
+import { useI18n } from "@/i18n/i18n-provider"
 
-const navItems = [
-  { name: "Accueil", id: "hero" },
-  { name: "Fonctionnalités", id: "fonctionnalites" },
-  { name: "Spécifications", id: "specifications" },
-  { name: "Analyse", id: "analyse" },
-  { name: "FAQ", id: "faq" },
-  { name: "Contact", id: "demo" }
+const navIds = [
+  { key: "home", id: "hero" },
+  { key: "features", id: "fonctionnalites" },
+  { key: "specs", id: "specifications" },
+  { key: "analytics", id: "analyse" },
+  { key: "faq", id: "faq" },
+  { key: "contact", id: "demo" },
 ]
 
 export function SiteHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { language, setLanguage, t } = useI18n()
+
+  const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value as 'fr' | 'en'
+    setLanguage(value)
+    try {
+      document.cookie = `language=${value}; path=/; max-age=31536000`
+    } catch {}
+  }
 
   const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault()
@@ -62,22 +72,35 @@ export function SiteHeader() {
             <div className="hidden md:flex justify-end flex-1">
               <NavigationMenu>
                 <NavigationMenuList className="flex space-x-4">
-                  {navItems.map((item, index) => (
+                  {navIds.map((item, index) => (
                     <motion.div
-                      key={item.name}
+                      key={item.key}
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
                       <NavigationMenuItem>
                         <Link href={`/#${item.id}`} className="text-sm font-medium text-primary hover:text-[#3eab35] transition-colors">
-                          {item.name}
+                          {t.nav[item.key as keyof typeof t.nav]}
                         </Link>
                       </NavigationMenuItem>
                     </motion.div>
                   ))}
                 </NavigationMenuList>
               </NavigationMenu>
+            </div>
+
+            <div className="hidden md:block">
+              <label htmlFor="language-select" className="sr-only">Langue</label>
+              <select
+                id="language-select"
+                value={language}
+                onChange={handleLanguageChange}
+                className="border border-gray-200 rounded-md text-sm px-2 py-1 text-primary hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3eab35]/30 focus:border-[#3eab35] bg-white"
+              >
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+              </select>
             </div>
 
             <motion.div
@@ -112,9 +135,9 @@ export function SiteHeader() {
             transition={{ duration: 0.3 }}
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
-              {navItems.map((item, index) => (
+              {navIds.map((item, index) => (
                 <motion.div
-                  key={item.name}
+                  key={item.key}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.3 }}
@@ -123,10 +146,22 @@ export function SiteHeader() {
                     href={`/#${item.id}`}
                     className="block px-3 py-2 rounded-md text-base font-medium text-primary hover:text-primary/80 hover:bg-gray-50"
                   >
-                    {item.name}
+                    {t.nav[item.key as keyof typeof t.nav]}
                   </Link>
                 </motion.div>
               ))}
+              <div className="pt-2 px-3">
+                <label htmlFor="language-select-mobile" className="block text-sm text-gray-600 mb-1">Langue</label>
+                <select
+                  id="language-select-mobile"
+                  value={language}
+                  onChange={handleLanguageChange}
+                  className="w-full border border-gray-200 rounded-md text-sm px-2 py-2 text-primary hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#3eab35]/30 focus:border-[#3eab35] bg-white"
+                >
+                  <option value="fr">Français (FR)</option>
+                  <option value="en">English (EN)</option>
+                </select>
+              </div>
             </div>
           </motion.div>
         )}

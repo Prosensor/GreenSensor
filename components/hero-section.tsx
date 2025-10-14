@@ -6,23 +6,16 @@ import { Button } from "@/components/ui/button"
 import { useCallback } from 'react'
 import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
+import { useI18n } from "@/i18n/i18n-provider"
 
-const caracteristiques = [
-  {
-    icon: Thermometer,
-    titre: "Mesure précise",
-  },
-  {
-    icon: Bell,
-    titre: "Alertes par SMS / Email",
-  },
-  {
-    icon: MapPin,
-    titre: "Affection des sondes à un lieu",
-  },
-]
+const iconMap = {
+  thermometer: Thermometer,
+  bell: Bell,
+  map: MapPin,
+} as const
 
 export function HeroSection() {
+  const { t } = useI18n()
   const scrollToDemo = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const demoSection = document.getElementById('demo')
@@ -42,7 +35,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              Sonde de température à <span className="text-[#3eab35]">Compost</span>
+              {t.hero.title_rest} <span className="text-[#3eab35]">{t.hero.title_highlight}</span>
             </motion.h1>
             <motion.p 
               className="text-xl text-gray-600 max-w-xl"
@@ -50,26 +43,30 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              ProSensor révolutionne la production et le suivi du processus du compostage avec des sondes de température. 
-              Grâce à une  interface de gestion intuitive, optimisez votre processus de compostage et garantissez la qualité de votre production.
+              {t.hero.subtitle_line1}
+              {" "}
+              {t.hero.subtitle_line2}
             </motion.p>
             <div className="flex flex-wrap gap-6">
-              {caracteristiques.map((carac, index) => (
+              {t.hero.features.map((feature, index) => {
+                const Icon = iconMap[feature.iconKey]
+                return (
                 <motion.div
-                  key={carac.titre}
+                  key={feature.label}
                   className="flex items-center gap-3"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d5f5e3] text-[#186a3b]">
-                    <carac.icon className="h-6 w-6" />
+                    <Icon className="h-6 w-6" />
                   </div>
                   <span className="text-sm font-medium text-gray-700">
-                    {carac.titre}
+                    {feature.label}
                   </span>
                 </motion.div>
-              ))}
+                )
+              })}
             </div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -81,7 +78,7 @@ export function HeroSection() {
                 className="bg-[#3eab35] text-white hover:bg-[#dd234b]"
                 onClick={scrollToDemo}
               >
-                Demander une présentation
+                {t.hero.cta}
               </Button>
             </motion.div>
           </div>

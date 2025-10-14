@@ -4,16 +4,21 @@ import Image from "next/image"
 import { Check } from 'lucide-react'
 import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
+import { useI18n } from "@/i18n/i18n-provider"
 
-const avantages = [
-  "Mesure précise de la température jusqu'à 0,5°C près",
-  "Interface intuitive pour un suivi en temps réel",
-  "Alertes personnalisables pour chaque étape de la production",
-  "Génération de rapports de campagnes et exportation des données",
-  "Installation facile et prise en main rapide",
-]
+const avantages: never[] = []
 
 export function RunSection() {
+  const { t } = useI18n()
+  const runT = (t as any).run as {
+    heading_line1: string
+    heading_highlight: string
+    heading_line2: string
+    paragraph_line1: string
+    paragraph_line2: string
+    advantages: string[]
+    image_alt: string
+  }
   return (
     <AnimatedSection id="specifications" className="py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,9 +31,9 @@ export function RunSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Optimisez votre <span className="text-[#3eab35]">production</span> de compost
+              {runT.heading_line1} <span className="text-[#3eab35]">{runT.heading_highlight}</span> {runT.heading_line2}
               <br />
-              avec une précision inégalée
+              
             </motion.h2>
             <motion.p 
               className="text-gray-600 text-lg max-w-xl"
@@ -37,9 +42,9 @@ export function RunSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              ProSensor vous offre tous les outils nécessaires pour simplifier votre processus de production
-              et automatiser les tâches chronophages dans votre flux de travail, garantissant ainsi
-              une qualité constante de vos compost.
+              {runT.paragraph_line1}
+              {" "}
+              {runT.paragraph_line2}
             </motion.p>
             <motion.ul 
               className="space-y-4"
@@ -48,7 +53,7 @@ export function RunSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              {avantages.map((avantage, index) => (
+              {runT.advantages.map((avantage, index) => (
                 <motion.li 
                   key={index} 
                   className="flex items-center gap-3"
@@ -74,7 +79,7 @@ export function RunSection() {
           >
             <Image
               src="/sonde-action.jpg"
-              alt="Sonde ProSensor en action dans la production de compotes"
+              alt={runT.image_alt}
               fill
               className="rounded-lg shadow-xl object-cover"
             />

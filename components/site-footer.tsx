@@ -7,6 +7,7 @@ import { Facebook, Twitter, LinkedinIcon as LinkedIn, Youtube } from 'lucide-rea
 import { DottedWorldMap } from "./dotted-world-map"
 import Image from "next/image"
 import { useCallback } from "react"
+import { useI18n } from "@/i18n/i18n-provider"
 
 
 const liensFooter = [
@@ -24,6 +25,15 @@ const liensSociaux = [
 ]
 
 export function SiteFooter() {
+  const { t } = useI18n()
+  const ft = (t as any).footer as {
+    description: string
+    useful_links: string
+    legal_info: string
+    nav: { home: string; features: string; specs: string; analytics: string; faq: string; contact: string }
+    legal: { mentions: string; privacy: string; terms: string; prosensor_site: string }
+    copyright: string
+  }
   const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const section = document.getElementById(id);
@@ -47,42 +57,42 @@ export function SiteFooter() {
               />
             </Link>
             <p className="text-sm">
-              GreenSensor est une solution innovante pour le suivi des températures dans le processus de compostage.
+              {ft.description}
             </p>
           </div>
 
           {/* Liens utiles */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Liens utiles</h3>
+            <h3 className="text-lg font-semibold text-white">{ft.useful_links}</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/#hero" className="hover:text-[#3eab35] transition-colors">Accueil</Link>
+                <Link href="/#hero" className="hover:text-[#3eab35] transition-colors">{ft.nav.home}</Link>
               </li>
               <li>
-                <Link href="/#fonctionnalites" className="hover:text-[#3eab35] transition-colors">Fonctionnalités</Link>
+                <Link href="/#fonctionnalites" className="hover:text-[#3eab35] transition-colors">{ft.nav.features}</Link>
               </li>
               <li>
-                <Link href="/#specifications" className="hover:text-[#3eab35] transition-colors">Spécifications</Link>
+                <Link href="/#specifications" className="hover:text-[#3eab35] transition-colors">{ft.nav.specs}</Link>
               </li>
               <li>
-                <Link href="/#analyse" className="hover:text-[#3eab35] transition-colors">Analyse</Link>
+                <Link href="/#analyse" className="hover:text-[#3eab35] transition-colors">{ft.nav.analytics}</Link>
               </li>
               <li>
-                <Link href="/#faq" className="hover:text-[#3eab35] transition-colors">FAQ</Link>
+                <Link href="/#faq" className="hover:text-[#3eab35] transition-colors">{ft.nav.faq}</Link>
               </li>
               <li>
-                <Link href="/#demo" className="hover:text-[#3eab35] transition-colors">Contact</Link>
+                <Link href="/#demo" className="hover:text-[#3eab35] transition-colors">{ft.nav.contact}</Link>
               </li>
             </ul>
           </div>
 
           {/* Liens légaux */}
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-white">Informations légales</h3>
-            <Link href="/mentions-legales" className="hover:text-[#3eab35] transition-colors block">Mentions légales</Link>
-            <Link href="/politique-confidentialite" className="hover:text-[#3eab35] transition-colors block">Politique de confidentialité</Link>
-            <Link href="/cgu" className="hover:text-[#3eab35] transition-colors block">Conditions Générales d'Utilisation</Link>
-            <Link href="https://www.prosensor.fr/" className="hover:text-[#3eab35] transition-colors block">Site de Prosensor</Link>
+            <h3 className="text-lg font-semibold text-white">{ft.legal_info}</h3>
+            <Link href="/mentions-legales" className="hover:text-[#3eab35] transition-colors block">{ft.legal.mentions}</Link>
+            <Link href="/politique-confidentialite" className="hover:text-[#3eab35] transition-colors block">{ft.legal.privacy}</Link>
+            <Link href="/cgu" className="hover:text-[#3eab35] transition-colors block">{ft.legal.terms}</Link>
+            <Link href="https://www.prosensor.fr/" className="hover:text-[#3eab35] transition-colors block">{ft.legal.prosensor_site}</Link>
           </div>
         </div>
       </div>
@@ -91,7 +101,7 @@ export function SiteFooter() {
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <p className="text-sm text-center">
-            © 2025 ProSensor. Tous droits réservés.
+            {ft.copyright}
           </p>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { WifiIcon } from "@/components/wifi-icon"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "./animated-section"
 import { motion } from "framer-motion"
+import { useI18n } from "@/i18n/i18n-provider"
 
 // Hook personnalisé pour la taille de la fenêtre
 function useWindowSize() {
@@ -301,6 +302,14 @@ CloudPlatform.displayName = "CloudPlatform"
 
 // Composant principal
 export function DownloadSection() {
+  const { t } = useI18n()
+  const dlT = (t as any).download as {
+    heading: string
+    heading_highlight: string
+    paragraph: string
+    bullets: string[]
+    cta: string
+  }
   const containerRef = useRef<HTMLDivElement>(null)
   const div1Ref = useRef<HTMLDivElement>(null)
   const div2Ref = useRef<HTMLDivElement>(null)
@@ -332,7 +341,7 @@ export function DownloadSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Solution pour le <span className="text-[#3eab35]">Suivi du Compostage</span>
+              {dlT.heading} <span className="text-[#3eab35]">{dlT.heading_highlight}</span>
             </motion.h2>
             <motion.p 
               className="text-lg text-gray-600"
@@ -341,8 +350,7 @@ export function DownloadSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Notre système intégré combine des sondes de température sans fil de haute précision, une connectivité sécurisée et une
-              plateforme cloud puissante pour un suivi en temps réel de vos processus de compostage.
+              {dlT.paragraph}
             </motion.p>
             <motion.ul 
               className="space-y-2 text-gray-700"
@@ -351,24 +359,14 @@ export function DownloadSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <li className="flex items-center">
-                <svg className="mr-2 h-6 w-6 text-[#3eab35]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Sondes sans fil précises à ±0.5°C
-              </li>
-              <li className="flex items-center">
-                <svg className="mr-2 h-6 w-6 text-[#3eab35]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Transmission de données sécurisée et fiable
-              </li>
-              <li className="flex items-center">
-                <svg className="mr-2 h-6 w-6 text-[#3eab35]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Alertes et rapports automatisés
-              </li>
+              {dlT.bullets.map((bullet, idx) => (
+                <li key={idx} className="flex items-center">
+                  <svg className="mr-2 h-6 w-6 text-[#3eab35]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  {bullet}
+                </li>
+              ))}
             </motion.ul>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -381,7 +379,7 @@ export function DownloadSection() {
                 className="bg-[#3eab35] text-white hover:bg-[#dd234b]"
                 onClick={scrollToDemo}
               >
-                Demander une présentation
+                {dlT.cta}
               </Button>
             </motion.div>
           </div>
