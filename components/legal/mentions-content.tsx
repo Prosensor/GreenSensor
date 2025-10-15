@@ -20,7 +20,7 @@ export function MentionsContent() {
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">1. Publisher</h2>
           <div className="bg-gray-50 p-6 rounded-lg mb-4">
             <p className="text-gray-700 mb-2">
-              <strong>Company name:</strong> ProSensor<br />
+              <strong>Company name:</strong> Prosensor<br />
               <strong>Brand:</strong> GreenSensor<br />
               <strong>Email:</strong> <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a><br />
               <strong>Address:</strong> 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France<br />
@@ -30,7 +30,7 @@ export function MentionsContent() {
             </p>
           </div>
           <p className="text-gray-700 mb-4">
-            ProSensor is a French company specializing in IoT solutions for agriculture and the environment.
+          Prosensor is a French company specializing in IoT solutions for agriculture and the environment.
             Our expertise allows us to design innovative systems for monitoring and analyzing natural processes, including composting.
           </p>
           <p className="text-gray-700">
@@ -56,19 +56,19 @@ export function MentionsContent() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">3. Intellectual property</h2>
           <p className="text-gray-700 mb-4">
-            All content on the GreenSensor website (texts, images, graphics, logo, icons, videos, software, databases, etc.) is the exclusive property of ProSensor, unless otherwise stated. Any reproduction or adaptation is prohibited without prior written consent.
+            All content on the GreenSensor website (texts, images, graphics, logo, icons, videos, software, databases, etc.) is the exclusive property of Prosensor, unless otherwise stated. Any reproduction or adaptation is prohibited without prior written consent.
           </p>
           <p className="text-gray-700 mb-4">
-            The trademarks "GreenSensor" and "ProSensor" and their associated logos are registered trademarks. Any unauthorized use is strictly prohibited.
+            The trademarks "GreenSensor" and "Prosensor" and their associated logos are registered trademarks. Any unauthorized use is strictly prohibited.
           </p>
           <p className="text-gray-700">
-            IoT technologies developed by ProSensor (data processing algorithms, wireless protocols, UIs) are protected by patents and trade secrets.
+            IoT technologies developed by Prosensor (data processing algorithms, wireless protocols, UIs) are protected by patents and trade secrets.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">4. Liability</h2>
-          <p className="text-gray-700 mb-4">Information is provided for guidance only and may be updated without notice. ProSensor cannot be held liable for direct or indirect damages arising from use of the site.</p>
+          <p className="text-gray-700 mb-4">Information is provided for guidance only and may be updated without notice. Prosensor cannot be held liable for direct or indirect damages arising from use of the site.</p>
         </section>
 
         <section className="mb-8">
@@ -88,7 +88,7 @@ export function MentionsContent() {
         <p className="text-gray-700 mb-0">
           <strong>Site web :</strong> GreenSensor - Sonde de température à Compost<br />
           <strong>Dernière mise à jour :</strong> Décembre 2024<br />
-          <strong>Éditeur :</strong> ProSensor
+          <strong>Éditeur :</strong> Prosensor
         </p>
       </div>
 
@@ -96,17 +96,16 @@ export function MentionsContent() {
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">1. Éditeur du site</h2>
         <div className="bg-gray-50 p-6 rounded-lg mb-4">
           <p className="text-gray-700 mb-2">
-            <strong>Raison sociale :</strong> ProSensor<br />
+            <strong>Raison sociale :</strong> Prosensor<br />
             <strong>Marque commerciale :</strong> GreenSensor<br />
             <strong>Email :</strong> <a href="mailto:info@prosensor.com" className="text-[#3eab35] underline">info@prosensor.com</a><br />
             <strong>Adresse :</strong> 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France<br />
             <strong>RCS :</strong> Metz 451 740 187<br />
             <strong>SIRET :</strong> 451 740 187 00012<br />
-            <strong>Code APE :</strong> 6201Z (Programmation informatique)
           </p>
         </div>
         <p className="text-gray-700 mb-4">
-          ProSensor est une société française spécialisée dans le développement de solutions IoT pour l'agriculture et l'environnement.
+        Prosensor est une société française spécialisée dans le développement de solutions IoT pour l'agriculture et l'environnement.
           Notre expertise permet de concevoir des systèmes innovants de suivi et d'analyse des processus naturels, notamment le compostage.
         </p>
         <p className="text-gray-700">
@@ -134,14 +133,14 @@ export function MentionsContent() {
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">3. Propriété intellectuelle</h2>
         <p className="text-gray-700 mb-4">
           L'ensemble du contenu du site GreenSensor (textes, images, graphismes, logo, icônes, vidéos, logiciels, bases de données, etc.)
-          est la propriété exclusive de ProSensor, sauf mention contraire. Toute reproduction, représentation ou adaptation est interdite
+          est la propriété exclusive de Prosensor, sauf mention contraire. Toute reproduction, représentation ou adaptation est interdite
           sans autorisation écrite préalable.
         </p>
         <p className="text-gray-700 mb-4">
-          Les marques "GreenSensor" et "ProSensor" ainsi que leurs logos sont des marques déposées. Toute utilisation non autorisée est interdite.
+          Les marques "GreenSensor" et "Prosensor" ainsi que leurs logos sont des marques déposées. Toute utilisation non autorisée est interdite.
         </p>
         <p className="text-gray-700">
-          Les technologies IoT développées par ProSensor (algorithmes, protocoles de communication, interfaces) sont protégées par des brevets
+          Les technologies IoT développées par Prosensor (algorithmes, protocoles de communication, interfaces) sont protégées par des brevets
           et des secrets de fabrication.
         </p>
       </section>
@@ -149,7 +148,7 @@ export function MentionsContent() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">4. Responsabilité et limitations</h2>
         <p className="text-gray-700 mb-4">
-          Les informations du site sont fournies à titre indicatif et peuvent être mises à jour sans préavis. ProSensor ne saurait être tenu responsable
+          Les informations du site sont fournies à titre indicatif et peuvent être mises à jour sans préavis. Prosensor ne saurait être tenu responsable
           des omissions, inexactitudes ou carences, ni des dommages directs ou indirects liés à l'utilisation du site.
         </p>
       </section>
