@@ -50,7 +50,7 @@ export function SiteFooter() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
               <Image
-                src="/GreenSensor_Logo.png"
+                src="/2025_LogoGreenSensor_BlancVert.png"
                 alt="Green Sensor Logo"
                 width={150}
                 height={80}
