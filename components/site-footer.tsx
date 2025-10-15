@@ -25,13 +25,14 @@ const liensSociaux = [
 ]
 
 export function SiteFooter() {
-  const { t } = useI18n()
+  const { t, language } = useI18n()
   const ft = (t as any).footer as {
     description: string
     useful_links: string
     legal_info: string
     nav: { home: string; features: string; specs: string; analytics: string; faq: string; contact: string }
     legal: { mentions: string; privacy: string; terms: string; prosensor_site: string }
+    hours: { title: string; weekdays: string; weekend: string }
     copyright: string
   }
   const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -84,6 +85,7 @@ export function SiteFooter() {
                 <Link href="/#demo" className="hover:text-[#3eab35] transition-colors">{ft.nav.contact}</Link>
               </li>
             </ul>
+            
           </div>
 
           {/* Liens légaux */}
@@ -92,15 +94,27 @@ export function SiteFooter() {
             <Link href="/mentions-legales" className="hover:text-[#3eab35] transition-colors block">{ft.legal.mentions}</Link>
             <Link href="/politique-confidentialite" className="hover:text-[#3eab35] transition-colors block">{ft.legal.privacy}</Link>
             <Link href="/cgu" className="hover:text-[#3eab35] transition-colors block">{ft.legal.terms}</Link>
-            <Link href="https://www.prosensor.fr/" className="hover:text-[#3eab35] transition-colors block">{ft.legal.prosensor_site}</Link>
-            <div className="mt-4">
+            <div className="mt-4 flex items-center gap-4">
               <Image
                 src="/prosensor-hq.jpg"
                 alt="Prosensor, siège social"
-                width={240}
-                height={120}
-                className="rounded-md object-cover border border-gray-800"
+                width={96}
+                height={72}
+                className="rounded-xl object-cover border border-gray-800 shadow-md"
               />
+              <div>
+                <p className="text-xs text-gray-400">
+                  {language === 'fr' ? 'Une marque de' : 'A brand of'}
+                </p>
+                <p className="text-white font-semibold">
+                  <Link href="https://www.prosensor.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-[#3eab35]  underline-offset-4">
+                    Prosensor
+                  </Link>
+                </p>
+                <p className="text-sm text-gray-400">
+                  {language === 'fr' ? 'Fabricant depuis 1989' : 'Manufacturer since 1989'}
+                </p>
+              </div>
             </div>
           </div>
         </div>

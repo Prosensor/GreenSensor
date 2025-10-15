@@ -77,6 +77,7 @@ type Translations = {
     legal_info: string
     nav: { home: string; features: string; specs: string; analytics: string; faq: string; contact: string }
     legal: { mentions: string; privacy: string; terms: string; prosensor_site: string }
+    hours: { title: string; weekdays: string; weekend: string }
     copyright: string
   }
   form?: {
@@ -212,6 +213,7 @@ const fr: Translations = {
     legal_info: "Informations légales",
     nav: { home: "Accueil", features: "Fonctionnalités", specs: "Spécifications", analytics: "Analyse", faq: "FAQ", contact: "Contact" },
     legal: { mentions: "Mentions légales", privacy: "Politique de confidentialité", terms: "Conditions Générales d'Utilisation", prosensor_site: "Site de Prosensor" },
+    hours: { title: "Horaires d'ouverture:", weekdays: "Lundi - Vendredi: 9h00 - 18h00", weekend: "Samedi - Dimanche: Fermé" },
     copyright: "© 2025 Prosensor. Tous droits réservés.",
   },
   form: {
@@ -345,6 +347,7 @@ const en: Translations = {
     legal_info: "Legal information",
     nav: { home: "Home", features: "Features", specs: "Specifications", analytics: "Analytics", faq: "FAQ", contact: "Contact" },
     legal: { mentions: "Legal notice", privacy: "Privacy policy", terms: "Terms of use", prosensor_site: "Prosensor website" },
+    hours: { title: "Opening hours:", weekdays: "Monday - Friday: 9:00 - 18:00", weekend: "Saturday - Sunday: Closed" },
     copyright: "© 2025 Prosensor. All rights reserved.",
   },
   form: {
