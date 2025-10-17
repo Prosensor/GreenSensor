@@ -61,7 +61,7 @@ export function SiteHeader() {
           >
             <Link href="/" className="flex items-center space-x-2">
               <Image
-                src="/GreenSensor_Logo.png"
+                src="/GreenSensor_Logo_horiz.png"
                 alt="Green Sensor Logo"
                 width={175}
                 height={70}
