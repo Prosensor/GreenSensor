@@ -7,7 +7,7 @@ import { DownloadSection } from "@/components/download-section"
 import { FaqSection } from "@/components/faq-section"
 import { DemoSection } from "@/components/demo-section"
 import { SiteFooter } from "@/components/site-footer"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 
 export default function Home() {
   return (
@@ -48,6 +48,11 @@ export function generateMetadata(): Metadata {
       images: ["https://greensensor.fr/GreenSensor_Logo.jpg"],
       creator: "@greensensor",
     },
+  }
+}
+
+export function generateViewport(): Viewport {
+  return {
     themeColor: "#3eab35",
   }
 }
