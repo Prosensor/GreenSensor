@@ -96,7 +96,7 @@ export function SiteFooter() {
             <Link href="/cgu" className="hover:text-[#3eab35] transition-colors block">{ft.legal.terms}</Link>
             <div className="mt-4 flex items-center gap-4">
               <Image
-                src="/prosensor-hq.jpg"
+                src="/Nouveaux batiment.jpg"
                 alt="Prosensor, siège social"
                 width={96}
                 height={72}
