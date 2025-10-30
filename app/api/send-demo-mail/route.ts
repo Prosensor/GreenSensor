@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
 
   const mailOptions = {
     from: '"Site GreenSensor" <contact@greensensor.fr>',
-    to: "info@prosensor.com",
+    to: "corentinadlpro@gmail.com",
     subject: "Nouvelle demande de présentation de la solution GreenSensor",
     text: `\nNom: ${data.nom}\nEmail: ${data.email}\nTéléphone: ${data.telephone}\nEntreprise: ${data.entreprise}\nMessage: ${data.message || "(aucun message)"}\n`,
     html: `
