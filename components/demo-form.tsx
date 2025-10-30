@@ -84,6 +84,9 @@ export function DemoForm() {
       });
       if (!res.ok) throw new Error("send_error");
       toast.success(formT.messages.success);
+      try {
+        (window as any)?.gtag?.('event', 'conversion', { send_to: 'AW-1068513425/Lns5CPOSmPsaEJHxwP0D' });
+      } catch {}
       form.reset();
     } catch (error) {
       toast.error(formT.messages.error);
