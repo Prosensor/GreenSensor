@@ -88,8 +88,8 @@ export async function generateMetadata(): Promise<Metadata> {
     }
   }
   if (lang === "de") {
-    const title = "GreenSensor - Temperatursonde für Kompostierung"
-    const description = "Entdecken Sie GreenSensor, die Temperatursonde für Kompostierung und Fermentation. Vernetzte Sonden, Cloud-Plattform und automatische Warnungen."
+    const title = "GreenSensor - Temperaturfühler für Kompostierung"
+    const description = "Entdecken Sie GreenSensor, den Temperaturfühler für Kompostierung und Fermentation. Vernetzte Sonden, Cloud-Plattform und automatische Warnungen."
     return {
       title,
       description,

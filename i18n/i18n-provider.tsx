@@ -553,7 +553,7 @@ const de: Translations = {
   },
   hero: {
     title_highlight: "Kompostierung",
-    title_rest: "Temperatursonde für",
+    title_rest: "Temperaturfühler für",
     subtitle_line1: "Prosensor optimiert das Kompost-Monitoring mit zuverlässigen Temperatursensoren.",
     subtitle_line2: "Mit einer intuitiven Oberfläche verbessern Sie Prozesse und sichern konstante Qualität.",
     cta: "Demo anfordern",
@@ -610,7 +610,7 @@ const de: Translations = {
   demo: {
     heading: "Demo",
     heading_highlight: "anfordern",
-    paragraph: "Entdecken Sie Prosensor in der Praxis und wie unsere Temperatursonden Ihre Kompostprozesse optimieren.",
+    paragraph: "Entdecken Sie Prosensor in der Praxis und wie unsere Temperaturfühler Ihre Kompostprozesse optimieren.",
     hq_title: "Hauptsitz: ",
     hq_company: "Prosensor",
     address: "EcoParc, 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur",

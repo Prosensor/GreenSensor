@@ -164,7 +164,7 @@ export function MentionsContent() {
         cardSite: "Website",
         cardUpdate: "Letzte Aktualisierung",
         cardPublisher: "Herausgeber",
-        siteValue: "GreenSensor - Temperatursonde für Kompost",
+        siteValue: "GreenSensor - Temperaturfühler für Kompost",
         updateValue: "Dezember 2024",
         publisherValue: "Prosensor",
         sections: [
