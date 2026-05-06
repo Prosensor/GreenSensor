@@ -329,13 +329,22 @@ export function DownloadSection() {
   }, [])
 
   return (
-    <AnimatedSection id="architecture" className="py-24 bg-gray-50">
+    <AnimatedSection id="architecture" className="py-24 bg-gradient-to-b from-white to-gray-50/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex w-full flex-col items-center justify-between gap-8 lg:flex-row">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Contenu explicatif */}
-          <div className="w-full max-w-xl space-y-6 p-8 lg:w-1/2">
-            <motion.h2 
-              className="text-3xl font-bold text-gray-800"
+          <div className="w-full lg:col-span-5 space-y-6">
+            <motion.span
+              className="inline-flex items-center rounded-full border border-[#3eab35]/20 bg-[#3eab35]/10 px-3 py-1 text-xs font-semibold tracking-wide text-[#2f8a29]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+            >
+              Architecture
+            </motion.span>
+            <motion.h2
+              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -343,8 +352,8 @@ export function DownloadSection() {
             >
               {dlT.heading} <span className="text-[#3eab35]">{dlT.heading_highlight}</span>
             </motion.h2>
-            <motion.p 
-              className="text-lg text-gray-600"
+            <motion.p
+              className="text-base md:text-lg text-gray-600"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -352,19 +361,19 @@ export function DownloadSection() {
             >
               {dlT.paragraph}
             </motion.p>
-            <motion.ul 
-              className="space-y-2 text-gray-700"
+            <motion.ul
+              className="space-y-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               {dlT.bullets.map((bullet, idx) => (
-                <li key={idx} className="flex items-center">
-                  <svg className="mr-2 h-6 w-6 text-[#3eab35]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                <li key={idx} className="flex items-start gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-700 shadow-sm">
+                  <svg className="mt-0.5 h-5 w-5 text-[#3eab35] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M5 13l4 4L19 7" />
                   </svg>
-                  {bullet}
+                  <span>{bullet}</span>
                 </li>
               ))}
             </motion.ul>
@@ -374,9 +383,9 @@ export function DownloadSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Button 
-                size="lg" 
-                className="bg-[#3eab35] text-white hover:bg-[#dd234b]"
+              <Button
+                size="lg"
+                className="bg-[#3eab35] text-white hover:bg-[#2f8a29] rounded-full px-8"
                 onClick={scrollToDemo}
               >
                 {dlT.cta}
@@ -386,7 +395,7 @@ export function DownloadSection() {
 
           {/* Démonstration visuelle */}
           <motion.div
-            className="relative flex h-[700px] w-full max-w-[500px] items-center justify-center overflow-hidden rounded-lg border bg-white p-8 shadow-xl lg:w-1/2"
+            className="relative lg:col-span-7 flex h-[640px] md:h-[700px] w-full items-center justify-center overflow-hidden rounded-3xl border border-gray-200 bg-white p-5 md:p-8 shadow-[0_25px_65px_-35px_rgba(15,23,42,0.35)]"
             ref={containerRef}
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}

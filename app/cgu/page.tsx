@@ -8,7 +8,8 @@ import { cookies } from "next/headers"
 
 export async function generateMetadata(): Promise<Metadata> {
   const cookieStore = await cookies()
-  const lang = cookieStore.get('language')?.value === 'en' ? 'en' : 'fr'
+  const cookieLang = cookieStore.get('language')?.value
+  const lang = cookieLang === 'en' ? 'en' : cookieLang === 'es' ? 'es' : cookieLang === 'de' ? 'de' : cookieLang === 'pt' ? 'pt' : cookieLang === 'ro' ? 'ro' : 'fr'
   if (lang === 'en') {
     return {
       title: "Terms of Use - GreenSensor",
@@ -19,6 +20,62 @@ export async function generateMetadata(): Promise<Metadata> {
         url: "https://greensensor.fr/cgu",
         siteName: "GreenSensor",
         locale: "en_US",
+        type: "article",
+      },
+    }
+  }
+  if (lang === 'es') {
+    return {
+      title: "Condiciones de uso - GreenSensor",
+      description: "Condiciones de uso del sitio GreenSensor: acceso, propiedad intelectual, responsabilidad y ley aplicable.",
+      openGraph: {
+        title: "Condiciones de uso - GreenSensor",
+        description: "Condiciones de uso del sitio GreenSensor: acceso, propiedad intelectual, responsabilidad y ley aplicable.",
+        url: "https://greensensor.fr/cgu",
+        siteName: "GreenSensor",
+        locale: "es_ES",
+        type: "article",
+      },
+    }
+  }
+  if (lang === 'de') {
+    return {
+      title: "Nutzungsbedingungen - GreenSensor",
+      description: "Nutzungsbedingungen der GreenSensor-Website: Zugang, geistiges Eigentum, Haftung und anwendbares Recht.",
+      openGraph: {
+        title: "Nutzungsbedingungen - GreenSensor",
+        description: "Nutzungsbedingungen der GreenSensor-Website: Zugang, geistiges Eigentum, Haftung und anwendbares Recht.",
+        url: "https://greensensor.fr/cgu",
+        siteName: "GreenSensor",
+        locale: "de_DE",
+        type: "article",
+      },
+    }
+  }
+  if (lang === 'pt') {
+    return {
+      title: "Condições de utilização - GreenSensor",
+      description: "Condições de utilização do site GreenSensor: acesso, propriedade intelectual, responsabilidade e lei aplicável.",
+      openGraph: {
+        title: "Condições de utilização - GreenSensor",
+        description: "Condições de utilização do site GreenSensor: acesso, propriedade intelectual, responsabilidade e lei aplicável.",
+        url: "https://greensensor.fr/cgu",
+        siteName: "GreenSensor",
+        locale: "pt_PT",
+        type: "article",
+      },
+    }
+  }
+  if (lang === 'ro') {
+    return {
+      title: "Termeni de utilizare - GreenSensor",
+      description: "Termeni de utilizare ai site-ului GreenSensor: acces, proprietate intelectuală, responsabilitate și lege aplicabilă.",
+      openGraph: {
+        title: "Termeni de utilizare - GreenSensor",
+        description: "Termeni de utilizare ai site-ului GreenSensor: acces, proprietate intelectuală, responsabilitate și lege aplicabilă.",
+        url: "https://greensensor.fr/cgu",
+        siteName: "GreenSensor",
+        locale: "ro_RO",
         type: "article",
       },
     }

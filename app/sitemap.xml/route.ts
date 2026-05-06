@@ -4,6 +4,8 @@ export async function GET() {
   const baseUrl = "https://greensensor.fr";
   const staticPages = [
     "",
+    "/documentation",
+    "/faq",
     "/mentions-legales",
     "/politique-confidentialite",
     "/cgu",

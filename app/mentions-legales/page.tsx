@@ -8,7 +8,8 @@ import { cookies } from "next/headers"
 
 export async function generateMetadata(): Promise<Metadata> {
   const cookieStore = await cookies()
-  const lang = cookieStore.get('language')?.value === 'en' ? 'en' : 'fr'
+  const cookieLang = cookieStore.get('language')?.value
+  const lang = cookieLang === 'en' ? 'en' : cookieLang === 'es' ? 'es' : cookieLang === 'de' ? 'de' : cookieLang === 'pt' ? 'pt' : cookieLang === 'ro' ? 'ro' : 'fr'
   if (lang === 'en') {
     return {
       title: "Legal Notice - GreenSensor",
@@ -19,6 +20,62 @@ export async function generateMetadata(): Promise<Metadata> {
         url: "https://greensensor.fr/mentions-legales",
         siteName: "GreenSensor",
         locale: "en_US",
+        type: "article",
+      },
+    }
+  }
+  if (lang === 'es') {
+    return {
+      title: "Aviso legal - GreenSensor",
+      description: "Aviso legal del sitio GreenSensor: editor, alojamiento, propiedad intelectual, responsabilidad y contacto.",
+      openGraph: {
+        title: "Aviso legal - GreenSensor",
+        description: "Aviso legal del sitio GreenSensor: editor, alojamiento, propiedad intelectual, responsabilidad y contacto.",
+        url: "https://greensensor.fr/mentions-legales",
+        siteName: "GreenSensor",
+        locale: "es_ES",
+        type: "article",
+      },
+    }
+  }
+  if (lang === 'de') {
+    return {
+      title: "Impressum - GreenSensor",
+      description: "Impressum der GreenSensor-Website: Herausgeber, Hosting, geistiges Eigentum, Haftung und Kontakt.",
+      openGraph: {
+        title: "Impressum - GreenSensor",
+        description: "Impressum der GreenSensor-Website: Herausgeber, Hosting, geistiges Eigentum, Haftung und Kontakt.",
+        url: "https://greensensor.fr/mentions-legales",
+        siteName: "GreenSensor",
+        locale: "de_DE",
+        type: "article",
+      },
+    }
+  }
+  if (lang === 'pt') {
+    return {
+      title: "Aviso legal - GreenSensor",
+      description: "Aviso legal do site GreenSensor: editor, alojamento, propriedade intelectual, responsabilidade e contacto.",
+      openGraph: {
+        title: "Aviso legal - GreenSensor",
+        description: "Aviso legal do site GreenSensor: editor, alojamento, propriedade intelectual, responsabilidade e contacto.",
+        url: "https://greensensor.fr/mentions-legales",
+        siteName: "GreenSensor",
+        locale: "pt_PT",
+        type: "article",
+      },
+    }
+  }
+  if (lang === 'ro') {
+    return {
+      title: "Mențiuni legale - GreenSensor",
+      description: "Mențiuni legale ale site-ului GreenSensor: editor, găzduire, proprietate intelectuală, responsabilitate și contact.",
+      openGraph: {
+        title: "Mențiuni legale - GreenSensor",
+        description: "Mențiuni legale ale site-ului GreenSensor: editor, găzduire, proprietate intelectuală, responsabilitate și contact.",
+        url: "https://greensensor.fr/mentions-legales",
+        siteName: "GreenSensor",
+        locale: "ro_RO",
         type: "article",
       },
     }
