@@ -115,13 +115,13 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: "FAQ GreenSensor - Questions fréquentes compostage connecté",
-    description: "Toutes les réponses sur GreenSensor : installation, conformité, alertes, routeur, rapports et exploitation terrain pour le compostage.",
+    title: "FAQ GreenSensor - Loi AGEC, tri biodéchets et compostage connecté",
+    description: "Toutes les réponses sur GreenSensor et la loi AGEC : tri des biodéchets, obligations entreprises et collectivités, installation, conformité, alertes et exploitation terrain.",
     robots: { index: true, follow: true },
     alternates,
     openGraph: {
       title: "FAQ GreenSensor",
-      description: "FAQ complète GreenSensor : sondes connectées, conformité, alertes et suivi du compostage.",
+      description: "FAQ complète GreenSensor : loi AGEC, tri des biodéchets, sondes connectées, conformité, alertes et suivi du compostage.",
       url: "https://greensensor.fr/faq",
       siteName: "GreenSensor",
       locale: "fr_FR",

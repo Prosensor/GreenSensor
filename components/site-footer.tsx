@@ -10,7 +10,7 @@ export function SiteFooter() {
     description: string
     useful_links: string
     legal_info: string
-    nav: { home: string; features: string; specs: string; analytics: string; faq: string; doc: string; contact: string }
+    nav: { home: string; features: string; specs: string; analytics: string; faq: string; doc: string; articles: string; contact: string }
     legal: { mentions: string; privacy: string; terms: string; prosensor_site: string }
     hours: { title: string; weekdays: string; weekend: string }
     copyright: string
@@ -65,6 +65,7 @@ export function SiteFooter() {
               <li><Link href="/#analyse" className="hover:text-[#6fdc63] transition-colors">{ft.nav.analytics}</Link></li>
               <li><Link href="/#faq" className="hover:text-[#6fdc63] transition-colors">{ft.nav.faq}</Link></li>
               <li><Link href="/documentation" className="hover:text-[#6fdc63] transition-colors">{ft.nav.doc}</Link></li>
+              <li><Link href="/articles" className="hover:text-[#6fdc63] transition-colors">{ft.nav.articles}</Link></li>
               <li><Link href="/#demo" className="hover:text-[#6fdc63] transition-colors">{ft.nav.contact}</Link></li>
             </ul>
           </div>

@@ -12,6 +12,7 @@ type Translations = {
     analytics: string
     faq: string
     doc: string
+    articles: string
     contact: string
   }
   hero: {
@@ -76,7 +77,7 @@ type Translations = {
     description: string
     useful_links: string
     legal_info: string
-    nav: { home: string; features: string; specs: string; analytics: string; faq: string; doc: string; contact: string }
+    nav: { home: string; features: string; specs: string; analytics: string; faq: string; doc: string; articles: string; contact: string }
     legal: { mentions: string; privacy: string; terms: string; prosensor_site: string }
     hours: { title: string; weekdays: string; weekend: string }
     copyright: string
@@ -110,6 +111,18 @@ type Translations = {
   header?: {
     appButton: string
   }
+  articlesHub: {
+    heading: string
+    subtitle: string
+    intro: string
+    countSuffix: string
+    empty: string
+    readMore: string
+    back: string
+    published: string
+    minRead: string
+    related: string
+  }
 }
 
 const fr: Translations = {
@@ -120,6 +133,7 @@ const fr: Translations = {
     analytics: "Analyse",
     faq: "FAQ",
     doc: "Documentation",
+    articles: "Articles",
     contact: "Contact",
   },
   hero: {
@@ -221,7 +235,7 @@ const fr: Translations = {
     description: "GreenSensor est une solution innovante pour le suivi des températures dans le processus de compostage.",
     useful_links: "Liens utiles",
     legal_info: "Informations légales",
-    nav: { home: "Accueil", features: "Fonctionnalités", specs: "Spécifications", analytics: "Analyse", faq: "FAQ", doc: "Documentation", contact: "Contact" },
+    nav: { home: "Accueil", features: "Fonctionnalités", specs: "Spécifications", analytics: "Analyse", faq: "FAQ", doc: "Documentation", articles: "Articles", contact: "Contact" },
     legal: { mentions: "Mentions légales", privacy: "Politique de confidentialité", terms: "Conditions Générales d'Utilisation", prosensor_site: "Site de Prosensor" },
     hours: { title: "Horaires d'ouverture:", weekdays: "Lundi - Vendredi: 9h00 - 18h00", weekend: "Samedi - Dimanche: Fermé" },
     copyright: "© 2025 Prosensor. Tous droits réservés.",
@@ -253,6 +267,19 @@ const fr: Translations = {
     }
   },
   header: { appButton: "Interface" },
+  articlesHub: {
+    heading: "Tous nos articles",
+    subtitle: "Compostage connecté, capteurs et exploitation terrain",
+    intro:
+      "Retrouvez ici l’ensemble des articles GreenSensor : guides pratiques, mesure CO₂, température et bonnes pratiques pour piloter votre compostage.",
+    countSuffix: "articles disponibles",
+    empty: "Aucun article pour le moment. Revenez bientôt.",
+    readMore: "Lire l’article",
+    back: "Tous les articles",
+    published: "Publié le",
+    minRead: "min de lecture",
+    related: "Articles connexes",
+  },
 }
 
 const en: Translations = {
@@ -263,6 +290,7 @@ const en: Translations = {
     analytics: "Analytics",
     faq: "FAQ",
     doc: "Documentation",
+    articles: "Articles",
     contact: "Contact",
   },
   hero: {
@@ -364,7 +392,7 @@ const en: Translations = {
     description: "GreenSensor is an innovative solution for temperature monitoring in the composting process.",
     useful_links: "Useful links",
     legal_info: "Legal information",
-    nav: { home: "Home", features: "Features", specs: "Specifications", analytics: "Analytics", faq: "FAQ", doc: "Documentation", contact: "Contact" },
+    nav: { home: "Home", features: "Features", specs: "Specifications", analytics: "Analytics", faq: "FAQ", doc: "Documentation", articles: "Articles", contact: "Contact" },
     legal: { mentions: "Legal notice", privacy: "Privacy policy", terms: "Terms of use", prosensor_site: "Prosensor website" },
     hours: { title: "Opening hours:", weekdays: "Monday - Friday: 9:00 - 18:00", weekend: "Saturday - Sunday: Closed" },
     copyright: "© 2025 Prosensor. All rights reserved.",
@@ -396,6 +424,19 @@ const en: Translations = {
     }
   },
   header: { appButton: "Open App" },
+  articlesHub: {
+    heading: "All articles",
+    subtitle: "Connected composting, sensors and field operations",
+    intro:
+      "Browse all GreenSensor articles: practical guides, CO₂ and temperature monitoring, and best practices for your composting process.",
+    countSuffix: "articles available",
+    empty: "No articles yet. Check back soon.",
+    readMore: "Read article",
+    back: "All articles",
+    published: "Published",
+    minRead: "min read",
+    related: "Related articles",
+  },
 }
 
 const es: Translations = {
@@ -406,6 +447,7 @@ const es: Translations = {
     analytics: "Análisis",
     faq: "FAQ",
     doc: "Documentación",
+    articles: "Artículos",
     contact: "Contacto",
   },
   hero: {
@@ -507,7 +549,7 @@ const es: Translations = {
     description: "GreenSensor es una solución innovadora para el seguimiento de temperatura en compostaje.",
     useful_links: "Enlaces útiles",
     legal_info: "Información legal",
-    nav: { home: "Inicio", features: "Funcionalidades", specs: "Especificaciones", analytics: "Análisis", faq: "FAQ", doc: "Documentación", contact: "Contacto" },
+    nav: { home: "Inicio", features: "Funcionalidades", specs: "Especificaciones", analytics: "Análisis", faq: "FAQ", doc: "Documentación", articles: "Artículos", contact: "Contacto" },
     legal: { mentions: "Aviso legal", privacy: "Política de privacidad", terms: "Condiciones de uso", prosensor_site: "Sitio de Prosensor" },
     hours: { title: "Horario:", weekdays: "Lunes - Viernes: 9:00 - 18:00", weekend: "Sábado - Domingo: Cerrado" },
     copyright: "© 2025 Prosensor. Todos los derechos reservados.",
@@ -539,6 +581,19 @@ const es: Translations = {
     }
   },
   header: { appButton: "Plataforma" },
+  articlesHub: {
+    heading: "Todos los artículos",
+    subtitle: "Compostaje conectado, sensores y operación en campo",
+    intro:
+      "Encuentre aquí todos los artículos GreenSensor: guías prácticas, CO₂, temperatura y buenas prácticas para su compostaje.",
+    countSuffix: "artículos disponibles",
+    empty: "Aún no hay artículos. Vuelva pronto.",
+    readMore: "Leer artículo",
+    back: "Todos los artículos",
+    published: "Publicado el",
+    minRead: "min de lectura",
+    related: "Artículos relacionados",
+  },
 }
 
 const de: Translations = {
@@ -549,6 +604,7 @@ const de: Translations = {
     analytics: "Analyse",
     faq: "FAQ",
     doc: "Dokumentation",
+    articles: "Artikel",
     contact: "Kontakt",
   },
   hero: {
@@ -650,7 +706,7 @@ const de: Translations = {
     description: "GreenSensor ist eine innovative Lösung zur Temperaturüberwachung in Kompostierungsprozessen.",
     useful_links: "Nützliche Links",
     legal_info: "Rechtliches",
-    nav: { home: "Start", features: "Funktionen", specs: "Spezifikationen", analytics: "Analyse", faq: "FAQ", doc: "Dokumentation", contact: "Kontakt" },
+    nav: { home: "Start", features: "Funktionen", specs: "Spezifikationen", analytics: "Analyse", faq: "FAQ", doc: "Dokumentation", articles: "Artikel", contact: "Kontakt" },
     legal: { mentions: "Impressum", privacy: "Datenschutz", terms: "Nutzungsbedingungen", prosensor_site: "Prosensor-Website" },
     hours: { title: "Öffnungszeiten:", weekdays: "Montag - Freitag: 9:00 - 18:00", weekend: "Samstag - Sonntag: Geschlossen" },
     copyright: "© 2025 Prosensor. Alle Rechte vorbehalten.",
@@ -682,6 +738,19 @@ const de: Translations = {
     }
   },
   header: { appButton: "Plattform" },
+  articlesHub: {
+    heading: "Alle Artikel",
+    subtitle: "Vernetztes Kompostieren, Sensoren und Feldbetrieb",
+    intro:
+      "Alle GreenSensor-Artikel an einem Ort: Praxisleitfäden, CO₂- und Temperaturmessung sowie Tipps für Ihren Kompostprozess.",
+    countSuffix: "Artikel verfügbar",
+    empty: "Noch keine Artikel. Schauen Sie bald wieder vorbei.",
+    readMore: "Artikel lesen",
+    back: "Alle Artikel",
+    published: "Veröffentlicht am",
+    minRead: "Min. Lesezeit",
+    related: "Verwandte Artikel",
+  },
 }
 
 const pt: Translations = {
@@ -692,6 +761,7 @@ const pt: Translations = {
     analytics: "Análise",
     faq: "FAQ",
     doc: "Documentação",
+    articles: "Artigos",
     contact: "Contacto",
   },
   hero: {
@@ -793,7 +863,7 @@ const pt: Translations = {
     description: "GreenSensor é uma solução inovadora para monitorização de temperatura no processo de compostagem.",
     useful_links: "Links úteis",
     legal_info: "Informação legal",
-    nav: { home: "Início", features: "Funcionalidades", specs: "Especificações", analytics: "Análise", faq: "FAQ", doc: "Documentação", contact: "Contacto" },
+    nav: { home: "Início", features: "Funcionalidades", specs: "Especificações", analytics: "Análise", faq: "FAQ", doc: "Documentação", articles: "Artigos", contact: "Contacto" },
     legal: { mentions: "Aviso legal", privacy: "Política de privacidade", terms: "Condições de utilização", prosensor_site: "Site da Prosensor" },
     hours: { title: "Horário:", weekdays: "Segunda - Sexta: 9:00 - 18:00", weekend: "Sábado - Domingo: Fechado" },
     copyright: "© 2025 Prosensor. Todos os direitos reservados.",
@@ -825,6 +895,19 @@ const pt: Translations = {
     }
   },
   header: { appButton: "Plataforma" },
+  articlesHub: {
+    heading: "Todos os artigos",
+    subtitle: "Compostagem ligada, sensores e operação no terreno",
+    intro:
+      "Encontre aqui todos os artigos GreenSensor: guias práticos, CO₂, temperatura e boas práticas para a sua compostagem.",
+    countSuffix: "artigos disponíveis",
+    empty: "Ainda não há artigos. Volte em breve.",
+    readMore: "Ler artigo",
+    back: "Todos os artigos",
+    published: "Publicado em",
+    minRead: "min de leitura",
+    related: "Artigos relacionados",
+  },
 }
 
 const ro: Translations = {
@@ -835,6 +918,7 @@ const ro: Translations = {
     analytics: "Analiză",
     faq: "FAQ",
     doc: "Documentație",
+    articles: "Articole",
     contact: "Contact",
   },
   hero: {
@@ -936,7 +1020,7 @@ const ro: Translations = {
     description: "GreenSensor este o soluție inovatoare pentru monitorizarea temperaturii în procesul de compostare.",
     useful_links: "Linkuri utile",
     legal_info: "Informații legale",
-    nav: { home: "Acasă", features: "Funcționalități", specs: "Specificații", analytics: "Analiză", faq: "FAQ", doc: "Documentație", contact: "Contact" },
+    nav: { home: "Acasă", features: "Funcționalități", specs: "Specificații", analytics: "Analiză", faq: "FAQ", doc: "Documentație", articles: "Articole", contact: "Contact" },
     legal: { mentions: "Mențiuni legale", privacy: "Politica de confidențialitate", terms: "Termeni de utilizare", prosensor_site: "Site Prosensor" },
     hours: { title: "Program:", weekdays: "Luni - Vineri: 9:00 - 18:00", weekend: "Sâmbătă - Duminică: Închis" },
     copyright: "© 2025 Prosensor. Toate drepturile rezervate.",
@@ -968,6 +1052,19 @@ const ro: Translations = {
     }
   },
   header: { appButton: "Platformă" },
+  articlesHub: {
+    heading: "Toate articolele",
+    subtitle: "Compostare conectată, senzori și operare în teren",
+    intro:
+      "Găsiți aici toate articolele GreenSensor: ghiduri practice, CO₂, temperatură și bune practici pentru compostare.",
+    countSuffix: "articole disponibile",
+    empty: "Încă nu există articole. Reveniți curând.",
+    readMore: "Citește articolul",
+    back: "Toate articolele",
+    published: "Publicat la",
+    minRead: "min de citire",
+    related: "Articole conexe",
+  },
 }
 
 const dictionaries: Record<Language, Translations> = { fr, en, es, de, pt, ro }

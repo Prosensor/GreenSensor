@@ -14,6 +14,43 @@ type FaqSection = { title: string; items: FaqItem[] }
 
 const frSections: FaqSection[] = [
   {
+    title: "Loi AGEC et tri des biodéchets",
+    items: [
+      {
+        q: "Qu'est-ce que la loi AGEC et pourquoi concerne-t-elle le compostage ?",
+        a: "La loi AGEC (Anti-Gaspillage pour une Économie Circulaire), promulguée le 10 février 2020, impose le tri à la source des biodéchets pour tous les acteurs — particuliers, entreprises et administrations — à partir du 1er janvier 2024, afin qu'ils soient valorisés par compostage ou méthanisation plutôt qu'incinérés ou enfouis. Les biodéchets représentent 30 % du contenu d'une poubelle ménagère et plus de 28,4 millions de tonnes sont générées chaque année en France (source ADEME 2024).",
+      },
+      {
+        q: "Depuis quand le tri des biodéchets est-il obligatoire en France ?",
+        a: "Le calendrier a été progressif : depuis 2016 pour les professionnels produisant plus de 10 t/an ; depuis le 1er janvier 2023 pour ceux produisant plus de 5 t/an ; et depuis le 1er janvier 2024 pour tous sans exception de volume — ménages, entreprises et administrations. L'obligation porte sur le tri à la source : séparer les biodéchets avant toute collecte, sans obligation de composteur individuel.",
+      },
+      {
+        q: "Quels types de déchets sont concernés par cette obligation ?",
+        a: "Sont visés les déchets alimentaires (épluchures, restes de repas, produits périmés, marc de café, coquilles d'œufs…), les déchets verts (tontes, feuilles mortes, tailles de haies) et, pour les professionnels, les déchets de cuisine (restaurants, cantines, traiteurs, grandes surfaces, agroalimentaire). Sont exclus les déchets dangereux et les emballages non biodégradables.",
+      },
+      {
+        q: "Quelles sont les obligations spécifiques pour les entreprises ?",
+        a: "Depuis le 1er janvier 2024, toutes les entreprises doivent mettre en place un tri à la source sur site, assurer la valorisation de leurs biodéchets (compostage ou méthanisation) et pouvoir justifier leur destination via un contrat avec un prestataire agréé ou une plateforme de compostage. Sont particulièrement concernées : restauration, hôtellerie, grande distribution, industrie agroalimentaire et établissements de santé.",
+      },
+      {
+        q: "Quelles sont les obligations pour les collectivités territoriales ?",
+        a: "Les collectivités doivent proposer une solution de tri à la source à tous leurs habitants : collecte séparée vers une plateforme industrielle, ou gestion de proximité (composteurs individuels, sites partagés). Au 1er juillet 2024, 40 % de la population française était couverte. Les collectivités de plus de 50 000 habitants étaient visées au 1er janvier 2024 ; les autres ont jusqu'au 31 décembre 2026.",
+      },
+      {
+        q: "Pourquoi la loi AGEC accélère-t-elle le développement des plateformes de compostage ?",
+        a: "La généralisation du tri crée un afflux massif de biodéchets à traiter. Les opérateurs (Veolia, Suez, Sépur, Paprec, Pizzorno, Moulinot…) agrandissent leurs plateformes, créent de nouveaux sites et diversifient leurs procédés (co-compostage, lombricompostage, méthanisation). La filière biodéchets représente une opportunité de plusieurs milliards d'euros d'ici 2030.",
+      },
+      {
+        q: "Quels sont les bénéfices environnementaux du tri des biodéchets ?",
+        a: "Le tri et la valorisation réduisent les émissions de gaz à effet de serre (éviter le méthane lié à l'enfouissement), enrichissent les sols agricoles via le compost produit, réduisent le recours aux engrais chimiques et soutiennent l'économie circulaire locale. En France, 62 % des composts produits sont utilisés en agriculture.",
+      },
+      {
+        q: "Comment GreenSensor aide-t-il à se conformer à la loi AGEC ?",
+        a: "Se conformer à la loi AGEC implique de trier, mais aussi de mesurer, tracer et justifier sa gestion des biodéchets. GreenSensor apporte une réponse concrète : mesure en temps réel des flux, traçabilité réglementaire avec génération automatique de documents justificatifs, optimisation des collectes par alertes de remplissage, et reporting ESG pour valoriser vos efforts environnementaux. Chaque kilo de biodéchet valorisé est mesuré, prouvé et intégrable dans votre bilan environnemental.",
+      },
+    ],
+  },
+  {
     title: "Fonctionnement et installation des sondes",
     items: [
       { q: "Quelle est la portée de transmission des sondes GreenSensor ?", a: "Les sondes communiquent sans fil avec une portée pouvant atteindre 2 km en environnement dégagé. La portée réelle dépend des obstacles et de la configuration du site." },
@@ -80,6 +117,43 @@ const frSections: FaqSection[] = [
 ]
 
 const enSections: FaqSection[] = [
+  {
+    title: "AGEC law and biowaste sorting",
+    items: [
+      {
+        q: "What is the AGEC law and why does it matter for composting?",
+        a: "The AGEC law (Anti-Waste for a Circular Economy), enacted on 10 February 2020, requires source sorting of biowaste for all actors — households, businesses and public bodies — from 1 January 2024, so materials are recovered through composting or anaerobic digestion rather than incineration or landfill. Biowaste accounts for 30% of household bin content and over 28.4 million tonnes are generated each year in France (ADEME 2024).",
+      },
+      {
+        q: "Since when has biowaste sorting been mandatory in France?",
+        a: "The timeline was gradual: since 2016 for professionals producing more than 10 t/year; since 1 January 2023 for those producing more than 5 t/year; and since 1 January 2024 for everyone with no volume exemption. The obligation is source sorting — separating biowaste before collection — not necessarily owning an individual composter.",
+      },
+      {
+        q: "Which waste types are covered by this obligation?",
+        a: "Food waste (peelings, leftovers, expired products, coffee grounds, eggshells), green waste (lawn clippings, dead leaves, hedge trimmings) and, for professionals, kitchen waste from restaurants, canteens, caterers, supermarkets and food industry. Hazardous waste and non-biodegradable packaging are excluded.",
+      },
+      {
+        q: "What are the specific obligations for businesses?",
+        a: "Since 1 January 2024, all businesses must implement on-site source sorting, ensure biowaste recovery (composting or anaerobic digestion) and be able to prove destination through a contract with an approved service provider or composting platform. Restaurants, hotels, retail, food industry and healthcare facilities are especially concerned.",
+      },
+      {
+        q: "What are the obligations for local authorities?",
+        a: "Authorities must offer a source-sorting solution to all residents: separate collection to an industrial platform, or local management (individual composters, shared neighbourhood sites). As of 1 July 2024, 40% of the French population was covered. Authorities over 50,000 inhabitants were targeted by 1 January 2024; others have until 31 December 2026.",
+      },
+      {
+        q: "Why does the AGEC law accelerate composting platform development?",
+        a: "Universal sorting creates a massive influx of biowaste to process. Operators (Veolia, Suez, Sépur, Paprec, Pizzorno, Moulinot…) are expanding platforms, opening new sites and diversifying processes (co-composting, vermicomposting, anaerobic digestion). The biowaste sector represents a multi-billion euro opportunity by 2030.",
+      },
+      {
+        q: "What are the environmental benefits of biowaste sorting?",
+        a: "Sorting and recovery reduce greenhouse gas emissions (avoiding landfill methane), enrich agricultural soils through compost, reduce reliance on chemical fertilisers and support local circular economy. In France, 62% of compost produced is used in agriculture.",
+      },
+      {
+        q: "How does GreenSensor help comply with the AGEC law?",
+        a: "Compliance requires sorting, but also measuring, tracing and proving biowaste management. GreenSensor provides real-time flow monitoring, regulatory traceability with automatic supporting documents, collection optimisation through fill-level alerts, and ESG reporting to demonstrate environmental performance. Every recovered kilo can be measured, evidenced and included in your environmental balance sheet.",
+      },
+    ],
+  },
   {
     title: "Probe operation and installation",
     items: [
@@ -148,6 +222,43 @@ const enSections: FaqSection[] = [
 
 const esSections: FaqSection[] = [
   {
+    title: "Ley AGEC y clasificación de biorresiduos",
+    items: [
+      {
+        q: "¿Qué es la ley AGEC y por qué afecta al compostaje?",
+        a: "La ley AGEC (Anti-desperdicio para una Economía Circular), promulgada el 10 de febrero de 2020, impone la clasificación en origen de biorresiduos para todos los actores a partir del 1 de enero de 2024, para valorizarlos mediante compostaje o metanización en lugar de incineración o vertedero. Los biorresiduos representan el 30 % del contenido de un cubo de basura doméstica y se generan más de 28,4 millones de toneladas al año en Francia (ADEME 2024).",
+      },
+      {
+        q: "¿Desde cuándo es obligatoria la clasificación de biorresiduos en Francia?",
+        a: "El calendario fue progresivo: desde 2016 para profesionales que producen más de 10 t/año; desde el 1 de enero de 2023 para más de 5 t/año; y desde el 1 de enero de 2024 para todos sin excepción de volumen. La obligación es la clasificación en origen, no necesariamente disponer de un compostador individual.",
+      },
+      {
+        q: "¿Qué tipos de residuos están concernidos?",
+        a: "Residuos alimentarios (cáscaras, restos de comida, productos caducados, posos de café, cáscaras de huevo), residuos verdes (césped, hojas, podas) y, para profesionales, residuos de cocina de restaurantes, cantinas, caterings, supermercados e industria agroalimentaria. Quedan excluidos residuos peligrosos y envases no biodegradables.",
+      },
+      {
+        q: "¿Cuáles son las obligaciones específicas para las empresas?",
+        a: "Desde el 1 de enero de 2024, todas las empresas deben implementar clasificación en origen, garantizar la valorización (compostaje o metanización) y poder justificar el destino mediante contrato con un prestador autorizado o plataforma de compostaje.",
+      },
+      {
+        q: "¿Cuáles son las obligaciones para las colectividades?",
+        a: "Deben ofrecer una solución de clasificación en origen: recogida separada hacia una plataforma industrial o gestión de proximidad (compostadores individuales, sitios compartidos). Al 1 de julio de 2024, el 40 % de la población francesa estaba cubierta. Las colectividades de más de 50 000 habitantes debían cumplir antes del 1 de enero de 2024; las demás hasta el 31 de diciembre de 2026.",
+      },
+      {
+        q: "¿Por qué la ley AGEC acelera el desarrollo de plataformas de compostaje?",
+        a: "La generalización del tri crea un aflujo masivo de biorresiduos. Los operadores amplían plataformas, crean nuevos sitios y diversifican procesos (co-compostaje, lombricompostaje, metanización). La filière representa una oportunidad de varios miles de millones de euros de aquí a 2030.",
+      },
+      {
+        q: "¿Cuáles son los beneficios ambientales del tri de biorresiduos?",
+        a: "Reduce emisiones de gases de efecto invernadero, enriquece suelos agrícolas mediante compost, reduce fertilizantes químicos y apoya la economía circular local. En Francia, el 62 % del compost producido se utiliza en agricultura.",
+      },
+      {
+        q: "¿Cómo ayuda GreenSensor a cumplir la ley AGEC?",
+        a: "Cumplir implica clasificar, pero también medir, trazar y justificar la gestión. GreenSensor ofrece medición en tiempo real, trazabilidad regulatoria con documentos justificativos automáticos, optimización de recogidas mediante alertas de llenado y reporting ESG. Cada kilo valorizado puede medirse, probarse e integrarse en su balance ambiental.",
+      },
+    ],
+  },
+  {
     title: "Funcionamiento e instalación de sondas",
     items: [
       { q: "¿Cuál es el alcance de transmisión de las sondas GreenSensor?", a: "Las sondas se comunican de forma inalámbrica hasta unos 2 km en zonas abiertas. El alcance real depende de obstáculos y de la configuración del sitio." },
@@ -214,6 +325,43 @@ const esSections: FaqSection[] = [
 ]
 
 const deSections: FaqSection[] = [
+  {
+    title: "AGEC-Gesetz und Bioabfalltrennung",
+    items: [
+      {
+        q: "Was ist das AGEC-Gesetz und warum betrifft es die Kompostierung?",
+        a: "Das AGEC-Gesetz (Anti-Verschwendung für eine Kreislaufwirtschaft) vom 10. Februar 2020 schreibt ab dem 1. Januar 2024 die getrennte Erfassung von Bioabfällen für alle Akteure vor, damit sie durch Kompostierung oder Vergärung statt Verbrennung oder Deponierung verwertet werden. Bioabfälle machen 30 % des Hausmülls aus; in Frankreich entstehen jährlich über 28,4 Mio. Tonnen (ADEME 2024).",
+      },
+      {
+        q: "Seit wann ist die Bioabfalltrennung in Frankreich Pflicht?",
+        a: "Stufenweise: seit 2016 für Profis mit mehr als 10 t/Jahr; seit 1. Januar 2023 für mehr als 5 t/Jahr; seit 1. Januar 2024 für alle ohne Mengenausnahme. Pflicht ist die Trennung an der Quelle, nicht zwingend ein eigener Komposter.",
+      },
+      {
+        q: "Welche Abfallarten sind betroffen?",
+        a: "Lebensmittelabfälle, Grünschnitt und für Profis Küchenabfälle aus Gastronomie, Kantinen, Caterern, Supermärkten und Lebensmittelindustrie. Gefährliche Abfälle und nicht biologisch abbaubare Verpackungen sind ausgenommen.",
+      },
+      {
+        q: "Welche Pflichten gelten für Unternehmen?",
+        a: "Seit 1. Januar 2024 müssen alle Unternehmen getrennte Erfassung vor Ort einführen, Verwertung sicherstellen und die Entsorgung per Vertrag mit zugelassenem Dienstleister oder Kompostierplattform nachweisen können.",
+      },
+      {
+        q: "Welche Pflichten gelten für Kommunen?",
+        a: "Kommunen müssen eine Trennlösung anbieten: separate Sammlung zu Industrieanlagen oder lokale Lösungen (Einzelkomposter, gemeinsame Standorte). Im Juli 2024 waren 40 % der Bevölkerung versorgt. Kommunen über 50 000 Einwohner ab 1. Januar 2024; andere bis 31. Dezember 2026.",
+      },
+      {
+        q: "Warum beschleunigt das AGEC-Gesetz den Ausbau von Kompostieranlagen?",
+        a: "Die flächendeckende Trennung erzeugt einen massiven Bioabfallzufluss. Betreiber erweitern Anlagen, schaffen neue Standorte und diversifizieren Verfahren. Die Branche birgt Milliardenpotenzial bis 2030.",
+      },
+      {
+        q: "Welche Umweltvorteile bringt die Bioabfalltrennung?",
+        a: "Sie reduziert Treibhausgasemissionen, verbessert Böden durch Kompost, senkt den Bedarf an chemischen Düngemitteln und stärkt die lokale Kreislaufwirtschaft. In Frankreich werden 62 % des Komposts in der Landwirtschaft genutzt.",
+      },
+      {
+        q: "Wie hilft GreenSensor bei der AGEC-Compliance?",
+        a: "Compliance erfordert Trennung, Messung, Rückverfolgbarkeit und Nachweis. GreenSensor bietet Echtzeit-Monitoring, regulatorische Traceability mit automatischen Belegen, optimierte Abholungen durch Füllstandswarnungen und ESG-Reporting für den Nachweis der Umweltleistung.",
+      },
+    ],
+  },
   {
     title: "Sondenbetrieb und Installation",
     items: [
@@ -282,6 +430,43 @@ const deSections: FaqSection[] = [
 
 const ptSections: FaqSection[] = [
   {
+    title: "Lei AGEC e triagem de biorresíduos",
+    items: [
+      {
+        q: "O que é a lei AGEC e por que diz respeito ao compostagem?",
+        a: "A lei AGEC (Anti-desperdício para uma Economia Circular), promulgada a 10 de fevereiro de 2020, impõe a triagem na origem dos biorresíduos para todos os atores a partir de 1 de janeiro de 2024, para valorização por compostagem ou metanização em vez de incineração ou aterro. Os biorresíduos representam 30 % do lixo doméstico e mais de 28,4 milhões de toneladas são geradas por ano em França (ADEME 2024).",
+      },
+      {
+        q: "Desde quando a triagem de biorresíduos é obrigatória em França?",
+        a: "Calendário progressivo: desde 2016 para profissionais com mais de 10 t/ano; desde 1 de janeiro de 2023 para mais de 5 t/ano; e desde 1 de janeiro de 2024 para todos sem exceção de volume. A obrigação é triagem na origem, não necessariamente um compostor individual.",
+      },
+      {
+        q: "Que tipos de resíduos estão abrangidos?",
+        a: "Resíduos alimentares, resíduos verdes e, para profissionais, resíduos de cozinha de restauração, cantinas, catering, grandes superfícies e indústria agroalimentar. Excluem-se resíduos perigosos e embalagens não biodegradáveis.",
+      },
+      {
+        q: "Quais são as obrigações específicas para empresas?",
+        a: "Desde 1 de janeiro de 2024, todas as empresas devem implementar triagem na origem, garantir valorização e poder justificar o destino via contrato com prestador autorizado ou plataforma de compostagem.",
+      },
+      {
+        q: "Quais são as obrigações para coletividades?",
+        a: "Devem propor uma solução de triagem: recolha separada para plataforma industrial ou gestão de proximidade. Em julho de 2024, 40 % da população francesa estava coberta. Coletividades acima de 50 000 habitantes até 1 de janeiro de 2024; outras até 31 de dezembro de 2026.",
+      },
+      {
+        q: "Por que a lei AGEC acelera o desenvolvimento de plataformas de compostagem?",
+        a: "A generalização da triagem cria um afluxo massivo de biorresíduos. Operadores ampliam plataformas, criam novos locais e diversificam processos. A filière representa uma oportunidade de vários mil milhões de euros até 2030.",
+      },
+      {
+        q: "Quais são os benefícios ambientais da triagem de biorresíduos?",
+        a: "Reduz emissões de GEE, enriquece solos agrícolas via compost, reduz fertilizantes químicos e apoia a economia circular local. Em França, 62 % do compost produzido é usado na agricultura.",
+      },
+      {
+        q: "Como o GreenSensor ajuda a cumprir a lei AGEC?",
+        a: "Cumprir implica triar, medir, rastrear e justificar a gestão. O GreenSensor oferece medição em tempo real, rastreabilidade regulatória com documentos automáticos, otimização de recolhas por alertas de enchimento e reporting ESG.",
+      },
+    ],
+  },
+  {
     title: "Operação e instalação das sondas",
     items: [
       { q: "Qual é o alcance de transmissão das sondas GreenSensor?", a: "As sondas comunicam sem fio até cerca de 2 km em áreas abertas. O alcance real depende de obstáculos e da configuração do local." },
@@ -348,6 +533,43 @@ const ptSections: FaqSection[] = [
 ]
 
 const roSections: FaqSection[] = [
+  {
+    title: "Legea AGEC și sortarea biordeșeurilor",
+    items: [
+      {
+        q: "Ce este legea AGEC și de ce privește compostarea?",
+        a: "Legea AGEC (Anti-risipă pentru o Economie Circulară), promulgată la 10 februarie 2020, impune sortarea la sursă a biordeșeurilor pentru toți actorii de la 1 ianuarie 2024, pentru valorificare prin compostare sau metanizare, nu incinerare sau depozitare. Biordeșeurile reprezintă 30 % din gunoiul menajer și peste 28,4 milioane tone sunt generate anual în Franța (ADEME 2024).",
+      },
+      {
+        q: "De când este obligatorie sortarea biordeșeurilor în Franța?",
+        a: "Calendar progresiv: din 2016 pentru profesioniști cu peste 10 t/an; din 1 ianuarie 2023 pentru peste 5 t/an; din 1 ianuarie 2024 pentru toți, fără excepție de volum. Obligația este sortarea la sursă, nu neapărat un compostor individual.",
+      },
+      {
+        q: "Ce tipuri de deșeuri sunt vizate?",
+        a: "Deșeuri alimentare, deșeuri verzi și, pentru profesioniști, deșeuri de bucătărie din restaurante, cantine, catering, supermarketuri și industrie alimentară. Sunt excluse deșeurile periculoase și ambalajele non-biodegradabile.",
+      },
+      {
+        q: "Care sunt obligațiile specifice pentru întreprinderi?",
+        a: "Din 1 ianuarie 2024, toate întreprinderile trebuie să implementeze sortare la sursă, să asigure valorificarea și să poată justifica destinația prin contract cu un prestator autorizat sau platformă de compostare.",
+      },
+      {
+        q: "Care sunt obligațiile pentru colectivități?",
+        a: "Trebuie să ofere o soluție de sortare: colectare separată către o platformă industrială sau gestionare locală. La 1 iulie 2024, 40 % din populația franceză era acoperită. Colectivitățile peste 50 000 locuitori până la 1 ianuarie 2024; celelalte până la 31 decembrie 2026.",
+      },
+      {
+        q: "De ce legea AGEC accelerează dezvoltarea platformelor de compostare?",
+        a: "Generalizarea sortării creează un aflux masiv de biordeșeuri. Operatorii extind platforme, deschid site-uri noi și diversifică procedeele. Sectorul reprezintă o oportunitate de miliarde de euro până în 2030.",
+      },
+      {
+        q: "Care sunt beneficiile de mediu ale sortării biordeșeurilor?",
+        a: "Reduce emisiile de GES, îmbogățește solurile agricole prin compost, reduce îngrășămintele chimice și susține economia circulară locală. În Franța, 62 % din compostul produs este folosit în agricultură.",
+      },
+      {
+        q: "Cum ajută GreenSensor la conformarea cu legea AGEC?",
+        a: "Conformarea implică sortare, măsurare, trasabilitate și justificare. GreenSensor oferă monitorizare în timp real, trasabilitate regulamentară cu documente automate, optimizarea colectărilor prin alerte de umplere și raportare ESG.",
+      },
+    ],
+  },
   {
     title: "Funcționarea și instalarea sondelor",
     items: [
@@ -439,7 +661,7 @@ export function FaqPageContent() {
           {isFr ? "Questions fréquentes GreenSensor" : isEs ? "Preguntas frecuentes GreenSensor" : isDe ? "Häufige Fragen zu GreenSensor" : isPt ? "Perguntas frequentes GreenSensor" : isRo ? "Întrebări frecvente GreenSensor" : "GreenSensor Frequently Asked Questions"}
         </h1>
         <p className="text-[#3eab35] mt-2 font-medium">
-          {isFr ? "Sondes connectées, conformité, alertes et exploitation terrain" : isEs ? "Sondas conectadas, cumplimiento, alertas y uso en campo" : isDe ? "Vernetzte Sonden, Compliance, Warnungen und Feldeinsatz" : isPt ? "Sondas conectadas, conformidade, alertas e operação no terreno" : isRo ? "Sonde conectate, conformitate, alerte și operare în teren" : "Connected probes, compliance, alerts and field operations"}
+          {isFr ? "Sondes connectées, loi AGEC, conformité, alertes et exploitation terrain" : isEs ? "Sondas conectadas, ley AGEC, cumplimiento, alertas y uso en campo" : isDe ? "Vernetzte Sonden, AGEC-Gesetz, Compliance, Warnungen und Feldeinsatz" : isPt ? "Sondas conectadas, lei AGEC, conformidade, alertas e operação no terreno" : isRo ? "Sonde conectate, legea AGEC, conformitate, alerte și operare în teren" : "Connected probes, AGEC law, compliance, alerts and field operations"}
         </p>
         <div className="mt-4 text-sm text-gray-600">
           {totalQuestions} {isFr ? "questions disponibles" : isEs ? "preguntas disponibles" : isDe ? "verfügbare Fragen" : isPt ? "perguntas disponíveis" : isRo ? "întrebări disponibile" : "questions available"}

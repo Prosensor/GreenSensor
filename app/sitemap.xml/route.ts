@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getAllArticleSlugs } from "@/lib/articles";
 
 export async function GET() {
   const baseUrl = "https://greensensor.fr";
@@ -6,12 +7,15 @@ export async function GET() {
     "",
     "/documentation",
     "/faq",
+    "/articles",
     "/mentions-legales",
     "/politique-confidentialite",
     "/cgu",
   ];
 
-  const urls = staticPages
+  const articlePaths = getAllArticleSlugs().map((slug) => `/articles/${slug}`);
+
+  const urls = [...staticPages, ...articlePaths]
     .map(
       (path) => `\n  <url>\n    <loc>${baseUrl}${path}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`
     )

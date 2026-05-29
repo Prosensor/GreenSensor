@@ -17,8 +17,16 @@ const navIds = [
   { key: "analytics", id: "analyse" },
   { key: "faq", id: "faq" },
   { key: "doc", id: "documentation" },
+  { key: "articles", id: "articles" },
   { key: "contact", id: "demo" },
 ]
+
+function navHref(key: string) {
+  if (key === "doc") return "/documentation"
+  if (key === "faq") return "/faq"
+  if (key === "articles") return "/articles"
+  return ""
+}
 
 type SiteHeaderProps = {
   overlay?: boolean
@@ -95,8 +103,8 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
                     >
                       <NavigationMenuItem>
                         <Link
-                          href={item.key === "doc" ? "/documentation" : item.key === "faq" ? "/faq" : `/#${item.id}`}
-                          onClick={item.key === "doc" || item.key === "faq" ? undefined : (e) => scrollToSection(e, item.id)}
+                          href={navHref(item.key) || `/#${item.id}`}
+                          onClick={navHref(item.key) ? undefined : (e) => scrollToSection(e, item.id)}
                           className={`inline-flex rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
                             overlay
                               ? "text-white hover:text-[#9CE66F] hover:bg-white/10"
@@ -207,8 +215,8 @@ export function SiteHeader({ overlay = false }: SiteHeaderProps) {
                   transition={{ delay: index * 0.1, duration: 0.3 }}
                 >
                   <Link
-                    href={item.key === "doc" ? "/documentation" : item.key === "faq" ? "/faq" : `/#${item.id}`}
-                    onClick={item.key === "doc" || item.key === "faq" ? () => setIsMobileMenuOpen(false) : (e) => scrollToSection(e, item.id)}
+                    href={navHref(item.key) || `/#${item.id}`}
+                    onClick={navHref(item.key) ? () => setIsMobileMenuOpen(false) : (e) => scrollToSection(e, item.id)}
                     className={`block px-3 py-2 rounded-md text-base font-medium ${
                       overlay
                         ? "text-white hover:text-white/90 hover:bg-white/10"
