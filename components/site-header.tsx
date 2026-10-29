@@ -107,7 +107,7 @@ export function SiteHeader() {
               href={APP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden h-10 items-center gap-1.5 rounded-btn border border-white/25 px-4 font-display text-sm font-bold text-white transition-colors hover:bg-white/10 2xl:inline-flex"
+              className="hidden h-10 items-center gap-1.5 rounded-btn border border-white/25 px-4 font-display text-sm font-bold text-white transition-colors hover:bg-white/10 xl:inline-flex"
             >
               {appLabel}
               <ExternalLink aria-hidden className="size-3.5" />

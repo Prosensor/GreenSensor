@@ -1,7 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import type { Metadata } from "next"
-import { MentionsContent } from "@/components/legal/mentions-content"
+import { LegalPage } from "@/components/legal/legal-page"
 import { cookies } from "next/headers"
 
 // metadata is generated dynamically below
@@ -102,8 +102,8 @@ export default function MentionsLegales() {
   return (
     <>
       <SiteHeader />
-      <main id="main" className="container mx-auto max-w-4xl py-16 px-4">
-        <MentionsContent />
+      <main id="main">
+        <LegalPage doc="mentions" />
       </main>
       <SiteFooter />
     </>

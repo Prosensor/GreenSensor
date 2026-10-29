@@ -1,7 +1,4 @@
-export type ArticleSlug =
-  | "sonde-co2-piquer-compost"
-  | "temperature-co2-compostage-complementaires"
-  | "mesurer-temperature-andain-compost"
+export type ArticleSlug = "mesurer-temperature-andain-compost"
 
 export type ArticleLanguage = "fr" | "en" | "es" | "de" | "pt" | "ro"
 

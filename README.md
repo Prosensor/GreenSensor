@@ -42,7 +42,7 @@ Ce dépôt contient **le site vitrine multilingue de GreenSensor** : la page pub
 - Présente le produit (hero, fonctionnalités, spécifications, analyse)
 - Propose une **FAQ** complète (page dédiée + section sur l'accueil)
 - Publie un **guide d'installation de la passerelle LoRa** (`/documentation`)
-- Héberge un **hub d'articles SEO** (`/articles`) — 2 articles publiés à ce jour
+- Héberge un **hub d'articles SEO** (`/articles`) — 1 article publié à ce jour
 - Reçoit les **demandes de présentation** via un formulaire enrichi (config sonde, pack, distance…)
 - Envoie un **e-mail automatique** à `info@prosensor.com` à chaque demande
 - Est disponible en **6 langues** : FR, EN, ES, DE, PT, RO
@@ -247,8 +247,7 @@ Structure : objet `fr`, `en`, `es`, `de`, `pt`, `ro` avec les clés `nav`, `hero
 4. Le sitemap se met à jour automatiquement via `getAllArticleSlugs()`
 
 Articles actuels :
-- `sonde-co2-piquer-compost`
-- `temperature-co2-compostage-complementaires`
+- `mesurer-temperature-andain-compost`
 
 ### Modifier la FAQ
 
@@ -272,9 +271,9 @@ Images clés :
 
 | Page | Fichier contenu |
 |------|-----------------|
-| Mentions légales | `components/legal/mentions-content.tsx` |
-| Politique confidentialité | `components/legal/privacy-content.tsx` |
-| CGU | `components/legal/cgu-content.tsx` |
+| Mentions légales | `i18n/legal-mentions.ts` (gabarit : `components/legal/legal-page.tsx`) |
+| Politique confidentialité | `i18n/legal-privacy.ts` |
+| CGU | `i18n/legal-cgu.ts` (identité éditeur / hébergeur : `i18n/legal-facts.ts`) |
 
 ---
 

@@ -11,6 +11,7 @@ GreenSensor est une sonde de température à Compost innovante développée par 
 - **Email** : info@prosensor.com
 - **Adresse** : 5 rue Maud Fontenoy, 57140 Norroy-le-Veneur, France
 - **RCS** : Metz 451 740 187
+- **SIRET** : 451 740 187 00047
 - **Site web** : https://greensensor.fr
 
 ## Produits et services
@@ -85,7 +86,7 @@ GreenSensor contribue à la transition écologique en permettant :
 
 ## Partenaires et intégrations
 
-- **Hébergeur** : LWS (Ligne Web Services)
+- **Hébergeur** : Vercel Inc.
 - **Partenaires technologiques** : Intégrations avec systèmes existants
 - **Distributeurs** : Réseau de partenaires commerciaux
 - **Instituts de recherche** : Collaborations scientifiques
