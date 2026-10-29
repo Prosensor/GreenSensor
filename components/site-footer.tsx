@@ -3,100 +3,99 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useI18n } from "@/i18n/i18n-provider"
+import { useHomeCopy } from "@/i18n/home-copy"
+import { Container } from "@/components/ui/container"
 
+const linkClass = "text-sm leading-snug text-mint transition-colors hover:text-white hover:underline"
+const headingClass = "font-heading text-sm font-bold uppercase tracking-[0.02em] text-white"
+
+/** Pied de page vert très foncé, avec le logo GreenSensor et la mention de la marque mère. */
 export function SiteFooter() {
-  const { t, language } = useI18n()
-  const ft = (t as any).footer as {
-    description: string
-    useful_links: string
-    legal_info: string
-    nav: { home: string; features: string; specs: string; analytics: string; faq: string; doc: string; articles: string; contact: string }
-    legal: { mentions: string; privacy: string; terms: string; prosensor_site: string }
-    hours: { title: string; weekdays: string; weekend: string }
-    copyright: string
-  }
+  const { t } = useI18n()
+  const copy = useHomeCopy()
+  const ft = t.footer
+
+  const navLinks = [
+    { href: "/", label: ft.nav.home },
+    { href: "/articles", label: ft.nav.articles },
+    { href: "/faq", label: ft.nav.faq },
+    { href: "/documentation", label: ft.nav.doc },
+    { href: "/contact", label: ft.nav.contact },
+  ]
 
   return (
-    <footer className="bg-[#0f1720] text-gray-300">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-10 xl:gap-8">
-          <div className="xl:col-span-4 space-y-5">
-            <Link href="/" className="inline-flex items-center">
-              <Image
-                src="/2025_LogoGreenSensor_BlancVert.png"
-                alt="Green Sensor Logo"
-                width={150}
-                height={80}
-              />
+    <footer className="on-dark bg-forest-950 text-mint">
+      <Container className="pb-8 pt-12 lg:pt-[60px]">
+        <div className="grid gap-10 md:grid-cols-2 xl:flex xl:items-start xl:justify-between xl:gap-12">
+          <div className="flex max-w-[340px] flex-col gap-5 xl:w-[340px] xl:shrink-0">
+            <Link href="/" className="w-fit" aria-label="GreenSensor">
+              <Image src="/2025_LogoGreenSensor_BlancVert.png" alt="GreenSensor" width={150} height={80} className="h-[60px] w-auto" />
             </Link>
-            <p className="text-sm leading-relaxed text-gray-400 max-w-sm">
-              {ft.description}
-            </p>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-3.5 flex items-center gap-4 max-w-sm">
-              <Image
-                src="/Nouveaux batiment.jpg"
-                alt="Prosensor, siège social"
-                width={88}
-                height={66}
-                className="rounded-lg object-cover border border-white/10 shadow-sm"
-              />
-              <div>
-                <p className="text-xs text-gray-400">
-                  {language === 'fr' ? 'Une marque de' : language === 'es' ? 'Una marca de' : language === 'de' ? 'Eine Marke von' : language === 'pt' ? 'Uma marca da' : language === 'ro' ? 'Un brand al' : 'A brand of'}
-                </p>
-                <p className="text-white font-semibold">
-                  <Link href="https://www.prosensor.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-[#6fdc63] transition-colors">
-                    Prosensor
+            <p className="text-sm leading-[1.5] text-mint">{ft.description}</p>
+            <div className="flex flex-col gap-2 border-t border-white/15 pt-5">
+              <p className="text-xs text-mint">{copy.brandOf}</p>
+              <Link
+                href="https://www.prosensor.fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit"
+                aria-label="Prosensor"
+              >
+                <Image src="/logo-prosensor-white.png" alt="Prosensor" width={724} height={179} className="h-[43px] w-auto" />
+              </Link>
+              <p className="text-xs text-mint">{copy.since}</p>
+            </div>
+          </div>
+
+          <nav aria-label={ft.useful_links}>
+            <h2 className={headingClass}>{ft.useful_links}</h2>
+            <ul className="mt-4 flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className={linkClass}>
+                    {link.label}
                   </Link>
-                </p>
-                <p className="text-xs text-gray-400">
-                  {language === 'fr' ? 'Fabricant depuis 1989' : language === 'es' ? 'Fabricante desde 1989' : language === 'de' ? 'Hersteller seit 1989' : language === 'pt' ? 'Fabricante desde 1989' : language === 'ro' ? 'Producător din 1989' : 'Manufacturer since 1989'}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="xl:col-span-3">
-            <h3 className="text-base font-semibold text-white mb-4">{ft.useful_links}</h3>
-            <ul className="space-y-2.5 text-sm">
-              <li><Link href="/#hero" className="hover:text-[#6fdc63] transition-colors">{ft.nav.home}</Link></li>
-              <li><Link href="/#fonctionnalites" className="hover:text-[#6fdc63] transition-colors">{ft.nav.features}</Link></li>
-              <li><Link href="/#specifications" className="hover:text-[#6fdc63] transition-colors">{ft.nav.specs}</Link></li>
-              <li><Link href="/#analyse" className="hover:text-[#6fdc63] transition-colors">{ft.nav.analytics}</Link></li>
-              <li><Link href="/#faq" className="hover:text-[#6fdc63] transition-colors">{ft.nav.faq}</Link></li>
-              <li><Link href="/documentation" className="hover:text-[#6fdc63] transition-colors">{ft.nav.doc}</Link></li>
-              <li><Link href="/articles" className="hover:text-[#6fdc63] transition-colors">{ft.nav.articles}</Link></li>
-              <li><Link href="/#demo" className="hover:text-[#6fdc63] transition-colors">{ft.nav.contact}</Link></li>
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
 
-          <div className="xl:col-span-3">
-            <h3 className="text-base font-semibold text-white mb-4">{ft.legal_info}</h3>
-            <div className="space-y-2.5 text-sm">
-              <Link href="/mentions-legales" className="hover:text-[#6fdc63] transition-colors block">{ft.legal.mentions}</Link>
-              <Link href="/politique-confidentialite" className="hover:text-[#6fdc63] transition-colors block">{ft.legal.privacy}</Link>
-              <Link href="/cgu" className="hover:text-[#6fdc63] transition-colors block">{ft.legal.terms}</Link>
-            </div>
-          </div>
+          <nav aria-label={ft.legal_info}>
+            <h2 className={headingClass}>{ft.legal_info}</h2>
+            <ul className="mt-4 flex flex-col gap-3">
+              <li>
+                <Link href="/mentions-legales" className={linkClass}>
+                  {ft.legal.mentions}
+                </Link>
+              </li>
+              <li>
+                <Link href="/politique-confidentialite" className={linkClass}>
+                  {ft.legal.privacy}
+                </Link>
+              </li>
+              <li>
+                <Link href="/cgu" className={linkClass}>
+                  {ft.legal.terms}
+                </Link>
+              </li>
+            </ul>
+          </nav>
 
-          <div className="xl:col-span-2">
-            <h3 className="text-base font-semibold text-white mb-4">{ft.hours.title}</h3>
-            <div className="space-y-2 text-sm text-gray-400">
+          <div>
+            <h2 className={headingClass}>{ft.hours.title}</h2>
+            <div className="mt-4 flex flex-col gap-3 text-sm text-mint">
               <p>{ft.hours.weekdays}</p>
               <p>{ft.hours.weekend}</p>
             </div>
           </div>
         </div>
-      </div>
+      </Container>
 
-      <div className="border-t border-white/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <p className="text-sm text-center text-gray-400">
-            {ft.copyright}
-          </p>
-        </div>
+      <div className="border-t border-white/15">
+        <Container className="py-5">
+          <p className="text-sm text-mint">{ft.copyright}</p>
+        </Container>
       </div>
     </footer>
   )
 }
-

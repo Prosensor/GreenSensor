@@ -90,7 +90,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <SiteHeader />
-      <main className="min-h-screen bg-gray-50/50">
+      <main id="main">
         <ArticleDetailContent slug={article.slug} />
       </main>
       <SiteFooter />

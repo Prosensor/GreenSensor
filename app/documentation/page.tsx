@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
   if (lang === "en") {
     return {
       title: "Technical documentation - Gateway and network connection | GreenSensor",
-      description: "Complete GreenSensor documentation: LoRaWAN LPS8-V2 gateway, network connection (WiFi, Ethernet), Web UI, LED indicators and troubleshooting.",
+      description: "Complete GreenSensor documentation: plug in the gateway, connect it to the Internet, switch on and push in the probe, then create your objectives, phases and campaigns.",
       robots: { index: true, follow: true },
       alternates,
       openGraph: {
@@ -52,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
   if (lang === "es") {
     return {
       title: "Documentación técnica - Pasarela y conexión de red | GreenSensor",
-      description: "Documentación completa de GreenSensor: pasarela LoRaWAN LPS8-V2, conexión de red (WiFi, Ethernet), interfaz Web UI, indicadores LED y soporte.",
+      description: "Documentación completa de GreenSensor: conectar la pasarela, conectarla a Internet, encender y clavar la sonda, y crear sus objetivos, fases y campañas.",
       robots: { index: true, follow: true },
       alternates,
       openGraph: {
@@ -68,7 +68,7 @@ export async function generateMetadata(): Promise<Metadata> {
   if (lang === "de") {
     return {
       title: "Technische Dokumentation - Gateway und Netzwerkverbindung | GreenSensor",
-      description: "Vollständige GreenSensor-Dokumentation: LoRaWAN LPS8-V2 Gateway, Netzwerkverbindung (WLAN, Ethernet), Web UI, LED-Anzeigen und Fehlerbehebung.",
+      description: "Vollständige GreenSensor-Dokumentation: Gateway anschließen, mit dem Internet verbinden, Sonde einschalten und einstecken, dann Ziele, Phasen und Kampagnen anlegen.",
       robots: { index: true, follow: true },
       alternates,
       openGraph: {
@@ -84,7 +84,7 @@ export async function generateMetadata(): Promise<Metadata> {
   if (lang === "pt") {
     return {
       title: "Documentação técnica - Gateway e ligação de rede | GreenSensor",
-      description: "Documentação completa GreenSensor: gateway LoRaWAN LPS8-V2, ligação de rede (WiFi, Ethernet), interface Web UI, indicadores LED e resolução de problemas.",
+      description: "Documentação completa GreenSensor: ligar o gateway, ligá-lo à Internet, ligar e cravar a sonda, e criar os seus objetivos, fases e campanhas.",
       robots: { index: true, follow: true },
       alternates,
       openGraph: {
@@ -100,7 +100,7 @@ export async function generateMetadata(): Promise<Metadata> {
   if (lang === "ro") {
     return {
       title: "Documentație tehnică - Gateway și conexiune de rețea | GreenSensor",
-      description: "Documentație completă GreenSensor: gateway LoRaWAN LPS8-V2, conexiune de rețea (WiFi, Ethernet), interfață Web UI, indicatori LED și depanare.",
+      description: "Documentație completă GreenSensor: conectarea gateway-ului, conectarea la internet, pornirea și înfigerea sondei, apoi crearea obiectivelor, fazelor și campaniilor.",
       robots: { index: true, follow: true },
       alternates,
       openGraph: {
@@ -116,7 +116,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: "Documentation technique - Passerelle et connexion réseau | GreenSensor",
-    description: "Documentation complète GreenSensor : passerelle LoRaWAN LPS8-V2, connexion réseau (WiFi, Ethernet), interface Web UI, indicateurs LED, dépannage. Référence pour les clients.",
+    description: "Documentation complète GreenSensor : brancher la passerelle, la connecter à Internet, allumer et planter la sonde, puis créer vos objectifs, phases et campagnes.",
     robots: { index: true, follow: true },
     alternates,
     openGraph: {
@@ -134,7 +134,7 @@ export default function DocumentationPage() {
   return (
     <>
       <SiteHeader />
-      <main className="min-h-screen bg-gray-50/50">
+      <main id="main">
         <DocumentationContent />
       </main>
       <SiteFooter />

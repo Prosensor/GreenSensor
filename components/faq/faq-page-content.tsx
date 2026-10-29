@@ -1,16 +1,15 @@
 "use client"
 
 import Link from "next/link"
+import { useEffect, useMemo, useState } from "react"
+import { Mail, Phone, Search } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-
-type FaqItem = { q: string; a: string }
-type FaqSection = { title: string; items: FaqItem[] }
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Container } from "@/components/ui/container"
+import { FaqAnswer } from "@/components/faq/faq-answer"
+import { buttonVariants } from "@/components/ui/button"
+import { faqExtra, type FaqLang, type FaqSection } from "@/i18n/faq-extra"
+import { cn } from "@/lib/utils"
 
 const frSections: FaqSection[] = [
   {
@@ -56,7 +55,7 @@ const frSections: FaqSection[] = [
       { q: "Quelle est la portée de transmission des sondes GreenSensor ?", a: "Les sondes communiquent sans fil avec une portée pouvant atteindre 2 km en environnement dégagé. La portée réelle dépend des obstacles et de la configuration du site." },
       { q: "Combien de capteurs de température comporte chaque sonde ?", a: "Chaque sonde intègre un ou deux points de mesure selon sa longueur pour suivre à la fois la surface et le coeur de l'andain." },
       { q: "A quelle profondeur mesurer la température d'un andain ?", a: "La mesure doit se faire au coeur de l'andain, au moins a 50 cm, idealement entre 80 cm et 1 m. Les sondes 1 m, 1.5 m et 2 m repondent aux usages terrain." },
-      { q: "L'installation nécessite-t-elle un technicien ?", a: "Non. L'installation est conçue pour être autonome et rapide, avec accompagnement possible du support Prosensor." },
+      { q: "L'installation nécessite-t-elle un technicien ?", a: "Non. Il suffit de connecter le routeur à Internet et de démarrer la sonde en appuyant sur le bouton du boîtier." },
       { q: "Les sondes résistent-elles aux conditions extérieures ?", a: "Oui. Elles sont conçues pour les conditions de compostage: humidité, UV, milieu corrosif et températures élevées." },
       { q: "Peut-on remplacer une sonde en cours de campagne ?", a: "Oui. L'historique reste conservé et la nouvelle sonde prend le relais dans la campagne." },
     ],
@@ -65,7 +64,7 @@ const frSections: FaqSection[] = [
     title: "Infrastructure, connectivité et routeurs",
     items: [
       { q: "Le routeur est-il indispensable si les bureaux sont proches ?", a: "Oui. Le routeur doit être positionné proche de la zone de compostage pour collecter les données radio des sondes." },
-      { q: "De quelle connexion Internet le routeur a-t-il besoin ?", a: "Selon la configuration, la passerelle peut fonctionner en 4G/LTE, Ethernet ou via le réseau existant du site." },
+      { q: "De quelle connexion Internet le routeur a-t-il besoin ?", a: "Idéalement en Ethernet. Pour les sites sans connexion Internet, des solutions 4G existent." },
       { q: "Que se passe-t-il en cas de perte temporaire de connexion ?", a: "Une coupure réseau peut perturber la remontée des données en temps réel. Une connexion stable est recommandée en phase critique." },
       { q: "Peut-on gérer plusieurs plateformes avec un seul compte ?", a: "Oui. Le mode multi-sites permet de centraliser plusieurs plateformes sous un même compte." },
     ],
@@ -75,8 +74,7 @@ const frSections: FaqSection[] = [
     items: [
       { q: "Quelles températures valident l'hygiénisation réglementaire ?", a: "Références usuelles: 55°C pendant 2 semaines, 65°C pendant 1 semaine, ou 70°C pendant 3 jours. GreenSensor aide a tracer ces phases." },
       { q: "GreenSensor aide-t-il a prévenir la combustion spontanée ?", a: "Oui. Des alertes SMS/email peuvent être déclenchées sur seuil haut pour intervenir avant un incident." },
-      { q: "GreenSensor est-il compatible avec une démarche HACCP ?", a: "Oui. La traçabilité continue des températures s'intègre dans une logique HACCP et qualité." },
-      { q: "Comment configurer les alertes et les destinataires ?", a: "Les seuils se configurent par sonde ou groupe. Les notifications peuvent être envoyées a plusieurs contacts simultanément." },
+      { q: "Comment configurer les alertes et les destinataires ?", a: "Directement sur la plateforme : chaque utilisateur paramètre lui-même les seuils d'alerte et les destinataires." },
     ],
   },
   {
@@ -100,7 +98,7 @@ const frSections: FaqSection[] = [
   {
     title: "Tarifs, activation et commandes",
     items: [
-      { q: "Le modèle tarifaire est-il achat, abonnement ou les deux ?", a: "La solution combine généralement matériel et services plateforme. Le détail est proposé selon votre besoin." },
+      { q: "Peut-on acheter les sondes ?", a: "Oui. Les sondes s'achètent avec l'accès annuel à la plateforme GreenSensor. Une première commande comprend souvent quelques sondes et une passerelle pour tester, puis les sites passent à des dizaines de sondes. Contactez-nous pour un devis adapté à votre site." },
       { q: "Existe-t-il des remises pour commandes en volume ?", a: "Oui, des conditions dégressives peuvent être proposées selon les quantités et le contexte multi-sites." },
       { q: "Les frais d'activation s'appliquent a quoi ?", a: "Ils couvrent la mise en service du compte et l'enregistrement de l'infrastructure associée." },
     ],
@@ -160,7 +158,7 @@ const enSections: FaqSection[] = [
       { q: "What is the transmission range of GreenSensor probes?", a: "The probes communicate wirelessly up to around 2 km in open areas. Effective range depends on obstacles and site layout." },
       { q: "How many temperature sensors does each probe include?", a: "Each probe includes one or two measurement points depending on model length, to monitor both surface and core temperatures." },
       { q: "At what depth should temperature be measured in windrows?", a: "Temperature should be measured at the core of the windrow, at least 50 cm deep and ideally between 80 cm and 1 m." },
-      { q: "Does installation require a technician?", a: "No. The solution is designed for quick self-installation, with optional remote support from Prosensor." },
+      { q: "Does installation require a technician?", a: "No. Just connect the router to the Internet and start the probe by pressing the button on its housing." },
       { q: "Are probes resistant to outdoor conditions?", a: "Yes. They are designed for composting conditions: humidity, UV, corrosive environments and high temperatures." },
       { q: "Can a probe be replaced during an active campaign?", a: "Yes. Historical data remains available and the replacement probe can continue the same campaign." },
     ],
@@ -169,7 +167,7 @@ const enSections: FaqSection[] = [
     title: "Infrastructure, connectivity and routers",
     items: [
       { q: "Is a router still required if offices are nearby?", a: "Yes. The router should be positioned close to composting areas to reliably collect radio data from probes." },
-      { q: "What internet connection does the router need?", a: "Depending on setup, gateways can use 4G/LTE, Ethernet or the site's existing internet access." },
+      { q: "What internet connection does the router need?", a: "Ideally Ethernet. For sites without an Internet connection, 4G solutions are available." },
       { q: "What happens during temporary internet loss?", a: "Temporary outages may impact real-time data transmission. A stable connection is recommended for critical phases." },
       { q: "Can multiple sites be managed from one account?", a: "Yes. Multi-site mode enables centralized monitoring for several composting platforms." },
     ],
@@ -179,8 +177,7 @@ const enSections: FaqSection[] = [
     items: [
       { q: "What temperatures are used for hygienisation compliance?", a: "Typical references are 55°C for 2 weeks, 65°C for 1 week, or 70°C for 3 days. GreenSensor helps document those periods." },
       { q: "Does GreenSensor help prevent spontaneous combustion?", a: "Yes. SMS/email alerts can be triggered on high thresholds to support preventive action before incidents." },
-      { q: "Is GreenSensor compatible with HACCP workflows?", a: "Yes. Continuous temperature traceability supports HACCP-style controls and quality systems." },
-      { q: "How are alerts configured and assigned?", a: "Thresholds can be set per probe or group. Alerts can be sent to multiple recipients simultaneously." },
+      { q: "How are alerts configured and assigned?", a: "Directly on the platform: each user sets the alert thresholds and recipients themselves." },
     ],
   },
   {
@@ -204,7 +201,7 @@ const enSections: FaqSection[] = [
   {
     title: "Pricing, activation and bulk orders",
     items: [
-      { q: "Is pricing hardware purchase, subscription, or both?", a: "Pricing typically combines hardware and platform services, tailored to your configuration." },
+      { q: "Can the probes be purchased?", a: "Yes. The probes are sold with annual access to the GreenSensor platform. A first order often includes a few probes and a gateway to test, then sites move on to dozens of probes. Contact us for a quote tailored to your site." },
       { q: "Are there discounts for larger orders?", a: "Yes, volume pricing can be discussed depending on quantities and multi-site needs." },
       { q: "What do activation fees cover?", a: "Activation usually covers account onboarding and infrastructure registration." },
     ],
@@ -264,7 +261,7 @@ const esSections: FaqSection[] = [
       { q: "¿Cuál es el alcance de transmisión de las sondas GreenSensor?", a: "Las sondas se comunican de forma inalámbrica hasta unos 2 km en zonas abiertas. El alcance real depende de obstáculos y de la configuración del sitio." },
       { q: "¿Cuántos sensores de temperatura incluye cada sonda?", a: "Cada sonda incluye uno o dos puntos de medición según la longitud del modelo, para controlar superficie y núcleo." },
       { q: "¿A qué profundidad debe medirse la temperatura en una pila?", a: "La temperatura debe medirse en el núcleo, al menos a 50 cm y, de forma ideal, entre 80 cm y 1 m." },
-      { q: "¿La instalación requiere técnico?", a: "No. La solución está diseñada para una instalación rápida y autónoma, con soporte remoto opcional de Prosensor." },
+      { q: "¿La instalación requiere técnico?", a: "No. Basta con conectar el router a Internet y poner en marcha la sonda pulsando el botón de su caja." },
       { q: "¿Las sondas resisten condiciones exteriores?", a: "Sí. Están diseñadas para compostaje: humedad, UV, entorno corrosivo y altas temperaturas." },
       { q: "¿Se puede reemplazar una sonda durante una campaña activa?", a: "Sí. El histórico se conserva y la nueva sonda puede continuar la misma campaña." },
     ],
@@ -273,7 +270,7 @@ const esSections: FaqSection[] = [
     title: "Infraestructura, conectividad y routers",
     items: [
       { q: "¿Sigue siendo necesario un router si las oficinas están cerca?", a: "Sí. El router debe colocarse cerca de la zona de compostaje para recoger correctamente los datos de radio." },
-      { q: "¿Qué conexión a Internet necesita el router?", a: "Según la configuración, la pasarela puede usar 4G/LTE, Ethernet o la conexión existente del sitio." },
+      { q: "¿Qué conexión a Internet necesita el router?", a: "Idealmente Ethernet. Para los sitios sin conexión a Internet existen soluciones 4G." },
       { q: "¿Qué ocurre ante una pérdida temporal de Internet?", a: "Los cortes temporales pueden afectar el tiempo real. Se recomienda una conexión estable en fases críticas." },
       { q: "¿Se pueden gestionar varios sitios con una sola cuenta?", a: "Sí. El modo multisitio permite centralizar varias plataformas de compostaje." },
     ],
@@ -283,8 +280,7 @@ const esSections: FaqSection[] = [
     items: [
       { q: "¿Qué temperaturas se usan para validar la higienización?", a: "Referencias habituales: 55°C durante 2 semanas, 65°C durante 1 semana o 70°C durante 3 días. GreenSensor ayuda a documentar estos periodos." },
       { q: "¿GreenSensor ayuda a prevenir la combustión espontánea?", a: "Sí. Se pueden activar alertas SMS/email por umbral alto para actuar de forma preventiva." },
-      { q: "¿GreenSensor es compatible con flujos HACCP?", a: "Sí. La trazabilidad continua de temperatura apoya controles tipo HACCP y sistemas de calidad." },
-      { q: "¿Cómo se configuran y asignan las alertas?", a: "Los umbrales pueden definirse por sonda o grupo, y enviarse a varios destinatarios simultáneamente." },
+      { q: "¿Cómo se configuran y asignan las alertas?", a: "Directamente en la plataforma: cada usuario define por sí mismo los umbrales de alerta y los destinatarios." },
     ],
   },
   {
@@ -308,7 +304,7 @@ const esSections: FaqSection[] = [
   {
     title: "Precios, activación y pedidos por volumen",
     items: [
-      { q: "¿El precio es compra de hardware, suscripción o ambos?", a: "Normalmente combina hardware y servicios de plataforma, ajustado a su configuración." },
+      { q: "¿Se pueden comprar las sondas?", a: "Sí. Las sondas se compran con el acceso anual a la plataforma GreenSensor. Un primer pedido suele incluir algunas sondas y una pasarela para probar, y luego los sitios pasan a decenas de sondas. Contáctenos para un presupuesto adaptado a su sitio." },
       { q: "¿Hay descuentos para pedidos grandes?", a: "Sí, puede aplicarse tarifa por volumen según cantidades y necesidades multisitio." },
       { q: "¿Qué cubren los costes de activación?", a: "Suelen cubrir la puesta en marcha de la cuenta y el registro de la infraestructura." },
     ],
@@ -368,7 +364,7 @@ const deSections: FaqSection[] = [
       { q: "Wie groß ist die Übertragungsreichweite der GreenSensor-Sonden?", a: "Die Sonden kommunizieren drahtlos bis etwa 2 km in offenem Gelände. Die effektive Reichweite hängt von Hindernissen und der Standortstruktur ab." },
       { q: "Wie viele Temperatursensoren hat jede Sonde?", a: "Je nach Modelllänge enthält jede Sonde ein oder zwei Messpunkte, um Oberfläche und Kern zu überwachen." },
       { q: "In welcher Tiefe sollte die Temperatur im Mietenkörper gemessen werden?", a: "Die Messung sollte im Kern erfolgen, mindestens 50 cm tief, idealerweise zwischen 80 cm und 1 m." },
-      { q: "Ist für die Installation ein Techniker erforderlich?", a: "Nein. Die Lösung ist für eine schnelle Selbstinstallation ausgelegt; optional mit Remote-Support von Prosensor." },
+      { q: "Ist für die Installation ein Techniker erforderlich?", a: "Nein. Es genügt, den Router mit dem Internet zu verbinden und die Sonde durch Drücken der Taste am Gehäuse zu starten." },
       { q: "Sind die Sonden für Außenbedingungen geeignet?", a: "Ja. Sie sind für Kompostbedingungen ausgelegt: Feuchtigkeit, UV, korrosive Umgebung und hohe Temperaturen." },
       { q: "Kann eine Sonde während einer laufenden Kampagne ersetzt werden?", a: "Ja. Historische Daten bleiben erhalten und die Ersatzsonde kann die Kampagne fortführen." },
     ],
@@ -377,7 +373,7 @@ const deSections: FaqSection[] = [
     title: "Infrastruktur, Konnektivität und Router",
     items: [
       { q: "Ist ein Router weiterhin nötig, wenn die Büros in der Nähe sind?", a: "Ja. Der Router sollte nahe an den Kompostbereichen positioniert werden, um die Funksignale zuverlässig zu erfassen." },
-      { q: "Welche Internetverbindung benötigt der Router?", a: "Je nach Setup können Gateways 4G/LTE, Ethernet oder den vorhandenen Internetzugang nutzen." },
+      { q: "Welche Internetverbindung benötigt der Router?", a: "Idealerweise Ethernet. Für Standorte ohne Internetanschluss gibt es 4G-Lösungen." },
       { q: "Was passiert bei einem vorübergehenden Internetausfall?", a: "Temporäre Ausfälle können die Echtzeitübertragung beeinträchtigen. Für kritische Phasen wird eine stabile Verbindung empfohlen." },
       { q: "Können mehrere Standorte mit einem Konto verwaltet werden?", a: "Ja. Der Multi-Site-Modus ermöglicht eine zentrale Überwachung mehrerer Plattformen." },
     ],
@@ -387,8 +383,7 @@ const deSections: FaqSection[] = [
     items: [
       { q: "Welche Temperaturen gelten für die Hygienisierungs-Compliance?", a: "Übliche Referenzen: 55°C für 2 Wochen, 65°C für 1 Woche oder 70°C für 3 Tage. GreenSensor hilft bei der Dokumentation." },
       { q: "Hilft GreenSensor, Selbstentzündung zu vermeiden?", a: "Ja. SMS/E-Mail-Warnungen können bei hohen Schwellen ausgelöst werden, um frühzeitig zu reagieren." },
-      { q: "Ist GreenSensor mit HACCP-Workflows kompatibel?", a: "Ja. Die kontinuierliche Temperatur-Rückverfolgbarkeit unterstützt HACCP-ähnliche Kontrollen und Qualitätssysteme." },
-      { q: "Wie werden Warnungen konfiguriert und zugewiesen?", a: "Schwellenwerte können pro Sonde oder Gruppe gesetzt und an mehrere Empfänger gleichzeitig gesendet werden." },
+      { q: "Wie werden Warnungen konfiguriert und zugewiesen?", a: "Direkt auf der Plattform: Jeder Nutzer legt die Alarmschwellen und die Empfänger selbst fest." },
     ],
   },
   {
@@ -412,7 +407,7 @@ const deSections: FaqSection[] = [
   {
     title: "Preise, Aktivierung und Sammelbestellungen",
     items: [
-      { q: "Besteht die Preisstruktur aus Hardwarekauf, Abo oder beidem?", a: "Die Preisgestaltung kombiniert in der Regel Hardware und Plattformservices, angepasst an Ihre Konfiguration." },
+      { q: "Kann man die Sonden kaufen?", a: "Ja. Die Sonden werden mit jährlichem Zugang zur GreenSensor-Plattform verkauft. Eine Erstbestellung umfasst oft einige Sonden und ein Gateway zum Testen, danach wechseln die Standorte zu Dutzenden von Sonden. Kontaktieren Sie uns für ein Angebot für Ihren Standort." },
       { q: "Gibt es Rabatte bei größeren Bestellungen?", a: "Ja, Mengenpreise sind je nach Stückzahl und Multi-Site-Bedarf möglich." },
       { q: "Was decken Aktivierungsgebühren ab?", a: "Sie decken üblicherweise Konto-Onboarding und Infrastrukturregistrierung ab." },
     ],
@@ -472,7 +467,7 @@ const ptSections: FaqSection[] = [
       { q: "Qual é o alcance de transmissão das sondas GreenSensor?", a: "As sondas comunicam sem fio até cerca de 2 km em áreas abertas. O alcance real depende de obstáculos e da configuração do local." },
       { q: "Quantos sensores de temperatura cada sonda inclui?", a: "Cada sonda inclui um ou dois pontos de medição, conforme o comprimento do modelo, para monitorizar superfície e núcleo." },
       { q: "A que profundidade deve ser medida a temperatura na leira?", a: "A medição deve ser feita no núcleo da leira, pelo menos a 50 cm e, idealmente, entre 80 cm e 1 m." },
-      { q: "A instalação requer técnico?", a: "Não. A solução foi concebida para auto-instalação rápida, com suporte remoto opcional da Prosensor." },
+      { q: "A instalação requer técnico?", a: "Não. Basta ligar o router à Internet e arrancar a sonda premindo o botão da caixa." },
       { q: "As sondas resistem a condições exteriores?", a: "Sim. Foram concebidas para condições de compostagem: humidade, UV, ambiente corrosivo e altas temperaturas." },
       { q: "É possível substituir uma sonda durante uma campanha ativa?", a: "Sim. O histórico mantém-se e a nova sonda pode continuar a mesma campanha." },
     ],
@@ -481,7 +476,7 @@ const ptSections: FaqSection[] = [
     title: "Infraestrutura, conectividade e routers",
     items: [
       { q: "O router continua a ser necessário se os escritórios estiverem perto?", a: "Sim. O router deve ficar próximo da área de compostagem para recolher os dados rádio das sondas com fiabilidade." },
-      { q: "Que ligação à Internet o router precisa?", a: "Consoante a configuração, o gateway pode usar 4G/LTE, Ethernet ou a ligação existente no local." },
+      { q: "Que ligação à Internet o router precisa?", a: "Idealmente Ethernet. Para os locais sem ligação à Internet, existem soluções 4G." },
       { q: "O que acontece em caso de perda temporária de Internet?", a: "Falhas temporárias podem afetar a transmissão em tempo real. Recomenda-se uma ligação estável em fases críticas." },
       { q: "É possível gerir vários locais com uma só conta?", a: "Sim. O modo multi-site permite monitorização centralizada de várias plataformas." },
     ],
@@ -491,8 +486,7 @@ const ptSections: FaqSection[] = [
     items: [
       { q: "Que temperaturas são usadas para conformidade de higienização?", a: "Referências típicas: 55°C por 2 semanas, 65°C por 1 semana ou 70°C por 3 dias. O GreenSensor ajuda a documentar estes períodos." },
       { q: "O GreenSensor ajuda a prevenir combustão espontânea?", a: "Sim. Alertas SMS/email podem ser acionados em limiares altos para ação preventiva." },
-      { q: "O GreenSensor é compatível com fluxos HACCP?", a: "Sim. A rastreabilidade contínua da temperatura apoia controlos tipo HACCP e sistemas de qualidade." },
-      { q: "Como configurar e atribuir alertas?", a: "Os limiares podem ser definidos por sonda ou grupo e enviados para vários destinatários em simultâneo." },
+      { q: "Como configurar e atribuir alertas?", a: "Diretamente na plataforma: cada utilizador define os limiares de alerta e os destinatários." },
     ],
   },
   {
@@ -516,7 +510,7 @@ const ptSections: FaqSection[] = [
   {
     title: "Preços, ativação e encomendas em volume",
     items: [
-      { q: "O preço é compra de hardware, subscrição ou ambos?", a: "Normalmente combina hardware e serviços da plataforma, ajustados à sua configuração." },
+      { q: "É possível comprar as sondas?", a: "Sim. As sondas são vendidas com o acesso anual à plataforma GreenSensor. Uma primeira encomenda inclui muitas vezes algumas sondas e um gateway para testar, e depois os locais passam a dezenas de sondas. Contacte-nos para um orçamento adaptado ao seu local." },
       { q: "Há descontos para encomendas maiores?", a: "Sim, podem ser aplicados preços por volume, dependendo das quantidades e necessidades multi-site." },
       { q: "O que cobrem as taxas de ativação?", a: "Cobrem normalmente o onboarding da conta e o registo da infraestrutura." },
     ],
@@ -576,7 +570,7 @@ const roSections: FaqSection[] = [
       { q: "Care este raza de transmisie a sondelor GreenSensor?", a: "Sondele comunică wireless până la aproximativ 2 km în zone deschise. Raza efectivă depinde de obstacole și de configurația locației." },
       { q: "Câți senzori de temperatură include fiecare sondă?", a: "Fiecare sondă include unul sau două puncte de măsurare, în funcție de lungimea modelului, pentru suprafață și nucleu." },
       { q: "La ce adâncime se măsoară temperatura în grămadă?", a: "Temperatura trebuie măsurată în nucleu, cel puțin la 50 cm și ideal între 80 cm și 1 m." },
-      { q: "Instalarea necesită tehnician?", a: "Nu. Soluția este proiectată pentru instalare rapidă în regim propriu, cu suport remote opțional de la Prosensor." },
+      { q: "Instalarea necesită tehnician?", a: "Nu. Este suficient să conectați routerul la internet și să porniți sonda apăsând butonul de pe carcasă." },
       { q: "Sondele rezistă la condiții exterioare?", a: "Da. Sunt proiectate pentru condiții de compostare: umiditate, UV, mediu coroziv și temperaturi ridicate." },
       { q: "Se poate înlocui o sondă în timpul unei campanii active?", a: "Da. Istoricul rămâne disponibil, iar sonda nouă poate continua aceeași campanie." },
     ],
@@ -585,7 +579,7 @@ const roSections: FaqSection[] = [
     title: "Infrastructură, conectivitate și routere",
     items: [
       { q: "Mai este necesar un router dacă birourile sunt aproape?", a: "Da. Routerul trebuie poziționat aproape de zona de compostare pentru colectarea fiabilă a datelor radio." },
-      { q: "Ce conexiune la internet necesită routerul?", a: "În funcție de configurație, gateway-urile pot folosi 4G/LTE, Ethernet sau conexiunea existentă a locației." },
+      { q: "Ce conexiune la internet necesită routerul?", a: "Ideal prin Ethernet. Pentru locațiile fără conexiune la internet există soluții 4G." },
       { q: "Ce se întâmplă la pierderea temporară a internetului?", a: "Întreruperile temporare pot afecta transmiterea în timp real. Se recomandă conexiune stabilă în fazele critice." },
       { q: "Se pot gestiona mai multe locații dintr-un singur cont?", a: "Da. Modul multi-site permite monitorizare centralizată pentru mai multe platforme." },
     ],
@@ -595,8 +589,7 @@ const roSections: FaqSection[] = [
     items: [
       { q: "Ce temperaturi sunt folosite pentru conformitatea igienizării?", a: "Referințe uzuale: 55°C timp de 2 săptămâni, 65°C timp de 1 săptămână sau 70°C timp de 3 zile. GreenSensor ajută la documentarea acestor perioade." },
       { q: "Ajută GreenSensor la prevenirea autoaprinderii?", a: "Da. Alertele SMS/email pot fi declanșate la praguri înalte pentru intervenție preventivă." },
-      { q: "Este GreenSensor compatibil cu fluxuri HACCP?", a: "Da. Trasabilitatea continuă a temperaturii susține controale de tip HACCP și sisteme de calitate." },
-      { q: "Cum se configurează și alocă alertele?", a: "Pragurile se pot seta pe sondă sau grup, iar alertele se pot trimite simultan către mai mulți destinatari." },
+      { q: "Cum se configurează și alocă alertele?", a: "Direct pe platformă: fiecare utilizator stabilește singur pragurile de alertă și destinatarii." },
     ],
   },
   {
@@ -620,7 +613,7 @@ const roSections: FaqSection[] = [
   {
     title: "Prețuri, activare și comenzi în volum",
     items: [
-      { q: "Prețul înseamnă achiziție hardware, abonament sau ambele?", a: "De regulă, prețul combină hardware și servicii de platformă, adaptate configurației dvs." },
+      { q: "Se pot cumpăra sondele?", a: "Da. Sondele se cumpără cu accesul anual la platforma GreenSensor. O primă comandă include adesea câteva sonde și un gateway pentru testare, apoi amplasamentele trec la zeci de sonde. Contactați-ne pentru o ofertă adaptată locației dvs." },
       { q: "Există reduceri pentru comenzi mai mari?", a: "Da, se pot discuta prețuri de volum în funcție de cantități și nevoi multi-site." },
       { q: "Ce acoperă taxele de activare?", a: "Acoperă în mod obișnuit onboarding-ul contului și înregistrarea infrastructurii." },
     ],
@@ -636,62 +629,250 @@ const roSections: FaqSection[] = [
   },
 ]
 
-export function FaqPageContent() {
-  const { language } = useI18n()
-  const isFr = language === "fr"
-  const isEs = language === "es"
-  const isDe = language === "de"
-  const isPt = language === "pt"
-  const isRo = language === "ro"
-  const sections = isFr ? frSections : isEs ? esSections : isDe ? deSections : isPt ? ptSections : isRo ? roSections : enSections
-  const totalQuestions = sections.reduce((acc, section) => acc + section.items.length, 0)
+const norm = (v: string) => v.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
 
-  return (
-    <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
-      <nav className="text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-[#3eab35] transition-colors">
-          {isFr ? "Accueil" : isEs ? "Inicio" : isDe ? "Start" : isPt ? "Início" : isRo ? "Acasă" : "Home"}
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="text-gray-700 font-medium">FAQ</span>
-      </nav>
-
-      <header className="rounded-3xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm mb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-          {isFr ? "Questions fréquentes GreenSensor" : isEs ? "Preguntas frecuentes GreenSensor" : isDe ? "Häufige Fragen zu GreenSensor" : isPt ? "Perguntas frequentes GreenSensor" : isRo ? "Întrebări frecvente GreenSensor" : "GreenSensor Frequently Asked Questions"}
-        </h1>
-        <p className="text-[#3eab35] mt-2 font-medium">
-          {isFr ? "Sondes connectées, loi AGEC, conformité, alertes et exploitation terrain" : isEs ? "Sondas conectadas, ley AGEC, cumplimiento, alertas y uso en campo" : isDe ? "Vernetzte Sonden, AGEC-Gesetz, Compliance, Warnungen und Feldeinsatz" : isPt ? "Sondas conectadas, lei AGEC, conformidade, alertas e operação no terreno" : isRo ? "Sonde conectate, legea AGEC, conformitate, alerte și operare în teren" : "Connected probes, AGEC law, compliance, alerts and field operations"}
-        </p>
-        <div className="mt-4 text-sm text-gray-600">
-          {totalQuestions} {isFr ? "questions disponibles" : isEs ? "preguntas disponibles" : isDe ? "verfügbare Fragen" : isPt ? "perguntas disponíveis" : isRo ? "întrebări disponibile" : "questions available"}
-        </div>
-      </header>
-
-      <div className="space-y-8">
-        {sections.map((section) => (
-          <section key={section.title} className="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-sm">
-            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">{section.title}</h2>
-            <Accordion type="single" collapsible className="w-full">
-              {section.items.map((item, idx) => (
-                <AccordionItem
-                  key={`${section.title}-${idx}`}
-                  value={`${section.title}-${idx}`}
-                  className="border border-gray-200 mb-3 rounded-xl overflow-hidden bg-white"
-                >
-                  <AccordionTrigger className="px-4 py-3 text-left hover:no-underline hover:bg-gray-50">
-                    <span className="font-medium text-gray-900">{item.q}</span>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-4 pb-4 text-gray-600 leading-relaxed">
-                    {item.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </section>
-        ))}
-      </div>
-    </div>
-  )
+const UI: Record<FaqLang, { home: string; title: string; lead: string; count: string; search: string; none: string; ctaTitle: string; ctaText: string; categories: string; results: string }> = {
+  fr: {
+    home: "Accueil",
+    title: "Questions fréquentes",
+    lead: "Le produit, l'installation, la plateforme, la réglementation et la commande : tout ce qu'il faut savoir sur GreenSensor.",
+    count: "questions",
+    search: "Rechercher une question",
+    none: "Aucune question ne correspond à votre recherche.",
+    ctaTitle: "Une question sans réponse ?",
+    ctaText: "Un conseiller Prosensor vous répond par téléphone ou par e-mail.",
+    categories: "Thèmes",
+    results: "résultats",
+  },
+  en: {
+    home: "Home",
+    title: "Frequently asked questions",
+    lead: "The product, installation, the platform, regulation and ordering: everything you need to know about GreenSensor.",
+    count: "questions",
+    search: "Search a question",
+    none: "No question matches your search.",
+    ctaTitle: "Still have a question?",
+    ctaText: "A Prosensor advisor will answer by phone or e-mail.",
+    categories: "Topics",
+    results: "results",
+  },
+  es: {
+    home: "Inicio",
+    title: "Preguntas frecuentes",
+    lead: "El producto, la instalación, la plataforma, la normativa y el pedido: todo lo que necesita saber sobre GreenSensor.",
+    count: "preguntas",
+    search: "Buscar una pregunta",
+    none: "Ninguna pregunta coincide con su búsqueda.",
+    ctaTitle: "¿Tiene otra pregunta?",
+    ctaText: "Un asesor de Prosensor le responde por teléfono o por correo.",
+    categories: "Temas",
+    results: "resultados",
+  },
+  de: {
+    home: "Start",
+    title: "Häufige Fragen",
+    lead: "Produkt, Installation, Plattform, Vorschriften und Bestellung: alles, was Sie über GreenSensor wissen müssen.",
+    count: "Fragen",
+    search: "Frage suchen",
+    none: "Keine Frage entspricht Ihrer Suche.",
+    ctaTitle: "Noch eine Frage?",
+    ctaText: "Ein Prosensor-Berater antwortet per Telefon oder E-Mail.",
+    categories: "Themen",
+    results: "Ergebnisse",
+  },
+  pt: {
+    home: "Início",
+    title: "Perguntas frequentes",
+    lead: "O produto, a instalação, a plataforma, a regulamentação e a encomenda: tudo o que precisa de saber sobre o GreenSensor.",
+    count: "perguntas",
+    search: "Pesquisar uma pergunta",
+    none: "Nenhuma pergunta corresponde à sua pesquisa.",
+    ctaTitle: "Ainda tem uma pergunta?",
+    ctaText: "Um consultor da Prosensor responde por telefone ou por e-mail.",
+    categories: "Temas",
+    results: "resultados",
+  },
+  ro: {
+    home: "Acasă",
+    title: "Întrebări frecvente",
+    lead: "Produsul, instalarea, platforma, reglementările și comanda: tot ce trebuie să știți despre GreenSensor.",
+    count: "întrebări",
+    search: "Caută o întrebare",
+    none: "Nicio întrebare nu corespunde căutării dvs.",
+    ctaTitle: "Mai aveți o întrebare?",
+    ctaText: "Un consultant Prosensor vă răspunde prin telefon sau e-mail.",
+    categories: "Teme",
+    results: "rezultate",
+  },
 }
 
+const historic: Record<FaqLang, FaqSection[]> = { fr: frSections, en: enSections, es: esSections, de: deSections, pt: ptSections, ro: roSections }
+
+/** Page FAQ : bandeau sombre avec recherche, thèmes à gauche, questions à droite, puis appel à l'action. */
+export function FaqPageContent() {
+  const { language, t } = useI18n()
+  const lang = language as FaqLang
+  const ui = UI[lang]
+  const [query, setQuery] = useState("")
+  const [active, setActive] = useState(0)
+
+  const sections = useMemo(() => {
+    const extra = faqExtra[lang]
+    const drop = extra.drop.map(norm)
+    const kept = historic[lang]
+      .map((section) => ({ ...section, items: section.items.filter((item) => !drop.some((d) => norm(item.q).startsWith(d))) }))
+      .filter((section) => section.items.length > 0)
+    return [...extra.before, ...kept, ...extra.after]
+  }, [lang])
+
+  const total = sections.reduce((acc, section) => acc + section.items.length, 0)
+  const q = norm(query.trim())
+  const visible = useMemo(
+    () =>
+      sections
+        .map((section) => ({ ...section, items: q ? section.items.filter((item) => norm(item.q + " " + item.a).includes(q)) : section.items }))
+        .filter((section) => section.items.length > 0),
+    [sections, q],
+  )
+  const found = visible.reduce((acc, section) => acc + section.items.length, 0)
+
+  // Le thème affiché dans la liste de gauche suit le défilement.
+  useEffect(() => {
+    const els = visible.map((_, i) => document.getElementById(`faq-section-${i}`)).filter(Boolean) as HTMLElement[]
+    if (!els.length) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const hit = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0]
+        if (hit) setActive(Number(hit.target.id.replace("faq-section-", "")))
+      },
+      { rootMargin: "-20% 0px -65% 0px" },
+    )
+    els.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [visible])
+
+  return (
+    <>
+      <section aria-labelledby="faq-page-title" className="on-dark relative isolate overflow-hidden bg-forest-950 pb-14 pt-10 text-white md:pb-20 md:pt-14">
+        <div aria-hidden className="grid-bg absolute inset-0 -z-10" />
+        <div
+          aria-hidden
+          className="absolute -right-48 -top-24 -z-10 size-[620px] rounded-full opacity-60"
+          style={{ background: "radial-gradient(closest-side, rgba(62,171,53,0.16), transparent)" }}
+        />
+        <Container className="flex flex-col gap-6">
+          <nav aria-label="Breadcrumb" className="text-sm text-white/60">
+            <Link href="/" className="transition-colors hover:text-white">
+              {ui.home}
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="font-medium text-white/90">FAQ</span>
+          </nav>
+          <h1 id="faq-page-title" className="font-display text-[34px] font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-[44px] lg:text-[52px]">
+            {ui.title}
+          </h1>
+          <p className="max-w-2xl font-alt text-base leading-[1.6] text-white/75 md:text-lg">{ui.lead}</p>
+
+          <div className="mt-2 flex max-w-xl flex-col gap-2">
+            <label htmlFor="faq-search" className="sr-only">
+              {ui.search}
+            </label>
+            <div className="relative">
+              <Search aria-hidden className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-white/50" />
+              <input
+                id="faq-search"
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder={ui.search}
+                autoComplete="off"
+                className="h-14 w-full rounded-btn border border-white/20 bg-white/10 pl-12 pr-4 text-base text-white placeholder:text-white/50 focus:border-moss-400 focus:outline-none"
+              />
+            </div>
+            <p aria-live="polite" className="text-sm text-white/60">
+              {q ? `${found} ${ui.results}` : `${total} ${ui.count}`}
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-surface py-12 md:py-16">
+        <Container className="grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[250px_minmax(0,1fr)] lg:gap-14">
+          <nav aria-label={ui.categories} className="hidden lg:block">
+            <div className="sticky top-28">
+              <p className="mb-3 font-display text-sm font-bold text-slate">{ui.categories}</p>
+              <ul className="flex flex-col">
+                {visible.map((section, i) => (
+                  <li key={section.title}>
+                    <a
+                      href={`#faq-section-${i}`}
+                      aria-current={active === i ? "true" : undefined}
+                      className={cn(
+                        "flex items-baseline justify-between gap-3 rounded-md px-3 py-2 text-[15px] leading-snug transition-colors",
+                        active === i ? "bg-moss-100 font-semibold text-forest" : "text-body hover:bg-surface-2 hover:text-ink-strong",
+                      )}
+                    >
+                      <span>{section.title}</span>
+                      <span className="text-xs tabular-nums text-mute">{section.items.length}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </nav>
+
+          <div className="flex min-w-0 flex-col gap-8">
+            {visible.length === 0 && <p className="rounded-panel border border-line bg-white p-8 text-center text-body">{ui.none}</p>}
+            {visible.map((section, i) => (
+              <section key={section.title} id={`faq-section-${i}`} aria-labelledby={`faq-heading-${i}`} className="scroll-mt-28">
+                <h2 id={`faq-heading-${i}`} className="mb-4 font-display text-2xl font-extrabold leading-tight tracking-[-0.01em] text-ink-strong">
+                  {section.title}
+                </h2>
+                <Accordion type="single" collapsible className="overflow-hidden rounded-panel border border-line bg-white">
+                  {section.items.map((item, idx) => (
+                    <AccordionItem key={`${section.title}-${idx}`} value={`${i}-${idx}`} className="border-b border-line px-5 last:border-b-0 sm:px-7">
+                      <AccordionTrigger className="gap-4 py-5 text-left font-heading text-[17px] font-extrabold leading-snug text-ink-strong hover:no-underline">
+                        {item.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-7 pt-0 text-base text-body">
+                        <FaqAnswer text={item.a} />
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </section>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section aria-labelledby="faq-cta-title" className="on-dark bg-forest py-14 text-white md:py-16">
+        <Container className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-xl">
+            <h2 id="faq-cta-title" className="font-display text-[28px] font-extrabold leading-[1.15] tracking-[-0.01em] md:text-[34px]">
+              {ui.ctaTitle}
+            </h2>
+            <p className="mt-3 font-alt text-base leading-[1.6] text-white/80 md:text-lg">{ui.ctaText}</p>
+            <ul className="mt-5 flex flex-col gap-3 text-[15px] sm:flex-row sm:gap-8">
+              <li className="flex items-center gap-3">
+                <Phone aria-hidden className="size-5 text-mint" />
+                <a href={`tel:${t.demo.phone_value.replace(/\s/g, "")}`} className="hover:underline">
+                  {t.demo.phone_value}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail aria-hidden className="size-5 text-mint" />
+                <a href={`mailto:${t.demo.email_value}`} className="hover:underline">
+                  {t.demo.email_value}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <Link href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "shrink-0 self-start")}>
+            {t.hero.cta}
+          </Link>
+        </Container>
+      </section>
+    </>
+  )
+}

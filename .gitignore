@@ -40,3 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.claude
+# outils et fichiers locaux, hors du site
+/config-sonde/
+/rapport-phase-fermentation.pdf
+skills-lock.json

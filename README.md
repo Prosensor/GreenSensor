@@ -264,9 +264,9 @@ Fichier : [`components/documentation/documentation-content.tsx`](components/docu
 Placer le fichier dans `public/` et mettre à jour la référence dans le composant concerné. Préférer `next/image` pour les images above-the-fold (hero).
 
 Images clés :
-- `public/2026_greensensor_BanWeb2.jpg` — bannière hero
-- `public/sonde hero.png` — visuel sonde
-- `public/GreenSensor_Logo_horiz.png` — logo header
+- `public/sonde-sur-tas.jpg` — photo de la sonde plantée dans l'andain (section sonde de l'accueil)
+- `public/GreenSensor_Logo_horiz.png` — logo
+- `public/logo-greensensor-by-prosensor-white.png` — logo du header
 
 ### Modifier les pages légales
 
@@ -360,7 +360,6 @@ Documents BMAD générés pour cadrer le produit et le projet. **À lire en prio
 | [`docs/PRD-GreenSensor-v1.0.md`](docs/PRD-GreenSensor-v1.0.md) | Product Requirements Document — objectifs, personas, features, critères d'acceptation |
 | [`docs/Backlog-GreenSensor-v1.0.md`](docs/Backlog-GreenSensor-v1.0.md) | 25 user stories découpées en 5 epics |
 | [`docs/Kanban-GreenSensor.md`](docs/Kanban-GreenSensor.md) | Suivi opérationnel — ce qui est fait / en cours / à faire |
-| `docs/*-Template-BMAD.md` | Templates vides BMAD (référence méthodo) |
 
 ---
 
@@ -411,7 +410,7 @@ Setup Next.js, design system, home complète, i18n 6 langues, FAQ, documentation
 
 ### Image hero lente (LCP)
 
-Optimiser `public/2026_greensensor_BanWeb2.jpg` (WebP, dimensions adaptées) — voir Web-15.
+Optimiser les images lourdes de `public/` (WebP, dimensions adaptées), en priorité `visu.jpg` et `faq.jpg` — voir Web-15.
 
 ### `npm run dev` — port déjà utilisé
 

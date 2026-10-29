@@ -134,7 +134,7 @@ export default function FaqPage() {
   return (
     <>
       <SiteHeader />
-      <main className="min-h-screen bg-gray-50/50">
+      <main id="main">
         <FaqPageContent />
       </main>
       <SiteFooter />

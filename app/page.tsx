@@ -1,29 +1,39 @@
-import { HeroSection } from "@/components/hero-section"
-import { FeaturesSection } from "@/components/features-section"
-import { RunSection } from "@/components/run-section"
-import { KeyFeaturesSection } from "@/components/key-features-section"
-import { DownloadSection } from "@/components/download-section"
+import { LiveHero } from "@/components/live-hero"
+import { TrustBand } from "@/components/trust-band"
+import { ChallengeSection } from "@/components/challenge-section"
+import { ChainSection } from "@/components/chain-section"
+import { CurveSection } from "@/components/curve-section"
+import { ReportSection } from "@/components/report-section"
+import { SpecsSection } from "@/components/specs-section"
+import { PlatformSection } from "@/components/platform-section"
+import { WhySection } from "@/components/why-section"
 import { FaqSection } from "@/components/faq-section"
-import { DocumentationSection } from "@/components/documentation-section"
 import { DemoSection } from "@/components/demo-section"
+import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { MobileCta } from "@/components/mobile-cta"
 import type { Metadata, Viewport } from "next"
 import { cookies } from "next/headers"
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-1">
-        <HeroSection />
-        <FeaturesSection />
-        <RunSection />
-        <KeyFeaturesSection />
-        <DownloadSection />
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
+      <main id="main" className="flex-1">
+        <LiveHero />
+        <TrustBand />
+        <ChallengeSection />
+        <ChainSection />
+        <CurveSection />
+        <ReportSection />
+        <SpecsSection />
+        <PlatformSection />
+        <WhySection />
         <FaqSection />
-        <DocumentationSection />
         <DemoSection />
       </main>
       <SiteFooter />
+      <MobileCta />
     </div>
   )
 }
@@ -134,7 +144,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export function generateViewport(): Viewport {
   return {
-    themeColor: "#3eab35",
+    themeColor: "#1b4a2a",
   }
 }
 

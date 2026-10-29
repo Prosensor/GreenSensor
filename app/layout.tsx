@@ -1,19 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo, Inter, Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/i18n/i18n-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Script from "next/script";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// Mêmes familles que le site principal Prosensor : Archivo (titres), Sora (navigation, boutons),
+// Inter (texte), Manrope (chapôs et légendes).
+const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin", "latin-ext"], weight: ["700", "800"], display: "swap" });
+const sora = Sora({ variable: "--font-sora", subsets: ["latin", "latin-ext"], weight: ["600", "700", "800"], display: "swap" });
+const inter = Inter({ variable: "--font-inter", subsets: ["latin", "latin-ext"], display: "swap" });
+const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin", "latin-ext"], weight: ["400", "500", "600"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "GreenSensor - Sonde de température pour le compostage",
@@ -67,7 +64,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#3eab35",
+  themeColor: "#1b4a2a",
 };
 
 export default function RootLayout({
@@ -78,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${archivo.variable} ${sora.variable} ${inter.variable} ${manrope.variable} antialiased`}
       >
         <Script
           strategy="afterInteractive"

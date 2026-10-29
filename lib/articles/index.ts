@@ -4,6 +4,7 @@ export type {
   ArticleSection,
   ArticleBody,
   ArticleDefinition,
+  ArticleCover,
 } from "./types"
 export {
   getAllArticleSlugs,

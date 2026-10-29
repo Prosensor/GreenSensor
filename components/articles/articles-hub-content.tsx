@@ -1,113 +1,128 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, BookOpen } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
-import { getArticleList, resolveArticleBody, resolveReadingMinutes } from "@/lib/articles"
+import { Container } from "@/components/ui/container"
+import { getArticleList, resolveArticleBody, resolveReadingMinutes, type ArticleDefinition } from "@/lib/articles"
+import { ARTICLES_UI, formatDate } from "@/components/articles/articles-ui"
 
-function excerpt(text: string, max = 180) {
+function excerpt(text: string, max = 170) {
   const t = text.replace(/\s+/g, " ").trim()
   if (t.length <= max) return t
-  return `${t.slice(0, max).trim()}…`
+  const cut = t.slice(0, max)
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:\s]+$/, "")}…`
 }
 
+/** Hub des articles : bandeau sombre, article à la une en grand, puis les autres en cartes avec photo. */
 export function ArticlesHubContent() {
   const { language, t } = useI18n()
   const ah = t.articlesHub
-  const list = getArticleList()
+  const ui = ARTICLES_UI[language]
+  const [featured, ...others] = getArticleList()
 
-  const dateLocale =
-    language === "fr"
-      ? "fr-FR"
-      : language === "es"
-        ? "es-ES"
-        : language === "de"
-          ? "de-DE"
-          : language === "pt"
-            ? "pt-PT"
-            : language === "ro"
-              ? "ro-RO"
-              : "en-US"
+  const meta = (a: ArticleDefinition) => `${formatDate(a.publishedAt, ui.locale)}, ${resolveReadingMinutes(a, language)} ${ah.minRead}`
 
   return (
-    <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
-      <nav className="text-sm text-gray-500 mb-6" aria-label="Breadcrumb">
-        <Link href="/" className="hover:text-[#3eab35] transition-colors">
-          {t.nav.home}
-        </Link>
-        <span className="mx-2" aria-hidden>
-          /
-        </span>
-        <span className="text-gray-700 font-medium">{t.nav.articles}</span>
-      </nav>
+    <>
+      <section aria-labelledby="articles-title" className="on-dark relative isolate overflow-hidden bg-forest-950 pb-14 pt-10 text-white md:pb-20 md:pt-14">
+        <div aria-hidden className="grid-bg absolute inset-0 -z-10" />
+        <div
+          aria-hidden
+          className="absolute -right-48 -top-24 -z-10 size-[620px] rounded-full opacity-60"
+          style={{ background: "radial-gradient(closest-side, rgba(62,171,53,0.16), transparent)" }}
+        />
+        <Container className="flex flex-col gap-6">
+          <nav aria-label="Breadcrumb" className="text-sm text-white/60">
+            <Link href="/" className="transition-colors hover:text-white">
+              {t.nav.home}
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="font-medium text-white/90">{t.nav.articles}</span>
+          </nav>
+          <h1 id="articles-title" className="font-display text-[34px] font-extrabold leading-[1.1] tracking-[-0.02em] sm:text-[44px] lg:text-[52px]">
+            {ah.heading}
+          </h1>
+          <p className="max-w-2xl font-alt text-base leading-[1.6] text-white/75 md:text-lg">{ah.intro}</p>
+        </Container>
+      </section>
 
-      <header className="rounded-3xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm mb-8">
-        <div className="flex items-start gap-4">
-          <div className="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#3eab35]/10 text-[#3eab35]">
-            <BookOpen className="h-6 w-6" aria-hidden />
-          </div>
-          <div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">{ah.heading}</h1>
-            <p className="text-[#3eab35] mt-2 font-medium">{ah.subtitle}</p>
-            <p className="mt-4 text-gray-600 leading-relaxed max-w-3xl">{ah.intro}</p>
-            <p className="mt-4 text-sm text-gray-600">
-              {list.length} {ah.countSuffix}
-            </p>
-          </div>
-        </div>
-      </header>
-
-      {list.length === 0 ? (
-        <p className="rounded-2xl border border-dashed border-gray-300 bg-white px-6 py-12 text-center text-gray-600">
-          {ah.empty}
-        </p>
-      ) : (
-        <ul className="grid gap-6 lg:grid-cols-2">
-          {list.map((article) => {
-            const body = resolveArticleBody(article, language)
-            const mins = resolveReadingMinutes(article, language)
-            const dateStr = new Intl.DateTimeFormat(dateLocale, {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            }).format(new Date(article.publishedAt))
-
-            return (
-              <li key={article.slug} className="flex">
-                <article className="flex flex-col w-full rounded-2xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm hover:border-[#3eab35]/40 hover:shadow-md transition-all">
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-500 mb-3">
-                    <time dateTime={article.publishedAt}>
-                      {ah.published} {dateStr}
-                    </time>
-                    <span aria-hidden>·</span>
-                    <span>
-                      {mins} {ah.minRead}
-                    </span>
-                  </div>
-                  <h2 className="text-xl font-semibold text-gray-900 mb-3">
-                    <Link
-                      href={`/articles/${article.slug}`}
-                      className="hover:text-[#3eab35] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3eab35]/40 rounded-sm"
-                    >
-                      {body.title}
+      <section className="bg-surface py-12 md:py-16">
+        <Container className="flex flex-col gap-10 md:gap-12">
+          {!featured ? (
+            <p className="rounded-panel border border-line bg-white p-10 text-center text-body">{ah.empty}</p>
+          ) : (
+            <>
+              <article className="grid overflow-hidden rounded-panel bg-white shadow-[0_30px_70px_-44px_rgba(15,42,24,0.5)] ring-1 ring-line lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)]">
+                <Link href={`/articles/${featured.slug}`} aria-hidden tabIndex={-1} className="relative block min-h-[260px] lg:min-h-[400px]">
+                  <Image
+                    src={featured.cover.src}
+                    alt=""
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 660px, 100vw"
+                    className="object-cover"
+                    style={{ objectPosition: featured.cover.position }}
+                  />
+                </Link>
+                <div className="flex flex-col justify-center gap-4 p-6 sm:p-10">
+                  <p className="font-display text-sm font-bold text-moss-700">
+                    {ui.featured}, {meta(featured)}
+                  </p>
+                  <h2 className="font-display text-[26px] font-extrabold leading-[1.15] tracking-[-0.01em] text-ink-strong md:text-[32px]">
+                    <Link href={`/articles/${featured.slug}`} className="transition-colors hover:text-forest">
+                      {resolveArticleBody(featured, language).title}
                     </Link>
                   </h2>
-                  <p className="text-gray-600 leading-relaxed mb-5 text-sm sm:text-base flex-1">
-                    {excerpt(body.intro)}
-                  </p>
-                  <Link
-                    href={`/articles/${article.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#3eab35] hover:text-[#2f8a29] transition-colors mt-auto"
-                  >
+                  <p className="text-base leading-relaxed text-body">{excerpt(resolveArticleBody(featured, language).intro, 230)}</p>
+                  <Link href={`/articles/${featured.slug}`} className="inline-flex w-fit items-center gap-2 font-display text-sm font-bold text-forest hover:text-moss-700">
                     {ah.readMore}
-                    <ArrowRight className="h-4 w-4" aria-hidden />
+                    <ArrowRight aria-hidden className="size-4" />
                   </Link>
-                </article>
-              </li>
-            )
-          })}
-        </ul>
-      )}
-    </div>
+                </div>
+              </article>
+
+              {others.length > 0 && (
+                <ul className="grid gap-6 md:grid-cols-2">
+                  {others.map((article) => {
+                    const body = resolveArticleBody(article, language)
+                    return (
+                      <li key={article.slug} className="flex">
+                        <article className="flex w-full flex-col overflow-hidden rounded-panel bg-white ring-1 ring-line">
+                          <Link href={`/articles/${article.slug}`} aria-hidden tabIndex={-1} className="relative block aspect-[16/9] overflow-hidden">
+                            <Image
+                              src={article.cover.src}
+                              alt=""
+                              fill
+                              sizes="(min-width: 768px) 560px, 100vw"
+                              className="object-cover"
+                              style={{ objectPosition: article.cover.position }}
+                            />
+                          </Link>
+                          <div className="flex flex-1 flex-col gap-3 p-6 sm:p-7">
+                            <p className="text-sm font-medium text-slate">{meta(article)}</p>
+                            <h2 className="font-display text-xl font-extrabold leading-snug text-ink-strong">
+                              <Link href={`/articles/${article.slug}`} className="transition-colors hover:text-forest">
+                                {body.title}
+                              </Link>
+                            </h2>
+                            <p className="flex-1 text-[15px] leading-relaxed text-body">{excerpt(body.intro)}</p>
+                            <Link href={`/articles/${article.slug}`} className="inline-flex w-fit items-center gap-2 font-display text-sm font-bold text-forest hover:text-moss-700">
+                              {ah.readMore}
+                              <ArrowRight aria-hidden className="size-4" />
+                            </Link>
+                          </div>
+                        </article>
+                      </li>
+                    )
+                  })}
+                </ul>
+              )}
+            </>
+          )}
+        </Container>
+      </section>
+    </>
   )
 }

@@ -102,7 +102,7 @@ export default function CGU() {
   return (
     <>
       <SiteHeader />
-      <main className="container mx-auto max-w-4xl py-16 px-4">
+      <main id="main" className="container mx-auto max-w-4xl py-16 px-4">
         <CguContent />
       </main>
       <SiteFooter />
