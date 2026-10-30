@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { Linkedin } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
 import { useHomeCopy } from "@/i18n/home-copy"
 import { Container } from "@/components/ui/container"
@@ -32,6 +33,15 @@ export function SiteFooter() {
               <Image src="/2025_LogoGreenSensor_BlancVert.png" alt="GreenSensor" width={150} height={80} className="h-[60px] w-auto" />
             </Link>
             <p className="text-sm leading-[1.5] text-mint">{ft.description}</p>
+            <a
+              href="https://www.linkedin.com/company/green-sensor/posts/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn GreenSensor"
+              className="flex size-10 items-center justify-center rounded-full border border-white/25 text-mint transition-colors hover:border-white hover:text-white"
+            >
+              <Linkedin className="size-5" aria-hidden="true" />
+            </a>
             <div className="flex flex-col gap-2 border-t border-white/15 pt-5">
               <p className="text-xs text-mint">{copy.brandOf}</p>
               <Link

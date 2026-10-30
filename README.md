@@ -244,10 +244,11 @@ Structure : objet `fr`, `en`, `es`, `de`, `pt`, `ro` avec les clés `nav`, `hero
    - `seo` et `body` par langue (minimum `fr` + `en`, idéalement les 6)
    - `relatedSlugs` pour les articles liés
 3. Lancer `npm run build` — Next.js génère automatiquement la page statique
-4. Le sitemap se met à jour automatiquement via `getAllArticleSlugs()`
+4. Le sitemap (`app/sitemap.ts`) se met à jour automatiquement via `getArticleList()`
 
 Articles actuels :
 - `mesurer-temperature-andain-compost`
+- `compost-economie-circulaire-temperature`
 
 ### Modifier la FAQ
 

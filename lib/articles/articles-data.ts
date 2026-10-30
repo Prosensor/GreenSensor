@@ -128,13 +128,185 @@ const measureEn: ArticleBody = {
     "In the core of the pile, at the same depth, every hour and with clear targets: these four rules are enough to turn scattered readings into reliable monitoring. Alerts and the report take care of the rest.",
 }
 
+const circularFr: ArticleBody = {
+  title: "Compost et économie circulaire : suivre la température des andains",
+  intro:
+    "Les biodéchets triés à la source sont compostés sur des plateformes, puis le compost est épandu sur les sols. Pendant le compostage, la température des andains indique si la matière se transforme correctement et si le lot est hygiénisé. Cet article explique comment la suivre et en garder la trace.",
+  takeaways: [
+    "Le compost est épandu sur les sols : les biodéchets triés y reviennent sous forme d’amendement.",
+    "La température de l’andain indique où en est chaque phase, de la fermentation à la maturation.",
+    "Une mesure par heure donne une courbe complète, là où un relevé manuel donne un point par jour.",
+    "L’historique de température documente l’hygiénisation de chaque lot.",
+  ],
+  sections: [
+    {
+      heading: "Du tri des biodéchets au compost",
+      paragraphs: [
+        "Ces dernières années, le tri à la source des biodéchets s’est généralisé en France. Restes alimentaires et déchets verts sont collectés séparément, puis compostés plutôt qu’enfouis ou incinérés.",
+        "Le compostage produit un amendement organique. Épandu sur les sols agricoles, les espaces verts ou les jardins, le compost apporte de la matière organique, améliore la réserve en eau du sol et réduit le besoin d’engrais de synthèse.",
+        "Les plateformes de compostage reçoivent ces déchets et les transforment en compost.",
+      ],
+    },
+    {
+      heading: "Ce que la température indique",
+      paragraphs: [
+        "Dans un andain, les micro-organismes dégradent la matière et dégagent de la chaleur. La température à cœur reflète leur activité.",
+        "Pendant la fermentation, la température monte et reste élevée : c’est ce qui détruit les pathogènes et les graines d’adventices (hygiénisation). Pendant la maturation, elle redescend et se stabilise.",
+        "Un lot qui ne monte pas assez, ou pas assez longtemps, n’est pas hygiénisé. Un lot qui s’emballe indique un manque d’air ou d’eau.",
+      ],
+    },
+    {
+      heading: "Les limites du relevé manuel",
+      paragraphs: [
+        "Sur beaucoup de plateformes, la température se relève encore à la main. Un opérateur parcourt les andains, plante un thermomètre, note la valeur et la reporte ensuite dans un tableau.",
+        "Cette méthode a trois limites :",
+      ],
+      bullets: [
+        "une mesure par jour au mieux, donc rien la nuit ni le week-end ;",
+        "un temps de tournée qui augmente avec le nombre d’andains ;",
+        "une traçabilité qui dépend des feuilles de relevé et de la rigueur de chacun.",
+      ],
+    },
+    {
+      heading: "Suivre chaque andain en continu",
+      paragraphs: [
+        "Une sonde de température connectée est plantée dans l’andain et mesure la température à cœur. La sonde GreenSensor relève la température toutes les heures et transmet les mesures par radio longue portée, jusqu’à 2 km en champ libre.",
+        "Sur la plateforme web, chaque sonde est affectée à un andain et à une campagne de fermentation ou de maturation. Les courbes s’affichent en temps réel, et une alerte SMS ou e-mail est envoyée quand un seuil est dépassé.",
+        "Les retournements et les arrosages peuvent ainsi se décider à partir des mesures plutôt que d’un calendrier fixe, et les équipes passent moins de temps à relever les températures.",
+      ],
+    },
+    {
+      heading: "Documenter l’hygiénisation lot par lot",
+      paragraphs: [
+        "Un agriculteur ou une collectivité qui épand du compost peut vouloir vérifier qu’il a été correctement traité.",
+        "L’historique horaire de chaque campagne montre la montée en température, la durée de maintien et la phase de maturation, lot par lot. Les données s’exportent et les rapports s’impriment pour un audit, une certification ou un client.",
+        "Les données sont archivées automatiquement : elles remplacent les feuilles de relevé.",
+      ],
+    },
+    {
+      heading: "La sonde GreenSensor",
+      paragraphs: [
+        "GreenSensor est conçue et fabriquée en France par Prosensor, spécialiste de la thermométrie depuis plus de 30 ans. Tige en inox 316L, boîtier IP68, 5 ans d’autonomie. La sonde est prête à l’emploi, sans infrastructure lourde à installer.",
+      ],
+    },
+  ],
+  conclusion:
+    "La température indique l’état de chaque lot. La mesurer toutes les heures et conserver l’historique permet de suivre la fermentation et de documenter l’hygiénisation.",
+}
+
+const circularEn: ArticleBody = {
+  title: "Compost and the circular economy: monitoring windrow temperature",
+  intro:
+    "Biowaste sorted at source is composted on platforms, then the compost is spread on soil. During composting, windrow temperature shows whether the material is transforming properly and whether the batch is sanitised. This article explains how to monitor it and keep a record.",
+  takeaways: [
+    "Compost is spread on soil: sorted biowaste goes back to it as a soil amendment.",
+    "Windrow temperature shows where each phase stands, from fermentation to maturation.",
+    "One reading per hour gives a complete curve, where a manual reading gives one point a day.",
+    "The temperature history documents the sanitisation of each batch.",
+  ],
+  sections: [
+    {
+      heading: "From biowaste sorting to compost",
+      paragraphs: [
+        "In recent years, source separation of biowaste has become widespread across France. Food scraps and green waste are collected separately, then composted rather than landfilled or incinerated.",
+        "Composting produces an organic soil amendment. Spread on farmland, green spaces or gardens, compost adds organic matter, improves the soil’s water reserve and reduces the need for synthetic fertiliser.",
+        "Composting platforms receive this waste and turn it into compost.",
+      ],
+    },
+    {
+      heading: "What temperature shows",
+      paragraphs: [
+        "In a windrow, microorganisms break down the material and give off heat. The core temperature reflects their activity.",
+        "During fermentation, the temperature rises and stays high: this is what destroys pathogens and weed seeds (sanitisation). During maturation, it falls and stabilises.",
+        "A batch that does not rise enough, or not for long enough, is not sanitised. A batch that runs away indicates a lack of air or water.",
+      ],
+    },
+    {
+      heading: "The limits of manual readings",
+      paragraphs: [
+        "On many platforms, temperature is still taken by hand. An operator walks the windrows, pushes in a thermometer, notes the value and enters it later in a spreadsheet.",
+        "This method has three limits:",
+      ],
+      bullets: [
+        "one reading a day at best, so nothing at night or over the weekend;",
+        "a round that takes longer as the number of windrows grows;",
+        "traceability that depends on record sheets and on each person’s rigour.",
+      ],
+    },
+    {
+      heading: "Monitor every windrow continuously",
+      paragraphs: [
+        "A connected temperature probe is pushed into the windrow and measures the core temperature. The GreenSensor probe reads the temperature every hour and sends the measurements by long-range radio, up to 2 km in open field.",
+        "On the web platform, each probe is assigned to a windrow and to a fermentation or maturation campaign. Curves are displayed in real time, and an SMS or e-mail alert is sent when a threshold is exceeded.",
+        "Turning and watering can then be decided from the measurements rather than a fixed calendar, and teams spend less time taking readings.",
+      ],
+    },
+    {
+      heading: "Document sanitisation batch by batch",
+      paragraphs: [
+        "A farmer or a local authority spreading compost may want to check that it was properly treated.",
+        "The hourly history of each campaign shows the temperature rise, the holding time and the maturation phase, batch by batch. Data can be exported and reports printed for an audit, a certification or a customer.",
+        "Data is archived automatically: it replaces the record sheets.",
+      ],
+    },
+    {
+      heading: "The GreenSensor probe",
+      paragraphs: [
+        "GreenSensor is designed and made in France by Prosensor, a temperature measurement specialist for over 30 years. 316L stainless steel rod, IP68 housing, 5 years of battery life. The probe is ready to use, with no heavy infrastructure to install.",
+      ],
+    },
+  ],
+  conclusion:
+    "Temperature shows the state of each batch. Measuring it every hour and keeping the history makes it possible to follow fermentation and document sanitisation.",
+}
+
 export const ARTICLES: ArticleDefinition[] = [
+  {
+    slug: "compost-economie-circulaire-temperature",
+    publishedAt: "2026-10-30",
+    cover: { src: "/article-compost-economie-circulaire.jpg", position: "50% 50%" },
+    readingMinutes: { fr: 5, en: 5, es: 5, de: 5, pt: 5, ro: 5 },
+    relatedSlugs: ["mesurer-temperature-andain-compost"],
+    seo: {
+      fr: {
+        title: "Compost et économie circulaire | GreenSensor",
+        description:
+          "Du tri des biodéchets au retour au sol : le rôle de la température des andains dans la qualité du compost, et comment la suivre et la documenter.",
+      },
+      en: {
+        title: "Compost and the circular economy | GreenSensor",
+        description:
+          "From biowaste sorting to the return to the soil: the role of windrow temperature in compost quality, and how to monitor and document it.",
+      },
+      es: {
+        title: "Compost y economía circular | GreenSensor",
+        description:
+          "De la separación de biorresiduos al retorno al suelo: el papel de la temperatura de las hileras en la calidad del compost y cómo seguirla y documentarla.",
+      },
+      de: {
+        title: "Kompost und Kreislaufwirtschaft | GreenSensor",
+        description:
+          "Von der Bioabfalltrennung zurück in den Boden: welche Rolle die Mietentemperatur für die Kompostqualität spielt und wie man sie überwacht und dokumentiert.",
+      },
+      pt: {
+        title: "Compostagem e economia circular | GreenSensor",
+        description:
+          "Da triagem de biorresíduos ao regresso ao solo: o papel da temperatura das leiras na qualidade do composto e como a acompanhar e documentar.",
+      },
+      ro: {
+        title: "Compost și economie circulară | GreenSensor",
+        description:
+          "De la sortarea biodeșeurilor la întoarcerea în sol: rolul temperaturii șirurilor în calitatea compostului și cum se urmărește și se documentează.",
+      },
+    },
+    body: { fr: circularFr, en: circularEn, es: circularEn, de: circularEn, pt: circularEn, ro: circularEn },
+  },
   {
     slug: "mesurer-temperature-andain-compost",
     publishedAt: "2026-10-28",
     cover: { src: "/visu.jpg", position: "50% 55%" },
     readingMinutes: { fr: 5, en: 5, es: 5, de: 5, pt: 5, ro: 5 },
-    relatedSlugs: [],
+    relatedSlugs: ["compost-economie-circulaire-temperature"],
     seo: {
       fr: {
         title: "Mesurer la température d’un andain de compost | GreenSensor",

@@ -113,24 +113,8 @@ export function ArticleDetailContent({ slug }: { slug: ArticleSlug }) {
           </nav>
 
           <div className="min-w-0 max-w-[44rem]">
-            {body.takeaways && (
-              <aside aria-label={ui.takeaways} className="rounded-panel bg-white p-6 ring-1 ring-line sm:p-8">
-                <h2 className="font-display text-lg font-extrabold text-ink-strong">{ui.takeaways}</h2>
-                <ul className="mt-4 flex flex-col gap-3">
-                  {body.takeaways.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-base leading-relaxed text-ink">
-                      <span aria-hidden className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-moss-100 text-moss-700">
-                        <Check className="size-3.5" strokeWidth={3} />
-                      </span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </aside>
-            )}
-
             {body.sections.map((section, i) => (
-              <section key={section.heading} id={`section-${i}`} aria-labelledby={`heading-${i}`} className="mt-12 scroll-mt-28">
+              <section key={section.heading} id={`section-${i}`} aria-labelledby={`heading-${i}`} className="mt-12 scroll-mt-28 first:mt-0">
                 <h2 id={`heading-${i}`} className="font-display text-2xl font-extrabold leading-tight tracking-[-0.01em] text-ink-strong md:text-[28px]">
                   {section.heading}
                 </h2>
@@ -151,6 +135,22 @@ export function ArticleDetailContent({ slug }: { slug: ArticleSlug }) {
                 </div>
               </section>
             ))}
+
+            {body.takeaways && (
+              <aside aria-label={ui.takeaways} className="mt-14 rounded-panel bg-white p-6 ring-1 ring-line sm:p-8">
+                <h2 className="font-display text-lg font-extrabold text-ink-strong">{ui.takeaways}</h2>
+                <ul className="mt-4 flex flex-col gap-3">
+                  {body.takeaways.map((point) => (
+                    <li key={point} className="flex items-start gap-3 text-base leading-relaxed text-ink">
+                      <span aria-hidden className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-moss-100 text-moss-700">
+                        <Check className="size-3.5" strokeWidth={3} />
+                      </span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            )}
 
             <div className="mt-14 rounded-panel bg-forest p-7 text-white sm:p-9">
               <p className="font-display text-xl font-extrabold leading-snug sm:text-2xl">{body.conclusion}</p>

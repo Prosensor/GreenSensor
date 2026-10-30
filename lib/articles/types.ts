@@ -1,4 +1,4 @@
-export type ArticleSlug = "mesurer-temperature-andain-compost"
+export type ArticleSlug = "mesurer-temperature-andain-compost" | "compost-economie-circulaire-temperature"
 
 export type ArticleLanguage = "fr" | "en" | "es" | "de" | "pt" | "ro"
 
