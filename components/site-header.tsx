@@ -20,6 +20,7 @@ const links = [
   { key: "articles", href: "/articles" },
   { key: "faq", href: "/faq" },
   { key: "doc", href: "/documentation" },
+  { key: "about", href: "/qui-sommes-nous" },
 ] as const
 
 /**

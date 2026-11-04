@@ -249,6 +249,8 @@ Structure : objet `fr`, `en`, `es`, `de`, `pt`, `ro` avec les clés `nav`, `hero
 Articles actuels :
 - `mesurer-temperature-andain-compost`
 - `compost-economie-circulaire-temperature`
+- `logiciel-suivi-compostage`
+- `incendie-plateforme-compostage`
 
 ### Modifier la FAQ
 

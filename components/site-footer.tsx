@@ -21,6 +21,7 @@ export function SiteFooter() {
     { href: "/articles", label: ft.nav.articles },
     { href: "/faq", label: ft.nav.faq },
     { href: "/documentation", label: ft.nav.doc },
+    { href: "/qui-sommes-nous", label: ft.nav.about },
     { href: "/contact", label: ft.nav.contact },
   ]
 

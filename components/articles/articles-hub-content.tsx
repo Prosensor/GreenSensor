@@ -12,7 +12,7 @@ function excerpt(text: string, max = 170) {
   const t = text.replace(/\s+/g, " ").trim()
   if (t.length <= max) return t
   const cut = t.slice(0, max)
-  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:\s]+$/, "")}…`
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[.,;:\s]+$/, "")}…`
 }
 
 /** Hub des articles : bandeau sombre, article à la une en grand, puis les autres en cartes avec photo. */

@@ -32,7 +32,12 @@ export type HomeCopy = {
   }
   specs: { title: string; lead: string; rows: { label: string; value: string }[]; custom: string; alt: string }
   platform: { title: string; lead: string; alt: string; features: { name: string; desc: string }[] }
-  why: { title: string; items: { name: string; desc: string }[]; strip: string[] }
+  why: {
+    title: string
+    items: { name: string; desc: string }[]
+    place: { title: string; text: string }
+    more: string
+  }
   lab: {
     steps: { name: string; desc: string }[]
     simulation: string
@@ -177,11 +182,13 @@ const fr: HomeCopy = {
   why: {
     title: "Pourquoi choisir GreenSensor ?",
     items: [
-      { name: "Fiable", desc: "Fabriquée dans notre usine en France, 100 % testée." },
-      { name: "Expérimenté", desc: "Prosensor mesure la température depuis plus de 30 ans, avec des produits qui s'améliorent sans cesse." },
-      { name: "Sur mesure", desc: "Des solutions conçues par notre bureau d'études." },
+      { name: "Une sonde faite pour l'andain", desc: "Tube inox 316L de 1 à 2 m, deux poignées pour la planter à la main, un capteur au cœur du tas et un dans l'air." },
+      { name: "Vos objectifs suivis, pas seulement des courbes", desc: "Vous fixez vos objectifs de température par phase. GreenSensor indique s'ils sont atteints et produit le rapport de suivi pour vos audits." },
+      { name: "Rien à brancher sur le site", desc: "Ni câble ni alimentation sur l'andain : la batterie tient 5 ans. Pas de technicien : la passerelle se branche à Internet, la sonde s'allume d'un bouton." },
+      { name: "Un fabricant joignable", desc: "Prosensor fabrique la sonde en France depuis 1989. Support gratuit du lundi au vendredi de 9h à 18h, garantie 3 ans, versions sur mesure." },
     ],
-    strip: ["Prêt à l'emploi", "Support gratuit", "Garantie 3 ans", "Fabriqué en France"],
+    place: { title: "Notre usine de Norroy-le-Veneur", text: "Prosensor fabrique des sondes de température à Norroy-le-Veneur, en Moselle, depuis 1989." },
+    more: "Qui sommes-nous",
   },
   lab: {
     steps: [
@@ -329,11 +336,13 @@ const en: HomeCopy = {
   why: {
     title: "Why choose GreenSensor?",
     items: [
-      { name: "Reliable", desc: "Made in our own factory in France, 100% tested." },
-      { name: "Experienced", desc: "Prosensor has over 30 years of experience in temperature measurement, with products that keep improving." },
-      { name: "Made to measure", desc: "Custom solutions designed by our R&D team." },
+      { name: "A probe built for the windrow", desc: "316L stainless steel tube from 1 to 2 m, two handles to push it in by hand, one sensor in the core of the pile and one in the air." },
+      { name: "Your objectives tracked, not just curves", desc: "You set temperature objectives for each phase. GreenSensor shows whether they are met and produces the tracking report for your audits." },
+      { name: "Nothing to wire on site", desc: "No cable or power on the windrow: the battery lasts 5 years. No technician: the gateway plugs into the Internet, the probe starts at the push of a button." },
+      { name: "A manufacturer you can reach", desc: "Prosensor has been building the probe in France since 1989. Free support Monday to Friday, 9am to 6pm, 3-year warranty, custom versions." },
     ],
-    strip: ["Ready to use", "Free support", "3-year warranty", "Made in France"],
+    place: { title: "Our factory in Norroy-le-Veneur", text: "Prosensor has been building temperature probes in Norroy-le-Veneur, Moselle, since 1989." },
+    more: "About us",
   },
   lab: {
     steps: [
@@ -481,11 +490,13 @@ const es: HomeCopy = {
   why: {
     title: "¿Por qué elegir GreenSensor?",
     items: [
-      { name: "Fiable", desc: "Fabricada en nuestra propia fábrica en Francia, 100 % probada." },
-      { name: "Con experiencia", desc: "Prosensor lleva más de 30 años midiendo temperatura, con productos que no dejan de mejorar." },
-      { name: "A medida", desc: "Soluciones diseñadas por nuestro departamento de I+D." },
+      { name: "Una sonda hecha para la pila", desc: "Tubo de acero inoxidable 316L de 1 a 2 m, dos empuñaduras para clavarla a mano, un sensor en el corazón de la pila y otro en el aire." },
+      { name: "Sus objetivos seguidos, no solo curvas", desc: "Usted fija objetivos de temperatura por fase. GreenSensor indica si se alcanzan y genera el informe de seguimiento para sus auditorías." },
+      { name: "Nada que conectar en el sitio", desc: "Ni cables ni alimentación en la pila: la batería dura 5 años. Sin técnico: la pasarela se conecta a Internet y la sonda se enciende con un botón." },
+      { name: "Un fabricante localizable", desc: "Prosensor fabrica la sonda en Francia desde 1989. Soporte gratuito de lunes a viernes de 9:00 a 18:00, garantía de 3 años, versiones a medida." },
     ],
-    strip: ["Lista para usar", "Soporte gratuito", "Garantía de 3 años", "Fabricado en Francia"],
+    place: { title: "Nuestra fábrica de Norroy-le-Veneur", text: "Prosensor fabrica sondas de temperatura en Norroy-le-Veneur (Mosela) desde 1989." },
+    more: "Quiénes somos",
   },
   lab: {
     steps: [
@@ -633,11 +644,13 @@ const de: HomeCopy = {
   why: {
     title: "Warum GreenSensor?",
     items: [
-      { name: "Zuverlässig", desc: "In unserer eigenen Fabrik in Frankreich gefertigt, zu 100 % geprüft." },
-      { name: "Erfahren", desc: "Prosensor misst seit über 30 Jahren Temperaturen, mit Produkten, die sich stetig verbessern." },
-      { name: "Maßgeschneidert", desc: "Lösungen, entwickelt von unserer Entwicklungsabteilung." },
+      { name: "Eine Sonde für die Miete", desc: "Edelstahlrohr 316L von 1 bis 2 m, zwei Griffe zum Einstecken von Hand, ein Sensor im Kern der Miete und einer in der Luft." },
+      { name: "Ihre Ziele verfolgt, nicht nur Kurven", desc: "Sie legen Temperaturziele pro Phase fest. GreenSensor zeigt, ob sie erreicht sind, und erstellt den Verlaufsbericht für Ihre Audits." },
+      { name: "Nichts zu verkabeln", desc: "Weder Kabel noch Strom an der Miete: Die Batterie hält 5 Jahre. Kein Techniker nötig: Das Gateway kommt ans Internet, die Sonde startet per Knopfdruck." },
+      { name: "Ein erreichbarer Hersteller", desc: "Prosensor fertigt die Sonde seit 1989 in Frankreich. Kostenloser Support Montag bis Freitag von 9 bis 18 Uhr, 3 Jahre Garantie, Sonderausführungen." },
     ],
-    strip: ["Sofort einsatzbereit", "Kostenloser Support", "3 Jahre Garantie", "Made in France"],
+    place: { title: "Unser Werk in Norroy-le-Veneur", text: "Prosensor fertigt seit 1989 Temperatursonden in Norroy-le-Veneur, Lothringen." },
+    more: "Über uns",
   },
   lab: {
     steps: [
@@ -785,11 +798,13 @@ const pt: HomeCopy = {
   why: {
     title: "Porquê escolher o GreenSensor?",
     items: [
-      { name: "Fiável", desc: "Fabricada na nossa própria fábrica em França, 100 % testada." },
-      { name: "Experiente", desc: "A Prosensor mede temperatura há mais de 30 anos, com produtos em constante evolução." },
-      { name: "Por medida", desc: "Soluções concebidas pela nossa equipa de I&D." },
+      { name: "Uma sonda feita para a pilha", desc: "Tubo em inox 316L de 1 a 2 m, duas pegas para a espetar à mão, um sensor no coração da pilha e outro no ar." },
+      { name: "Os seus objetivos acompanhados, não só curvas", desc: "Define objetivos de temperatura por fase. O GreenSensor indica se são atingidos e gera o relatório de acompanhamento para as suas auditorias." },
+      { name: "Nada a ligar no local", desc: "Sem cabos nem alimentação na pilha: a bateria dura 5 anos. Sem técnico: a gateway liga-se à Internet e a sonda arranca com um botão." },
+      { name: "Um fabricante contactável", desc: "A Prosensor fabrica a sonda em França desde 1989. Suporte gratuito de segunda a sexta, das 9h às 18h, garantia de 3 anos, versões por medida." },
     ],
-    strip: ["Pronta a usar", "Suporte gratuito", "Garantia de 3 anos", "Fabricado em França"],
+    place: { title: "A nossa fábrica de Norroy-le-Veneur", text: "A Prosensor fabrica sondas de temperatura em Norroy-le-Veneur (Mosela) desde 1989." },
+    more: "Quem somos",
   },
   lab: {
     steps: [
@@ -937,11 +952,13 @@ const ro: HomeCopy = {
   why: {
     title: "De ce să alegeți GreenSensor?",
     items: [
-      { name: "Fiabil", desc: "Fabricat în propria noastră fabrică din Franța, testat 100 %." },
-      { name: "Experimentat", desc: "Prosensor măsoară temperatura de peste 30 de ani, cu produse care se îmbunătățesc continuu." },
-      { name: "La comandă", desc: "Soluții proiectate de echipa noastră de cercetare-dezvoltare." },
+      { name: "O sondă făcută pentru brazdă", desc: "Tub din inox 316L de 1 până la 2 m, două mânere pentru a o înfige manual, un senzor în miezul grămezii și unul în aer." },
+      { name: "Obiectivele dvs. urmărite, nu doar curbe", desc: "Stabiliți obiective de temperatură pentru fiecare fază. GreenSensor arată dacă sunt atinse și generează raportul de monitorizare pentru auditurile dvs." },
+      { name: "Nimic de conectat pe amplasament", desc: "Fără cabluri sau alimentare pe brazdă: bateria ține 5 ani. Fără tehnician: gateway-ul se conectează la Internet, sonda pornește dintr-un buton." },
+      { name: "Un producător pe care îl puteți contacta", desc: "Prosensor fabrică sonda în Franța din 1989. Suport gratuit de luni până vineri, 9:00–18:00, garanție 3 ani, versiuni la comandă." },
     ],
-    strip: ["Gata de utilizare", "Suport gratuit", "Garanție 3 ani", "Fabricat în Franța"],
+    place: { title: "Fabrica noastră din Norroy-le-Veneur", text: "Prosensor fabrică sonde de temperatură în Norroy-le-Veneur (Moselle) din 1989." },
+    more: "Despre noi",
   },
   lab: {
     steps: [

@@ -14,6 +14,7 @@ type Translations = {
     doc: string
     articles: string
     contact: string
+    about: string
   }
   hero: {
     title_highlight: string
@@ -77,7 +78,7 @@ type Translations = {
     description: string
     useful_links: string
     legal_info: string
-    nav: { home: string; features: string; specs: string; analytics: string; faq: string; doc: string; articles: string; contact: string }
+    nav: { home: string; features: string; specs: string; analytics: string; faq: string; doc: string; articles: string; contact: string; about: string }
     legal: { mentions: string; privacy: string; terms: string; prosensor_site: string }
     hours: { title: string; weekdays: string; weekend: string }
     copyright: string
@@ -135,6 +136,7 @@ const fr: Translations = {
     doc: "Documentation",
     articles: "Articles",
     contact: "Contact",
+    about: "Qui sommes-nous",
   },
   hero: {
     title_highlight: "Compost",
@@ -235,7 +237,7 @@ const fr: Translations = {
     description: "GreenSensor est une solution innovante pour le suivi des températures dans le processus de compostage.",
     useful_links: "Liens utiles",
     legal_info: "Informations légales",
-    nav: { home: "Accueil", features: "Fonctionnalités", specs: "Spécifications", analytics: "Analyse", faq: "FAQ", doc: "Documentation", articles: "Articles", contact: "Contact" },
+    nav: { home: "Accueil", features: "Fonctionnalités", specs: "Spécifications", analytics: "Analyse", faq: "FAQ", doc: "Documentation", articles: "Articles", contact: "Contact", about: "Qui sommes-nous" },
     legal: { mentions: "Mentions légales", privacy: "Politique de confidentialité", terms: "Conditions Générales d'Utilisation", prosensor_site: "Site de Prosensor" },
     hours: { title: "Horaires d'ouverture:", weekdays: "Lundi - Vendredi: 9h00 - 18h00", weekend: "Samedi - Dimanche: Fermé" },
     copyright: "© 2025 Prosensor. Tous droits réservés.",
@@ -292,6 +294,7 @@ const en: Translations = {
     doc: "Documentation",
     articles: "Articles",
     contact: "Contact",
+    about: "About us",
   },
   hero: {
     title_highlight: "Compost",
@@ -392,7 +395,7 @@ const en: Translations = {
     description: "GreenSensor is an innovative solution for temperature monitoring in the composting process.",
     useful_links: "Useful links",
     legal_info: "Legal information",
-    nav: { home: "Home", features: "Features", specs: "Specifications", analytics: "Analytics", faq: "FAQ", doc: "Documentation", articles: "Articles", contact: "Contact" },
+    nav: { home: "Home", features: "Features", specs: "Specifications", analytics: "Analytics", faq: "FAQ", doc: "Documentation", articles: "Articles", contact: "Contact", about: "About us" },
     legal: { mentions: "Legal notice", privacy: "Privacy policy", terms: "Terms of use", prosensor_site: "Prosensor website" },
     hours: { title: "Opening hours:", weekdays: "Monday - Friday: 9:00 - 18:00", weekend: "Saturday - Sunday: Closed" },
     copyright: "© 2025 Prosensor. All rights reserved.",
@@ -449,6 +452,7 @@ const es: Translations = {
     doc: "Documentación",
     articles: "Artículos",
     contact: "Contacto",
+    about: "Quiénes somos",
   },
   hero: {
     title_highlight: "Compostaje",
@@ -549,7 +553,7 @@ const es: Translations = {
     description: "GreenSensor es una solución innovadora para el seguimiento de temperatura en compostaje.",
     useful_links: "Enlaces útiles",
     legal_info: "Información legal",
-    nav: { home: "Inicio", features: "Funcionalidades", specs: "Especificaciones", analytics: "Análisis", faq: "FAQ", doc: "Documentación", articles: "Artículos", contact: "Contacto" },
+    nav: { home: "Inicio", features: "Funcionalidades", specs: "Especificaciones", analytics: "Análisis", faq: "FAQ", doc: "Documentación", articles: "Artículos", contact: "Contacto", about: "Quiénes somos" },
     legal: { mentions: "Aviso legal", privacy: "Política de privacidad", terms: "Condiciones de uso", prosensor_site: "Sitio de Prosensor" },
     hours: { title: "Horario:", weekdays: "Lunes - Viernes: 9:00 - 18:00", weekend: "Sábado - Domingo: Cerrado" },
     copyright: "© 2025 Prosensor. Todos los derechos reservados.",
@@ -606,6 +610,7 @@ const de: Translations = {
     doc: "Dokumentation",
     articles: "Artikel",
     contact: "Kontakt",
+    about: "Über uns",
   },
   hero: {
     title_highlight: "Kompostierung",
@@ -706,7 +711,7 @@ const de: Translations = {
     description: "GreenSensor ist eine innovative Lösung zur Temperaturüberwachung in Kompostierungsprozessen.",
     useful_links: "Nützliche Links",
     legal_info: "Rechtliches",
-    nav: { home: "Start", features: "Funktionen", specs: "Spezifikationen", analytics: "Analyse", faq: "FAQ", doc: "Dokumentation", articles: "Artikel", contact: "Kontakt" },
+    nav: { home: "Start", features: "Funktionen", specs: "Spezifikationen", analytics: "Analyse", faq: "FAQ", doc: "Dokumentation", articles: "Artikel", contact: "Kontakt", about: "Über uns" },
     legal: { mentions: "Impressum", privacy: "Datenschutz", terms: "Nutzungsbedingungen", prosensor_site: "Prosensor-Website" },
     hours: { title: "Öffnungszeiten:", weekdays: "Montag - Freitag: 9:00 - 18:00", weekend: "Samstag - Sonntag: Geschlossen" },
     copyright: "© 2025 Prosensor. Alle Rechte vorbehalten.",
@@ -763,6 +768,7 @@ const pt: Translations = {
     doc: "Documentação",
     articles: "Artigos",
     contact: "Contacto",
+    about: "Quem somos",
   },
   hero: {
     title_highlight: "Compostagem",
@@ -863,7 +869,7 @@ const pt: Translations = {
     description: "GreenSensor é uma solução inovadora para monitorização de temperatura no processo de compostagem.",
     useful_links: "Links úteis",
     legal_info: "Informação legal",
-    nav: { home: "Início", features: "Funcionalidades", specs: "Especificações", analytics: "Análise", faq: "FAQ", doc: "Documentação", articles: "Artigos", contact: "Contacto" },
+    nav: { home: "Início", features: "Funcionalidades", specs: "Especificações", analytics: "Análise", faq: "FAQ", doc: "Documentação", articles: "Artigos", contact: "Contacto", about: "Quem somos" },
     legal: { mentions: "Aviso legal", privacy: "Política de privacidade", terms: "Condições de utilização", prosensor_site: "Site da Prosensor" },
     hours: { title: "Horário:", weekdays: "Segunda - Sexta: 9:00 - 18:00", weekend: "Sábado - Domingo: Fechado" },
     copyright: "© 2025 Prosensor. Todos os direitos reservados.",
@@ -920,6 +926,7 @@ const ro: Translations = {
     doc: "Documentație",
     articles: "Articole",
     contact: "Contact",
+    about: "Despre noi",
   },
   hero: {
     title_highlight: "Compost",
@@ -1020,7 +1027,7 @@ const ro: Translations = {
     description: "GreenSensor este o soluție inovatoare pentru monitorizarea temperaturii în procesul de compostare.",
     useful_links: "Linkuri utile",
     legal_info: "Informații legale",
-    nav: { home: "Acasă", features: "Funcționalități", specs: "Specificații", analytics: "Analiză", faq: "FAQ", doc: "Documentație", articles: "Articole", contact: "Contact" },
+    nav: { home: "Acasă", features: "Funcționalități", specs: "Specificații", analytics: "Analiză", faq: "FAQ", doc: "Documentație", articles: "Articole", contact: "Contact", about: "Despre noi" },
     legal: { mentions: "Mențiuni legale", privacy: "Politica de confidențialitate", terms: "Termeni de utilizare", prosensor_site: "Site Prosensor" },
     hours: { title: "Program:", weekdays: "Luni - Vineri: 9:00 - 18:00", weekend: "Sâmbătă - Duminică: Închis" },
     copyright: "© 2025 Prosensor. Toate drepturile rezervate.",
