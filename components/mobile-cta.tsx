@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { useEffect, useState } from "react"
 import { useI18n } from "@/i18n/i18n-provider"
 import { buttonVariants } from "@/components/ui/button"
@@ -50,9 +50,9 @@ export function MobileCta() {
         show ? "visible translate-y-0" : "invisible translate-y-full",
       )}
     >
-      <Link href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "w-full")}>
+      <LocalizedLink href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "w-full")}>
         {t.hero.cta}
-      </Link>
+      </LocalizedLink>
     </div>
   )
 }

@@ -19,6 +19,16 @@ export function resolveArticleBody(def: ArticleDefinition, lang: ArticleLanguage
   return def.body[lang] ?? def.body.en ?? def.body.fr
 }
 
+/**
+ * Langues dans lesquelles l'article est réellement rédigé. Une langue qui réutilise le texte anglais
+ * (`es: monArticleEn`) n'en fait pas partie : sa page existe, mais n'est ni déclarée en hreflang ni dans le sitemap.
+ */
+export function getArticleLanguages(def: ArticleDefinition): ArticleLanguage[] {
+  return (Object.keys(def.body) as ArticleLanguage[]).filter(
+    (lang) => lang === "fr" || lang === "en" || def.body[lang] !== def.body.en,
+  )
+}
+
 export function resolveArticleSeo(def: ArticleDefinition, lang: ArticleLanguage) {
   return def.seo[lang] ?? def.seo.en ?? def.seo.fr
 }

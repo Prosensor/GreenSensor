@@ -154,16 +154,21 @@ Configurés dans [`next.config.ts`](next.config.ts) : HSTS, X-Frame-Options, nos
 
 ```
 green-sensor/
+├── middleware.ts                 # Routage par langue (/en, /es… ; français sans préfixe)
 ├── app/                          # Routes Next.js (App Router)
-│   ├── page.tsx                  # Page d'accueil (toutes les sections)
-│   ├── faq/                      # FAQ complète
-│   ├── documentation/            # Guide passerelle LoRa
-│   ├── articles/                 # Hub articles + [slug]
-│   ├── mentions-legales/         # Pages légales RGPD
-│   ├── politique-confidentialite/
-│   ├── cgu/
+│   ├── [lang]/                   # Toutes les pages, une version par langue
+│   │   ├── layout.tsx            # Layout racine : <html lang>, polices, fournisseur de langue
+│   │   ├── page.tsx              # Page d'accueil (toutes les sections)
+│   │   ├── faq/                  # FAQ complète
+│   │   ├── documentation/        # Guide passerelle LoRa
+│   │   ├── articles/             # Hub articles + [slug]
+│   │   ├── qui-sommes-nous/
+│   │   ├── contact/
+│   │   ├── mentions-legales/     # Pages légales RGPD
+│   │   ├── politique-confidentialite/
+│   │   └── cgu/
 │   ├── api/send-demo-mail/       # API POST — envoi e-mail formulaire
-│   └── sitemap.xml/              # Sitemap dynamique
+│   └── sitemap.ts                # Sitemap : une entrée par page et par langue
 │
 ├── components/                   # Composants React
 │   ├── hero-section.tsx          # Sections de la home
@@ -177,13 +182,16 @@ green-sensor/
 │   └── ui/                       # Composants shadcn/ui (Button, Form, etc.)
 │
 ├── i18n/
-│   └── i18n-provider.tsx         # Traductions FR/EN/ES/DE/PT/RO (~1100 lignes)
+│   ├── i18n-provider.tsx         # Traductions FR/EN/ES/DE/PT/RO (~1100 lignes) + langue courante
+│   └── page-seo.ts               # Titres et descriptions SEO par page et par langue
 │
 ├── lib/
 │   ├── articles/
 │   │   ├── articles-data.ts      # ⭐ Contenu des articles (à éditer pour en ajouter)
 │   │   ├── registry.ts           # Fonctions de lecture articles
 │   │   └── types.ts              # Types TypeScript articles
+│   ├── i18n-routing.ts           # Langues, préfixes d'URL, hreflang (localizePath, stripLang…)
+│   ├── seo.ts                    # pageMetadata() : titre, canonique, hreflang, Open Graph
 │   └── utils.ts                  # Utilitaires (cn, etc.)
 │
 ├── public/                       # Assets statiques (images, robots.txt, llms.txt)
@@ -193,24 +201,28 @@ green-sensor/
 
 ### Pages et routes
 
+Chaque page existe dans les 6 langues : `/faq` en français, `/en/faq`, `/es/faq`, `/de/faq`, `/pt/faq`, `/ro/faq`.
+
 | Route | Fichier | Description |
 |-------|---------|-------------|
-| `/` | `app/page.tsx` | Accueil : hero, features, run, key features, download, FAQ, doc, démo |
-| `/faq` | `app/faq/page.tsx` | FAQ étendue |
-| `/documentation` | `app/documentation/page.tsx` | Guide installation passerelle |
-| `/articles` | `app/articles/page.tsx` | Liste des articles |
-| `/articles/[slug]` | `app/articles/[slug]/page.tsx` | Détail article (SSG) |
-| `/mentions-legales` | `app/mentions-legales/page.tsx` | Mentions légales |
-| `/politique-confidentialite` | `app/politique-confidentialite/page.tsx` | RGPD |
-| `/cgu` | `app/cgu/page.tsx` | Conditions générales |
-| `/sitemap.xml` | `app/sitemap.xml/route.ts` | Sitemap XML |
+| `/` | `app/[lang]/page.tsx` | Accueil : hero, features, run, key features, download, FAQ, doc, démo |
+| `/faq` | `app/[lang]/faq/page.tsx` | FAQ étendue |
+| `/documentation` | `app/[lang]/documentation/page.tsx` | Guide installation passerelle |
+| `/articles` | `app/[lang]/articles/page.tsx` | Liste des articles |
+| `/articles/[slug]` | `app/[lang]/articles/[slug]/page.tsx` | Détail article (SSG) |
+| `/qui-sommes-nous` | `app/[lang]/qui-sommes-nous/page.tsx` | Présentation de l'équipe et du site |
+| `/contact` | `app/[lang]/contact/page.tsx` | Contact et demande de démo |
+| `/mentions-legales` | `app/[lang]/mentions-legales/page.tsx` | Mentions légales |
+| `/politique-confidentialite` | `app/[lang]/politique-confidentialite/page.tsx` | RGPD |
+| `/cgu` | `app/[lang]/cgu/page.tsx` | Conditions générales |
+| `/sitemap.xml` | `app/sitemap.ts` | Sitemap XML |
 | `POST /api/send-demo-mail` | `app/api/send-demo-mail/route.ts` | Envoi e-mail démo |
 
 ### Flux principal (visiteur → lead)
 
 ```
 Visiteur → greensensor.fr
-    → Parcourt le site (i18n via localStorage)
+    → Parcourt le site (langue portée par l'URL : /en/…, /es/…)
     → Remplit le formulaire démo (#demo)
     → POST /api/send-demo-mail
         → Validation Zod
@@ -331,12 +343,16 @@ Auth   : contact@greensensor.fr + MAIL_PASSWORD
 | `pt` | Portugais |
 | `ro` | Roumain |
 
-**Mécanisme :**
-- Sélecteur dans le header → `localStorage` (`language`) + cookie (`language`, 1 an)
-- Hook `useI18n()` dans les composants client : `{ language, setLanguage, t }`
-- Métadonnées SEO serveur : lecture du cookie `language` dans `generateMetadata()`
+**Adresses :** le français est à la racine (`greensensor.fr/faq`), les autres langues ont un préfixe (`greensensor.fr/en/faq`). Pour une campagne e-mail en anglais, utiliser des liens `https://greensensor.fr/en/…` : le visiteur arrive directement dans sa langue.
 
-**Limitation connue :** les articles n'ont pas encore de contenu complet dans les 6 langues — fallback FR/EN via `resolveArticleBody()` dans `lib/articles/registry.ts`.
+**Mécanisme :**
+- `middleware.ts` : sert `/fr/…` sous l'adresse sans préfixe, redirige `/fr/…` vers l'adresse sans préfixe, et redirige les anciennes adresses `?lang=en` vers `/en/…` (en gardant `utm_…`)
+- `app/[lang]/layout.tsx` : lit la langue dans l'URL, pose `<html lang>` et donne la langue à `I18nProvider`
+- Hook `useI18n()` dans les composants client : `{ language, setLanguage, t }`. `setLanguage()` mène à la même page dans l'autre langue et pose un cookie `language` (1 an) ; un visiteur qui a choisi une langue y est renvoyé s'il revient à l'adresse sans préfixe
+- Liens internes : toujours `LocalizedLink` (`components/localized-link.tsx`), jamais `next/link` directement, sinon le lien fait perdre la langue
+- Pour ajouter une langue : l'ajouter à `LANGS`, `HREFLANG` et `OG_LOCALE` dans `lib/i18n-routing.ts`, puis traduire les textes (`i18n/`)
+
+**Limitation connue :** les articles n'ont pas encore de contenu complet dans les 6 langues — fallback FR/EN via `resolveArticleBody()` dans `lib/articles/registry.ts`. Un article n'est déclaré (hreflang, sitemap) que dans les langues où il est réellement rédigé ; les autres langues affichent la version anglaise avec une adresse canonique vers `/en/articles/…`.
 
 ---
 
@@ -344,12 +360,13 @@ Auth   : contact@greensensor.fr + MAIL_PASSWORD
 
 | Élément | Emplacement |
 |---------|-------------|
-| Métadonnées par langue | `generateMetadata()` dans chaque `page.tsx` |
-| Open Graph / Twitter | Idem + `app/layout.tsx` (défaut FR) |
-| Sitemap | `/sitemap.xml` (route dynamique) |
+| Métadonnées par langue | `generateMetadata()` dans chaque `page.tsx`, via `pageMetadata()` ([`lib/seo.ts`](lib/seo.ts)) ; textes dans [`i18n/page-seo.ts`](i18n/page-seo.ts) |
+| Canonique et hreflang | Calculés par `pageMetadata()` : une adresse par langue, `x-default` sur le français |
+| Open Graph / Twitter | Idem + valeurs par défaut dans `app/[lang]/layout.tsx` |
+| Sitemap | `/sitemap.xml` ([`app/sitemap.ts`](app/sitemap.ts)) : une entrée par page et par langue |
 | robots.txt | `public/robots.txt` |
 | llms.txt | `public/llms.txt` (infos pour LLM/crawlers IA) |
-| Google Ads | Tag `AW-1068513425` dans `app/layout.tsx` |
+| Google Ads | Tag `AW-1068513425` dans `app/[lang]/layout.tsx` |
 
 ---
 
@@ -401,7 +418,7 @@ Setup Next.js, design system, home complète, i18n 6 langues, FAQ, documentation
 
 ### Les traductions ne changent pas
 
-1. Vider le `localStorage` du navigateur (clé `language`)
+1. Vérifier l'adresse : la langue est dans l'URL (`/en/…`), pas dans le navigateur. Un ancien cookie `language` peut renvoyer vers une autre langue depuis l'adresse sans préfixe : le supprimer, ou changer de langue dans le sélecteur
 2. Vérifier que la clé existe dans **toutes** les langues dans `i18n-provider.tsx`
 
 ### Build échoue après ajout d'article

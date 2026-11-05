@@ -1,8 +1,10 @@
 "use client"
 
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react"
+import { createContext, useContext, useMemo, type ReactNode } from "react"
+import { useRouter } from "next/navigation"
+import { LANG_COOKIE, localizePath, stripLang, type Lang } from "@/lib/i18n-routing"
 
-type Language = "fr" | "en" | "es" | "de" | "pt" | "ro"
+type Language = Lang
 
 type Translations = {
   nav: {
@@ -1084,29 +1086,21 @@ type I18nContextType = {
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined)
 
-export function I18nProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("fr")
-
-  useEffect(() => {
-    const stored = typeof window !== "undefined" ? (window.localStorage.getItem("language") as Language | null) : null
-    if (stored === "fr" || stored === "en" || stored === "es" || stored === "de" || stored === "pt" || stored === "ro") {
-      setLanguage(stored)
-    }
-  }, [])
+/** La langue vient de l'URL (`/en/...`) : elle est connue dès le rendu serveur, sans affichage furtif en français. */
+export function I18nProvider({ lang, children }: { lang: Language; children: ReactNode }) {
+  const router = useRouter()
 
   const value = useMemo<I18nContextType>(() => ({
-    language,
-    setLanguage: (lang: Language) => {
-      setLanguage(lang)
-      if (typeof window !== "undefined") {
-        window.localStorage.setItem("language", lang)
-      }
-      if (typeof document !== "undefined") {
-        document.documentElement.lang = lang
-      }
+    language: lang,
+    // Changer de langue = aller à la même page dans l'autre langue ; le cookie fait retrouver ce choix à la prochaine visite.
+    setLanguage: (next: Language) => {
+      if (next === lang) return
+      document.cookie = `${LANG_COOKIE}=${next}; path=/; max-age=31536000; samesite=lax`
+      const { path } = stripLang(window.location.pathname)
+      router.push(`${localizePath(next, path)}${window.location.search}${window.location.hash}`)
     },
-    t: dictionaries[language],
-  }), [language])
+    t: dictionaries[lang],
+  }), [lang, router])
 
   return (
     <I18nContext.Provider value={value}>{children}</I18nContext.Provider>

@@ -13,6 +13,7 @@ GreenSensor est une sonde de température à Compost innovante développée par 
 - **RCS** : Metz 451 740 187
 - **SIRET** : 451 740 187 00047
 - **Site web** : https://greensensor.fr
+- **Langues du site** : français (https://greensensor.fr), anglais (https://greensensor.fr/en), espagnol (/es), allemand (/de), portugais (/pt), roumain (/ro)
 
 ## Produits et services
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, type ChangeEvent } from "react"
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import Image from "next/image"
 import { ExternalLink, Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
@@ -11,8 +11,7 @@ import { useHomeCopy } from "@/i18n/home-copy"
 import { Container } from "@/components/ui/container"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-
-type Lang = "fr" | "en" | "es" | "de" | "pt" | "ro"
+import { stripLang, type Lang } from "@/lib/i18n-routing"
 
 const APP_URL = "https://greensensor.prosensor.fr/"
 
@@ -36,13 +35,7 @@ export function SiteHeader() {
   const pathname = usePathname()
   const appLabel = t.header?.appButton ?? "Open App"
 
-  const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const value = e.target.value as Lang
-    setLanguage(value)
-    try {
-      document.cookie = `language=${value}; path=/; max-age=31536000`
-    } catch {}
-  }
+  const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => setLanguage(e.target.value as Lang)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -51,7 +44,7 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const isCurrent = (href: string) => !href.startsWith("/#") && pathname === href
+  const isCurrent = (href: string) => !href.startsWith("/#") && stripLang(pathname).path === href
 
   return (
     <>
@@ -62,7 +55,7 @@ export function SiteHeader() {
         )}
       >
         <Container className="flex h-16 items-center justify-between gap-3 lg:h-[72px]">
-          <Link href="/" className="shrink-0 rounded-badge" aria-label="GreenSensor by Prosensor">
+          <LocalizedLink href="/" className="shrink-0 rounded-badge" aria-label="GreenSensor by Prosensor">
             <Image
               src="/logo-greensensor-by-prosensor-white.png"
               alt="GreenSensor by Prosensor"
@@ -71,19 +64,19 @@ export function SiteHeader() {
               priority
               className="h-10 w-auto lg:h-12"
             />
-          </Link>
+          </LocalizedLink>
 
           <nav aria-label="Principal" className="hidden xl:block">
             <ul className="flex items-center gap-1 font-display text-sm font-semibold">
               {links.map((item) => (
                 <li key={item.key}>
-                  <Link
+                  <LocalizedLink
                     href={item.href}
                     aria-current={isCurrent(item.href) ? "page" : undefined}
                     className="inline-flex rounded-btn px-3 py-2 text-white/80 transition-colors hover:bg-white/10 hover:text-white aria-[current=page]:text-white aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:decoration-moss-400 aria-[current=page]:underline-offset-8"
                   >
                     {t.nav[item.key]}
-                  </Link>
+                  </LocalizedLink>
                 </li>
               ))}
             </ul>
@@ -115,9 +108,9 @@ export function SiteHeader() {
               <span className="sr-only">(nouvel onglet)</span>
             </a>
 
-            <Link href="/contact" className={cn(buttonVariants({ variant: "cta" }), "hidden h-10 px-5 sm:inline-flex")}>
+            <LocalizedLink href="/contact" className={cn(buttonVariants({ variant: "cta" }), "hidden h-10 px-5 sm:inline-flex")}>
               {t.hero.cta}
-            </Link>
+            </LocalizedLink>
 
             <button
               type="button"
@@ -146,22 +139,22 @@ export function SiteHeader() {
                   <ul>
                     {links.map((item) => (
                       <li key={item.key} className="border-b border-white/10">
-                        <Link
+                        <LocalizedLink
                           href={item.href}
                           onClick={() => setOpen(false)}
                           aria-current={isCurrent(item.href) ? "page" : undefined}
                           className="block py-3.5 font-display text-base font-semibold text-white/85 aria-[current=page]:text-white"
                         >
                           {t.nav[item.key]}
-                        </Link>
+                        </LocalizedLink>
                       </li>
                     ))}
                   </ul>
                 </nav>
                 <div className="flex flex-wrap items-center gap-3 py-4">
-                  <Link href="/contact" onClick={() => setOpen(false)} className={buttonVariants({ variant: "cta" })}>
+                  <LocalizedLink href="/contact" onClick={() => setOpen(false)} className={buttonVariants({ variant: "cta" })}>
                     {t.hero.cta}
-                  </Link>
+                  </LocalizedLink>
                   <a
                     href={APP_URL}
                     target="_blank"

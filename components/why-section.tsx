@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { ArrowRight } from "lucide-react"
 import { useHomeCopy } from "@/i18n/home-copy"
 import { Container } from "@/components/ui/container"
@@ -47,13 +47,13 @@ export function WhySection() {
           <figcaption className="absolute inset-x-0 bottom-0 flex max-w-lg flex-col items-start gap-2 p-6 sm:inset-y-0 sm:justify-end sm:p-10 lg:p-12">
             <p className="font-display text-xl font-extrabold leading-tight md:text-2xl">{why.place.title}</p>
             <p className="text-[15px] leading-relaxed text-white/80">{why.place.text}</p>
-            <Link
+            <LocalizedLink
               href="/qui-sommes-nous"
               className="mt-4 inline-flex h-11 items-center gap-2 rounded-btn bg-white px-5 font-display text-sm font-bold text-forest transition-colors hover:bg-mint"
             >
               {why.more}
               <ArrowRight aria-hidden className="size-4" />
-            </Link>
+            </LocalizedLink>
           </figcaption>
         </figure>
       </Container>

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
 import { aboutPageCopy, type AboutLang, type AboutPageCopy } from "@/i18n/about-page"
@@ -46,9 +46,9 @@ function AboutHero({ c, crumb }: { c: AboutPageCopy; crumb: string }) {
 
       <Container className="flex flex-col gap-10 md:gap-14">
         <nav aria-label="Breadcrumb" className="text-sm text-white/60">
-          <Link href="/" className="transition-colors hover:text-white">
+          <LocalizedLink href="/" className="transition-colors hover:text-white">
             {c.home}
-          </Link>
+          </LocalizedLink>
           <span className="mx-2">/</span>
           <span className="font-medium text-white/90">{crumb}</span>
         </nav>
@@ -245,10 +245,10 @@ function TeamSection({ c }: { c: AboutPageCopy }) {
               </span>
             </li>
           </ul>
-          <Link href="/contact" className={cn(buttonVariants({ variant: "cta" }), "mt-6 w-full gap-2 sm:w-auto")}>
+          <LocalizedLink href="/contact" className={cn(buttonVariants({ variant: "cta" }), "mt-6 w-full gap-2 sm:w-auto")}>
             {team.cta}
             <ArrowRight aria-hidden className="size-4" />
-          </Link>
+          </LocalizedLink>
         </div>
       </Container>
     </section>

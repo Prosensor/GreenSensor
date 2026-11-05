@@ -9,6 +9,7 @@ export type {
 export {
   getAllArticleSlugs,
   getArticleBySlug,
+  getArticleLanguages,
   getArticleList,
   resolveArticleBody,
   resolveArticleSeo,

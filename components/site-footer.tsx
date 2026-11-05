@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import Image from "next/image"
 import { Linkedin } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
@@ -30,9 +30,9 @@ export function SiteFooter() {
       <Container className="pb-8 pt-12 lg:pt-[60px]">
         <div className="grid gap-10 md:grid-cols-2 xl:flex xl:items-start xl:justify-between xl:gap-12">
           <div className="flex max-w-[340px] flex-col gap-5 xl:w-[340px] xl:shrink-0">
-            <Link href="/" className="w-fit" aria-label="GreenSensor">
+            <LocalizedLink href="/" className="w-fit" aria-label="GreenSensor">
               <Image src="/2025_LogoGreenSensor_BlancVert.png" alt="GreenSensor" width={150} height={80} className="h-[60px] w-auto" />
-            </Link>
+            </LocalizedLink>
             <p className="text-sm leading-[1.5] text-mint">{ft.description}</p>
             <a
               href="https://www.linkedin.com/company/green-sensor/posts/"
@@ -45,7 +45,7 @@ export function SiteFooter() {
             </a>
             <div className="flex flex-col gap-2 border-t border-white/15 pt-5">
               <p className="text-xs text-mint">{copy.brandOf}</p>
-              <Link
+              <LocalizedLink
                 href="https://www.prosensor.fr/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -53,7 +53,7 @@ export function SiteFooter() {
                 aria-label="Prosensor"
               >
                 <Image src="/logo-prosensor-white.png" alt="Prosensor" width={724} height={179} className="h-[43px] w-auto" />
-              </Link>
+              </LocalizedLink>
               <p className="text-xs text-mint">{copy.since}</p>
             </div>
           </div>
@@ -63,9 +63,9 @@ export function SiteFooter() {
             <ul className="mt-4 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className={linkClass}>
+                  <LocalizedLink href={link.href} className={linkClass}>
                     {link.label}
-                  </Link>
+                  </LocalizedLink>
                 </li>
               ))}
             </ul>
@@ -75,19 +75,19 @@ export function SiteFooter() {
             <h2 className={headingClass}>{ft.legal_info}</h2>
             <ul className="mt-4 flex flex-col gap-3">
               <li>
-                <Link href="/mentions-legales" className={linkClass}>
+                <LocalizedLink href="/mentions-legales" className={linkClass}>
                   {ft.legal.mentions}
-                </Link>
+                </LocalizedLink>
               </li>
               <li>
-                <Link href="/politique-confidentialite" className={linkClass}>
+                <LocalizedLink href="/politique-confidentialite" className={linkClass}>
                   {ft.legal.privacy}
-                </Link>
+                </LocalizedLink>
               </li>
               <li>
-                <Link href="/cgu" className={linkClass}>
+                <LocalizedLink href="/cgu" className={linkClass}>
                   {ft.legal.terms}
-                </Link>
+                </LocalizedLink>
               </li>
             </ul>
           </nav>

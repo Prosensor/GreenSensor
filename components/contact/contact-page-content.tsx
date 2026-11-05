@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { Check, Mail, MapPin, Phone } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
 import { contactPageCopy, type ContactLang } from "@/i18n/contact-page"
@@ -27,9 +27,9 @@ export function ContactPageContent() {
 
       <Container className="flex flex-col gap-10">
         <nav aria-label="Breadcrumb" className="text-sm text-white/60">
-          <Link href="/" className="transition-colors hover:text-white">
+          <LocalizedLink href="/" className="transition-colors hover:text-white">
             {c.home}
-          </Link>
+          </LocalizedLink>
           <span className="mx-2">/</span>
           <span className="font-medium text-white/90">{c.title}</span>
         </nav>

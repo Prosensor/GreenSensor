@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { useEffect, useMemo, useState } from "react"
 import { Mail, Phone, Search } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
@@ -762,9 +762,9 @@ export function FaqPageContent() {
         />
         <Container className="flex flex-col gap-6">
           <nav aria-label="Breadcrumb" className="text-sm text-white/60">
-            <Link href="/" className="transition-colors hover:text-white">
+            <LocalizedLink href="/" className="transition-colors hover:text-white">
               {ui.home}
-            </Link>
+            </LocalizedLink>
             <span className="mx-2">/</span>
             <span className="font-medium text-white/90">FAQ</span>
           </nav>
@@ -868,9 +868,9 @@ export function FaqPageContent() {
               </li>
             </ul>
           </div>
-          <Link href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "shrink-0 self-start")}>
+          <LocalizedLink href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "shrink-0 self-start")}>
             {t.hero.cta}
-          </Link>
+          </LocalizedLink>
         </Container>
       </section>
     </>

@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useI18n } from "@/i18n/i18n-provider"
 import { useHomeCopy, joinTitle } from "@/i18n/home-copy"
@@ -19,9 +19,9 @@ export function FaqSection() {
           <h2 id="faq-title" className="font-display text-[28px] font-extrabold leading-[1.15] tracking-[-0.01em] text-ink-strong md:text-[40px]">
             {joinTitle(language, t.faq.heading, t.faq.heading_highlight)}
           </h2>
-          <Link href="/faq" className="font-display text-sm font-bold text-forest underline underline-offset-4 transition-colors hover:text-moss-700">
+          <LocalizedLink href="/faq" className="font-display text-sm font-bold text-forest underline underline-offset-4 transition-colors hover:text-moss-700">
             {copy.faqAll}
-          </Link>
+          </LocalizedLink>
         </div>
 
         <Accordion type="single" collapsible className="flex w-full flex-col">

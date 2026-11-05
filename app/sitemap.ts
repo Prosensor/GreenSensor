@@ -1,31 +1,19 @@
 import type { MetadataRoute } from "next"
-import { getArticleList } from "@/lib/articles"
-
-const BASE_URL = "https://greensensor.fr"
-const LANGS = ["fr", "en", "es", "de", "pt", "ro"] as const
-const HREFLANG: Record<(typeof LANGS)[number], string> = {
-  fr: "fr-FR",
-  en: "en-US",
-  es: "es-ES",
-  de: "de-DE",
-  pt: "pt-PT",
-  ro: "ro-RO",
-}
+import { getArticleLanguages, getArticleList } from "@/lib/articles"
+import { LANGS, absoluteUrl, languageAlternates, type Lang } from "@/lib/i18n-routing"
 
 type Entry = MetadataRoute.Sitemap[number]
+type Meta = Pick<Entry, "priority" | "changeFrequency" | "lastModified">
 
-// Même jeu d'alternates que les `alternates.languages` des pages.
-function withLanguages(path: string): Entry["alternates"] {
-  const languages: Record<string, string> = Object.fromEntries(
-    LANGS.map((lang) => [HREFLANG[lang], `${BASE_URL}${path}?lang=${lang}`])
-  )
-  languages["x-default"] = `${BASE_URL}${path}`
-  return { languages }
+// Une entrée par page et par langue, chacune avec l'ensemble des versions (hreflang).
+function entries(path: string, meta: Meta, langs: readonly Lang[] = LANGS): Entry[] {
+  const alternates = { languages: languageAlternates(path, langs) }
+  return langs.map((lang) => ({ url: absoluteUrl(lang, path), alternates, ...meta }))
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pageDefs: (Pick<Entry, "priority" | "changeFrequency"> & { path: string })[] = [
-    { path: "", priority: 1, changeFrequency: "weekly" },
+  const pages: ({ path: string } & Meta)[] = [
+    { path: "/", priority: 1, changeFrequency: "weekly" },
     { path: "/documentation", priority: 0.8, changeFrequency: "monthly" },
     { path: "/faq", priority: 0.8, changeFrequency: "monthly" },
     { path: "/articles", priority: 0.8, changeFrequency: "weekly" },
@@ -33,27 +21,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/contact", priority: 0.6, changeFrequency: "yearly" },
   ]
 
-  const pages: Entry[] = pageDefs.map(({ path, ...rest }) => ({
-    url: `${BASE_URL}${path}`,
-    alternates: withLanguages(path),
-    ...rest,
-  }))
+  const legal = ["/mentions-legales", "/politique-confidentialite", "/cgu"]
 
-  const legal: Entry[] = ["/mentions-legales", "/politique-confidentialite", "/cgu"].map(
-    (path) => ({
-      url: `${BASE_URL}${path}`,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    })
+  // Un article n'est listé que dans les langues où il est réellement rédigé.
+  const articles = getArticleList().flatMap((article) =>
+    entries(
+      `/articles/${article.slug}`,
+      { lastModified: article.publishedAt, changeFrequency: "monthly", priority: 0.7 },
+      getArticleLanguages(article),
+    ),
   )
 
-  const articles: Entry[] = getArticleList().map((article) => ({
-    url: `${BASE_URL}/articles/${article.slug}`,
-    lastModified: article.publishedAt,
-    alternates: withLanguages(`/articles/${article.slug}`),
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }))
-
-  return [...pages, ...articles, ...legal]
+  return [
+    ...pages.flatMap(({ path, ...meta }) => entries(path, meta)),
+    ...articles,
+    ...legal.flatMap((path) => entries(path, { changeFrequency: "yearly", priority: 0.3 })),
+  ]
 }

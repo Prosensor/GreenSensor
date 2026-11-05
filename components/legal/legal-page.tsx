@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { Fragment, useEffect, useState, type ReactNode } from "react"
 import { ArrowRight, Mail, Phone } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 
 const linkClass = "font-semibold text-forest underline decoration-forest/30 underline-offset-2 transition-colors hover:decoration-forest"
 
-/** Texte courant avec `**gras**` et `[libellé](lien)` ; les liens internes passent par next/link. */
+/** Texte courant avec `**gras**` et `[libellé](lien)` ; les liens internes passent par LocalizedLink. */
 function Inline({ text }: { text: string }) {
   const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g)
   return (
@@ -22,7 +22,7 @@ function Inline({ text }: { text: string }) {
         const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
         if (!link) return <Fragment key={i}>{part}</Fragment>
         const [, label, href] = link
-        if (href.startsWith("/")) return <Link key={i} href={href} className={linkClass}>{label}</Link>
+        if (href.startsWith("/")) return <LocalizedLink key={i} href={href} className={linkClass}>{label}</LocalizedLink>
         const external = href.startsWith("http")
         return (
           <a key={i} href={href} className={linkClass} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
@@ -113,9 +113,9 @@ export function LegalPage({ doc }: { doc: LegalDocKey }) {
         />
         <Container className="flex flex-col gap-5">
           <nav aria-label="Breadcrumb" className="text-sm text-white/60">
-            <Link href="/" className="transition-colors hover:text-white">
+            <LocalizedLink href="/" className="transition-colors hover:text-white">
               {ui.home}
-            </Link>
+            </LocalizedLink>
             <span className="mx-2">/</span>
             <span className="font-medium text-white/90">{d.title}</span>
           </nav>
@@ -180,13 +180,13 @@ export function LegalPage({ doc }: { doc: LegalDocKey }) {
               <ul className="mt-3 grid gap-3 sm:grid-cols-2">
                 {others.map((k) => (
                   <li key={k}>
-                    <Link
+                    <LocalizedLink
                       href={LEGAL_PATHS[k]}
                       className="group flex items-center justify-between gap-4 rounded-card bg-white px-5 py-4 font-display text-base font-bold text-ink-strong ring-1 ring-line transition-colors hover:ring-forest/40"
                     >
                       {ui.names[k]}
                       <ArrowRight aria-hidden className="size-4 shrink-0 text-forest transition-transform group-hover:translate-x-0.5" />
-                    </Link>
+                    </LocalizedLink>
                   </li>
                 ))}
               </ul>
@@ -217,9 +217,9 @@ export function LegalPage({ doc }: { doc: LegalDocKey }) {
               </li>
             </ul>
           </div>
-          <Link href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "shrink-0 self-start")}>
+          <LocalizedLink href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "shrink-0 self-start")}>
             {t.hero.cta}
-          </Link>
+          </LocalizedLink>
         </Container>
       </section>
     </>

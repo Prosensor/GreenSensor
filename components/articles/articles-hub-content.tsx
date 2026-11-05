@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { ArrowRight } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
 import { Container } from "@/components/ui/container"
@@ -35,9 +35,9 @@ export function ArticlesHubContent() {
         />
         <Container className="flex flex-col gap-6">
           <nav aria-label="Breadcrumb" className="text-sm text-white/60">
-            <Link href="/" className="transition-colors hover:text-white">
+            <LocalizedLink href="/" className="transition-colors hover:text-white">
               {t.nav.home}
-            </Link>
+            </LocalizedLink>
             <span className="mx-2">/</span>
             <span className="font-medium text-white/90">{t.nav.articles}</span>
           </nav>
@@ -55,7 +55,7 @@ export function ArticlesHubContent() {
           ) : (
             <>
               <article className="grid overflow-hidden rounded-panel bg-white shadow-[0_30px_70px_-44px_rgba(15,42,24,0.5)] ring-1 ring-line lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)]">
-                <Link href={`/articles/${featured.slug}`} aria-hidden tabIndex={-1} className="relative block min-h-[260px] lg:min-h-[400px]">
+                <LocalizedLink href={`/articles/${featured.slug}`} aria-hidden tabIndex={-1} className="relative block min-h-[260px] lg:min-h-[400px]">
                   <Image
                     src={featured.cover.src}
                     alt=""
@@ -65,21 +65,21 @@ export function ArticlesHubContent() {
                     className="object-cover"
                     style={{ objectPosition: featured.cover.position }}
                   />
-                </Link>
+                </LocalizedLink>
                 <div className="flex flex-col justify-center gap-4 p-6 sm:p-10">
                   <p className="font-display text-sm font-bold text-moss-700">
                     {ui.featured}, {meta(featured)}
                   </p>
                   <h2 className="font-display text-[26px] font-extrabold leading-[1.15] tracking-[-0.01em] text-ink-strong md:text-[32px]">
-                    <Link href={`/articles/${featured.slug}`} className="transition-colors hover:text-forest">
+                    <LocalizedLink href={`/articles/${featured.slug}`} className="transition-colors hover:text-forest">
                       {resolveArticleBody(featured, language).title}
-                    </Link>
+                    </LocalizedLink>
                   </h2>
                   <p className="text-base leading-relaxed text-body">{excerpt(resolveArticleBody(featured, language).intro, 230)}</p>
-                  <Link href={`/articles/${featured.slug}`} className="inline-flex w-fit items-center gap-2 font-display text-sm font-bold text-forest hover:text-moss-700">
+                  <LocalizedLink href={`/articles/${featured.slug}`} className="inline-flex w-fit items-center gap-2 font-display text-sm font-bold text-forest hover:text-moss-700">
                     {ah.readMore}
                     <ArrowRight aria-hidden className="size-4" />
-                  </Link>
+                  </LocalizedLink>
                 </div>
               </article>
 
@@ -90,7 +90,7 @@ export function ArticlesHubContent() {
                     return (
                       <li key={article.slug} className="flex">
                         <article className="flex w-full flex-col overflow-hidden rounded-panel bg-white ring-1 ring-line">
-                          <Link href={`/articles/${article.slug}`} aria-hidden tabIndex={-1} className="relative block aspect-[16/9] overflow-hidden">
+                          <LocalizedLink href={`/articles/${article.slug}`} aria-hidden tabIndex={-1} className="relative block aspect-[16/9] overflow-hidden">
                             <Image
                               src={article.cover.src}
                               alt=""
@@ -99,19 +99,19 @@ export function ArticlesHubContent() {
                               className="object-cover"
                               style={{ objectPosition: article.cover.position }}
                             />
-                          </Link>
+                          </LocalizedLink>
                           <div className="flex flex-1 flex-col gap-3 p-6 sm:p-7">
                             <p className="text-sm font-medium text-slate">{meta(article)}</p>
                             <h2 className="font-display text-xl font-extrabold leading-snug text-ink-strong">
-                              <Link href={`/articles/${article.slug}`} className="transition-colors hover:text-forest">
+                              <LocalizedLink href={`/articles/${article.slug}`} className="transition-colors hover:text-forest">
                                 {body.title}
-                              </Link>
+                              </LocalizedLink>
                             </h2>
                             <p className="flex-1 text-[15px] leading-relaxed text-body">{excerpt(body.intro)}</p>
-                            <Link href={`/articles/${article.slug}`} className="inline-flex w-fit items-center gap-2 font-display text-sm font-bold text-forest hover:text-moss-700">
+                            <LocalizedLink href={`/articles/${article.slug}`} className="inline-flex w-fit items-center gap-2 font-display text-sm font-bold text-forest hover:text-moss-700">
                               {ah.readMore}
                               <ArrowRight aria-hidden className="size-4" />
-                            </Link>
+                            </LocalizedLink>
                           </div>
                         </article>
                       </li>

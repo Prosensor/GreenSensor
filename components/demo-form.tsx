@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -140,9 +140,9 @@ export function DemoForm() {
 
         <p className="text-center text-xs leading-relaxed text-slate">
           {contact.note}{" "}
-          <Link href="/politique-confidentialite" className="underline underline-offset-2 hover:text-forest">
+          <LocalizedLink href="/politique-confidentialite" className="underline underline-offset-2 hover:text-forest">
             {contact.privacy}
-          </Link>
+          </LocalizedLink>
         </p>
       </form>
     </Form>

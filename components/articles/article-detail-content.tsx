@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { useEffect, useState } from "react"
 import { ArrowRight, Check } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
@@ -55,13 +55,13 @@ export function ArticleDetailContent({ slug }: { slug: ArticleSlug }) {
         />
         <Container className="flex flex-col gap-6">
           <nav aria-label="Breadcrumb" className="text-sm text-white/60">
-            <Link href="/" className="transition-colors hover:text-white">
+            <LocalizedLink href="/" className="transition-colors hover:text-white">
               {t.nav.home}
-            </Link>
+            </LocalizedLink>
             <span className="mx-2">/</span>
-            <Link href="/articles" className="transition-colors hover:text-white">
+            <LocalizedLink href="/articles" className="transition-colors hover:text-white">
               {t.nav.articles}
-            </Link>
+            </LocalizedLink>
           </nav>
           <p className="font-display text-sm font-bold text-moss-400">
             <time dateTime={def.publishedAt}>
@@ -166,7 +166,7 @@ export function ArticleDetailContent({ slug }: { slug: ArticleSlug }) {
                 const b = resolveArticleBody(a, language)
                 return (
                   <li key={a.slug}>
-                    <Link href={`/articles/${a.slug}`} className="group flex h-full gap-5 overflow-hidden rounded-panel bg-white p-4 ring-1 ring-line transition-shadow hover:shadow-md">
+                    <LocalizedLink href={`/articles/${a.slug}`} className="group flex h-full gap-5 overflow-hidden rounded-panel bg-white p-4 ring-1 ring-line transition-shadow hover:shadow-md">
                       <span className="relative hidden aspect-square w-28 shrink-0 overflow-hidden rounded-card sm:block">
                         <Image src={a.cover.src} alt="" fill sizes="112px" className="object-cover" style={{ objectPosition: a.cover.position }} />
                       </span>
@@ -177,7 +177,7 @@ export function ArticleDetailContent({ slug }: { slug: ArticleSlug }) {
                           <ArrowRight aria-hidden className="size-4" />
                         </span>
                       </span>
-                    </Link>
+                    </LocalizedLink>
                   </li>
                 )
               })}
@@ -194,9 +194,9 @@ export function ArticleDetailContent({ slug }: { slug: ArticleSlug }) {
             </h2>
             <p className="mt-3 font-alt text-base leading-[1.6] text-white/80 md:text-lg">{ui.ctaText}</p>
           </div>
-          <Link href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "shrink-0 self-start")}>
+          <LocalizedLink href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "shrink-0 self-start")}>
             {t.hero.cta}
-          </Link>
+          </LocalizedLink>
         </Container>
       </section>
     </article>

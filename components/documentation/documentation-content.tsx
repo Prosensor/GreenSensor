@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import { LocalizedLink } from "@/components/localized-link"
 import { useEffect, useState } from "react"
 import { EthernetPort, Globe, Mail, Phone, Power } from "lucide-react"
 import { useI18n } from "@/i18n/i18n-provider"
@@ -86,9 +86,9 @@ export function DocumentationContent() {
         />
         <Container className="flex flex-col gap-6">
           <nav aria-label="Breadcrumb" className="text-sm text-white/60">
-            <Link href="/" className="transition-colors hover:text-white">
+            <LocalizedLink href="/" className="transition-colors hover:text-white">
               {d.home}
-            </Link>
+            </LocalizedLink>
             <span className="mx-2">/</span>
             <span className="font-medium text-white/90">{d.title}</span>
           </nav>
@@ -206,9 +206,9 @@ export function DocumentationContent() {
               </li>
             </ul>
           </div>
-          <Link href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "shrink-0 self-start")}>
+          <LocalizedLink href="/contact" className={cn(buttonVariants({ variant: "cta", size: "lg" }), "shrink-0 self-start")}>
             {t.hero.cta}
-          </Link>
+          </LocalizedLink>
         </Container>
       </section>
     </>
