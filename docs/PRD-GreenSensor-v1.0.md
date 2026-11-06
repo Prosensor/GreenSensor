@@ -83,7 +83,7 @@ Permettre aux exploitants de plateformes de compostage (professionnels et struct
 
 ### Feature 1 — Mesure de température sans fil (sondes GreenSensor)
 
-- **Description :** Sondes avec 2 capteurs par sonde, précision annoncée ±0,5 °C, visibilité terrain (coloris fluo), portée LoRa ~2 km en champ libre vers la passerelle.
+- **Description :** Sondes avec 2 capteurs par sonde, précision annoncée ±0,5 °C, visibilité terrain (coloris fluo), liaison LoRa vers la passerelle (portée à valider selon le site).
 - **Use cases :** Relevé continu ; remplacement de sonde en cours de campagne ; multi-sondes par routeur sans plafond technique.
 
 ### Feature 2 — Passerelle & connectivité LoRaWAN

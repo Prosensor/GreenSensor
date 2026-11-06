@@ -52,7 +52,7 @@ const frSections: FaqSection[] = [
   {
     title: "Fonctionnement et installation des sondes",
     items: [
-      { q: "Quelle est la portée de transmission des sondes GreenSensor ?", a: "Les sondes communiquent sans fil avec une portée pouvant atteindre 2 km en environnement dégagé. La portée réelle dépend des obstacles et de la configuration du site." },
+      { q: "Quelle est la portée de transmission des sondes GreenSensor ?", a: "Les sondes envoient leurs mesures à la passerelle par radio LoRa (868 MHz). La portée réelle dépend beaucoup du site : bâtiments, relief, végétation, andains et emplacement de la passerelle (elle est réduite si la passerelle est en intérieur). Placez la passerelle au plus près des sondes, et contactez-nous pour valider l'emplacement." },
       { q: "Combien de capteurs de température comporte chaque sonde ?", a: "Chaque sonde intègre un ou deux points de mesure selon sa longueur pour suivre à la fois la surface et le coeur de l'andain." },
       { q: "A quelle profondeur mesurer la température d'un andain ?", a: "La mesure doit se faire au coeur de l'andain, au moins a 50 cm, idealement entre 80 cm et 1 m. Les sondes 1 m, 1.5 m et 2 m repondent aux usages terrain." },
       { q: "L'installation nécessite-t-elle un technicien ?", a: "Non. Il suffit de connecter le routeur à Internet et de démarrer la sonde en appuyant sur le bouton du boîtier." },
@@ -155,7 +155,7 @@ const enSections: FaqSection[] = [
   {
     title: "Probe operation and installation",
     items: [
-      { q: "What is the transmission range of GreenSensor probes?", a: "The probes communicate wirelessly up to around 2 km in open areas. Effective range depends on obstacles and site layout." },
+      { q: "What is the transmission range of GreenSensor probes?", a: "The probes send their readings to the gateway by LoRa radio (868 MHz). The real range depends heavily on the site: buildings, terrain, vegetation, windrows and the gateway's location (it is reduced if the gateway is indoors). Place the gateway as close to the probes as possible, and contact us to check the location." },
       { q: "How many temperature sensors does each probe include?", a: "Each probe includes one or two measurement points depending on model length, to monitor both surface and core temperatures." },
       { q: "At what depth should temperature be measured in windrows?", a: "Temperature should be measured at the core of the windrow, at least 50 cm deep and ideally between 80 cm and 1 m." },
       { q: "Does installation require a technician?", a: "No. Just connect the router to the Internet and start the probe by pressing the button on its housing." },
@@ -258,7 +258,7 @@ const esSections: FaqSection[] = [
   {
     title: "Funcionamiento e instalación de sondas",
     items: [
-      { q: "¿Cuál es el alcance de transmisión de las sondas GreenSensor?", a: "Las sondas se comunican de forma inalámbrica hasta unos 2 km en zonas abiertas. El alcance real depende de obstáculos y de la configuración del sitio." },
+      { q: "¿Cuál es el alcance de transmisión de las sondas GreenSensor?", a: "Las sondas envían sus mediciones a la pasarela por radio LoRa (868 MHz). El alcance real depende mucho del sitio: edificios, relieve, vegetación, hileras y ubicación de la pasarela (se reduce si la pasarela está en interior). Coloque la pasarela lo más cerca posible de las sondas y contáctenos para validar la ubicación." },
       { q: "¿Cuántos sensores de temperatura incluye cada sonda?", a: "Cada sonda incluye uno o dos puntos de medición según la longitud del modelo, para controlar superficie y núcleo." },
       { q: "¿A qué profundidad debe medirse la temperatura en una pila?", a: "La temperatura debe medirse en el núcleo, al menos a 50 cm y, de forma ideal, entre 80 cm y 1 m." },
       { q: "¿La instalación requiere técnico?", a: "No. Basta con conectar el router a Internet y poner en marcha la sonda pulsando el botón de su caja." },
@@ -361,7 +361,7 @@ const deSections: FaqSection[] = [
   {
     title: "Sondenbetrieb und Installation",
     items: [
-      { q: "Wie groß ist die Übertragungsreichweite der GreenSensor-Sonden?", a: "Die Sonden kommunizieren drahtlos bis etwa 2 km in offenem Gelände. Die effektive Reichweite hängt von Hindernissen und der Standortstruktur ab." },
+      { q: "Wie groß ist die Übertragungsreichweite der GreenSensor-Sonden?", a: "Die Sonden senden ihre Messwerte per LoRa-Funk (868 MHz) an das Gateway. Die tatsächliche Reichweite hängt stark vom Standort ab: Gebäude, Gelände, Bewuchs, Mieten und Aufstellort des Gateways (sie sinkt, wenn das Gateway in einem Gebäude steht). Stellen Sie das Gateway so nah wie möglich an den Sonden auf und kontaktieren Sie uns, um den Aufstellort zu prüfen." },
       { q: "Wie viele Temperatursensoren hat jede Sonde?", a: "Je nach Modelllänge enthält jede Sonde ein oder zwei Messpunkte, um Oberfläche und Kern zu überwachen." },
       { q: "In welcher Tiefe sollte die Temperatur im Mietenkörper gemessen werden?", a: "Die Messung sollte im Kern erfolgen, mindestens 50 cm tief, idealerweise zwischen 80 cm und 1 m." },
       { q: "Ist für die Installation ein Techniker erforderlich?", a: "Nein. Es genügt, den Router mit dem Internet zu verbinden und die Sonde durch Drücken der Taste am Gehäuse zu starten." },
@@ -464,7 +464,7 @@ const ptSections: FaqSection[] = [
   {
     title: "Operação e instalação das sondas",
     items: [
-      { q: "Qual é o alcance de transmissão das sondas GreenSensor?", a: "As sondas comunicam sem fio até cerca de 2 km em áreas abertas. O alcance real depende de obstáculos e da configuração do local." },
+      { q: "Qual é o alcance de transmissão das sondas GreenSensor?", a: "As sondas enviam as medições à gateway por rádio LoRa (868 MHz). O alcance real depende muito do local: edifícios, relevo, vegetação, leiras e posição da gateway (é reduzido se a gateway estiver no interior). Coloque a gateway o mais perto possível das sondas e contacte-nos para validar a localização." },
       { q: "Quantos sensores de temperatura cada sonda inclui?", a: "Cada sonda inclui um ou dois pontos de medição, conforme o comprimento do modelo, para monitorizar superfície e núcleo." },
       { q: "A que profundidade deve ser medida a temperatura na leira?", a: "A medição deve ser feita no núcleo da leira, pelo menos a 50 cm e, idealmente, entre 80 cm e 1 m." },
       { q: "A instalação requer técnico?", a: "Não. Basta ligar o router à Internet e arrancar a sonda premindo o botão da caixa." },
@@ -567,7 +567,7 @@ const roSections: FaqSection[] = [
   {
     title: "Funcționarea și instalarea sondelor",
     items: [
-      { q: "Care este raza de transmisie a sondelor GreenSensor?", a: "Sondele comunică wireless până la aproximativ 2 km în zone deschise. Raza efectivă depinde de obstacole și de configurația locației." },
+      { q: "Care este raza de transmisie a sondelor GreenSensor?", a: "Sondele trimit măsurătorile la gateway prin radio LoRa (868 MHz). Raza reală depinde mult de amplasament: clădiri, relief, vegetație, șiruri și poziția gateway-ului (scade dacă gateway-ul este în interior). Plasați gateway-ul cât mai aproape de sonde și contactați-ne pentru a valida poziția." },
       { q: "Câți senzori de temperatură include fiecare sondă?", a: "Fiecare sondă include unul sau două puncte de măsurare, în funcție de lungimea modelului, pentru suprafață și nucleu." },
       { q: "La ce adâncime se măsoară temperatura în grămadă?", a: "Temperatura trebuie măsurată în nucleu, cel puțin la 50 cm și ideal între 80 cm și 1 m." },
       { q: "Instalarea necesită tehnician?", a: "Nu. Este suficient să conectați routerul la internet și să porniți sonda apăsând butonul de pe carcasă." },

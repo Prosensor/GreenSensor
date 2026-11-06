@@ -170,7 +170,7 @@ const circularFr: ArticleBody = {
     {
       heading: "Suivre chaque andain en continu",
       paragraphs: [
-        "Une sonde de température connectée est plantée dans l’andain et mesure la température à cœur. La sonde GreenSensor relève la température toutes les heures et transmet les mesures par radio longue portée, jusqu’à 2 km en champ libre.",
+        "Une sonde de température connectée est plantée dans l’andain et mesure la température à cœur. La sonde GreenSensor relève la température toutes les heures et transmet les mesures par radio (LoRa) vers une passerelle.",
         "Sur la plateforme web, chaque sonde est affectée à un andain et à une campagne de fermentation ou de maturation. Les courbes s’affichent en temps réel, et une alerte SMS ou e-mail est envoyée quand un seuil est dépassé.",
         "Les retournements et les arrosages peuvent ainsi se décider à partir des mesures plutôt que d’un calendrier fixe, et les équipes passent moins de temps à relever les températures.",
       ],
@@ -236,7 +236,7 @@ const circularEn: ArticleBody = {
     {
       heading: "Monitor every windrow continuously",
       paragraphs: [
-        "A connected temperature probe is pushed into the windrow and measures the core temperature. The GreenSensor probe reads the temperature every hour and sends the measurements by long-range radio, up to 2 km in open field.",
+        "A connected temperature probe is pushed into the windrow and measures the core temperature. The GreenSensor probe reads the temperature every hour and sends the measurements by radio (LoRa) to a gateway.",
         "On the web platform, each probe is assigned to a windrow and to a fermentation or maturation campaign. Curves are displayed in real time, and an SMS or e-mail alert is sent when a threshold is exceeded.",
         "Turning and watering can then be decided from the measurements rather than a fixed calendar, and teams spend less time taking readings.",
       ],
@@ -275,8 +275,8 @@ const softwareFr: ArticleBody = {
       heading: "Du cahier à l’écran",
       paragraphs: [
         "Avec des relevés manuels, chaque mesure demande un déplacement sur l’andain, une lecture, puis une saisie. Les données arrivent tard, parfois incomplètes, et il faut encore les rassembler pour les analyser.",
-        "Avec des sondes connectées, la mesure est automatique. Chaque sonde transmet par radio longue portée vers une passerelle, puis vers un serveur. Les mesures s’affichent sur une plateforme web, depuis un ordinateur ou un téléphone. Il n’y a plus de tournée à faire pour relever les températures.",
-        "Rien à installer sur vos ordinateurs : la plateforme s’ouvre dans un navigateur. La passerelle reçoit les données jusqu’à 2 km en champ libre.",
+        "Avec des sondes connectées, la mesure est automatique. Chaque sonde transmet par radio (LoRa) vers une passerelle, puis vers un serveur. Les mesures s’affichent sur une plateforme web, depuis un ordinateur ou un téléphone. Il n’y a plus de tournée à faire pour relever les températures.",
+        "Rien à installer sur vos ordinateurs : la plateforme s’ouvre dans un navigateur. La passerelle reçoit les données des sondes et les envoie vers la plateforme.",
       ],
     },
     {
@@ -339,8 +339,8 @@ const softwareEn: ArticleBody = {
       heading: "From logbook to screen",
       paragraphs: [
         "With manual readings, each measurement means walking to the windrow, reading a value, then entering it. Data arrives late, sometimes incomplete, and still has to be gathered before it can be analysed.",
-        "With connected probes, measurement is automatic. Each probe transmits by long-range radio to a gateway, then to a server. Measurements are displayed on a web platform, from a computer or a phone. There are no more rounds to take temperatures.",
-        "Nothing to install on your computers: the platform opens in a browser. The gateway receives data up to 2 km in open field.",
+        "With connected probes, measurement is automatic. Each probe transmits by radio (LoRa) to a gateway, then to a server. Measurements are displayed on a web platform, from a computer or a phone. There are no more rounds to take temperatures.",
+        "Nothing to install on your computers: the platform opens in a browser. The gateway receives the data from the probes and sends it to the platform.",
       ],
     },
     {

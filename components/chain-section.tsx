@@ -32,7 +32,7 @@ const icons = [ProbeIcon, Router, Cloud, MonitorSmartphone]
  */
 export function ChainSection() {
   const copy = useHomeCopy()
-  const { chain, figures } = copy
+  const { chain } = copy
   const reduced = useReducedMotionFlag()
   const [ref, inView] = useInView<HTMLDivElement>(0.3)
   const { t, seek } = useClock(inView && !reduced, LOOP, { fps: 20 })
@@ -56,11 +56,6 @@ export function ChainSection() {
           {/* Trait de liaison : horizontal sur grand écran, vertical sur mobile */}
           <div aria-hidden className="absolute left-[12.5%] right-[12.5%] top-[44px] hidden h-px bg-white/20 lg:block">
             <span className="absolute left-0 top-0 h-px bg-moss-400" style={{ width: `${p * 100}%` }} />
-            <span
-              className="absolute left-[16.7%] top-1/2 -translate-x-1/2 -translate-y-1/2 bg-forest-950 px-2 font-display text-xs font-bold text-mint"
-            >
-              {figures[2].value}
-            </span>
             <span
               className="absolute top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"
               style={{ left: `${p * 100}%` }}

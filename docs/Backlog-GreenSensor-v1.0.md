@@ -86,7 +86,7 @@
 
 | ID | Story | Critères d'acceptation | Priorité | Points | Sprint |
 |----|-------|------------------------|----------|--------|--------|
-| **US-5.1** | En tant qu'**exploitant**, je veux **que mes sondes transmettent en LoRa vers la passerelle** afin d'**éviter les relevés manuels**. | • Portée ~2 km champ libre • Multi-sondes sans limite par routeur • 2 capteurs par sonde | P0 | 13 | Backlog |
+| **US-5.1** | En tant qu'**exploitant**, je veux **que mes sondes transmettent en LoRa vers la passerelle** afin d'**éviter les relevés manuels**. | • Portée à valider selon le site • Multi-sondes sans limite par routeur • 2 capteurs par sonde | P0 | 13 | Backlog |
 | **US-5.2** | En tant qu'**exploitant sans box sur site**, je veux **une option passerelle 4G Prosensor** afin de **connecter le site à GreenSensor**. | • Procédure fournie par Prosensor • Remontée données une fois SYS vert | P1 | 8 | Backlog |
 | **US-5.3** | En tant qu'**exploitant**, je veux **dépanner une passerelle hors ligne** via la WebUI afin de **rétablir la coche LoRa verte**. | • Accès Basic Station depuis WebUI • Logo LoRa vert après correction • Données qui reprennent | P1 | 5 | Backlog |
 | **US-5.4** | En tant qu'**exploitant**, je veux **planifier la maintenance batterie sonde** afin de **garantir 4 ans d'autonomie**. | • Forfait révision 80 € (pile + contrôle + transport) documenté en FAQ • Rappel ou procédure contact Prosensor | P2 | 3 | Backlog |

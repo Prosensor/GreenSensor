@@ -36,17 +36,17 @@ const fr: Extra = {
       items: [
         {
           q: "Comment démarrer avec GreenSensor ?",
-          a: "En quatre étapes. 1. Installez la passerelle sur le site, à moins de 2 km en champ libre. 2. Plantez la sonde à la main dans l'andain, grâce à ses deux poignées. 3. Créez vos objectifs et utilisez-les dans vos phases, puis créez une campagne qui relie la sonde à son andain. 4. Suivez les données en direct, recevez les alertes et exportez les rapports.",
+          a: "En quatre étapes. 1. Installez la passerelle sur le site, au plus près des sondes. 2. Plantez la sonde à la main dans l'andain, grâce à ses deux poignées. 3. Créez vos objectifs et utilisez-les dans vos phases, puis créez une campagne qui relie la sonde à son andain. 4. Suivez les données en direct, recevez les alertes et exportez les rapports.",
         },
         { q: "Faut-il tirer des câbles ou alimenter quelque chose sur l'andain ?", a: "Non. La sonde fonctionne sur batterie et communique par radio : ni câble, ni alimentation à prévoir sur l'andain." },
         { q: "Peut-on mettre plusieurs sondes dans un même andain ?", a: "Oui. Vous utilisez une ou plusieurs sondes par andain, et vous les reliez à leur andain dans la plateforme." },
         {
           q: "Quelle technologie radio utilise la sonde ?",
-          a: "Une radio longue portée et basse consommation, sur la bande 868 MHz (Europe). L'émetteur est vissé directement sur la sonde, en une seule pièce. Les données suivent le trajet sonde, passerelle, serveur cloud sécurisé, plateforme web GreenSensor.",
+          a: "Une radio LoRa basse consommation, sur la bande 868 MHz (Europe). L'émetteur est vissé directement sur la sonde, en une seule pièce. Les données suivent le trajet sonde, passerelle, serveur cloud sécurisé, plateforme web GreenSensor.",
         },
         {
           q: "Où placer la passerelle ?",
-          a: "Sur le site, à moins de 2 km des sondes en champ libre. Plus il y a d'obstacles (bâtiments, relief), plus la portée réelle diminue. La connexion Internet de la passerelle est détaillée dans la section dédiée.",
+          a: "Sur le site, au plus près des sondes. Plus il y a d'obstacles (bâtiments, relief), plus la portée réelle diminue. La connexion Internet de la passerelle est détaillée dans la section dédiée.",
         },
       ],
     },
@@ -109,17 +109,17 @@ const en: Extra = {
       items: [
         {
           q: "How do I get started with GreenSensor?",
-          a: "In four steps. 1. Install the gateway on site, within 2 km in open field. 2. Push the probe into the windrow by hand, using its two handles. 3. Create your objectives and use them in your phases, then create a campaign that links the probe to its windrow. 4. Follow live data, get alerts and export reports.",
+          a: "In four steps. 1. Install the gateway on site, as close to the probes as possible. 2. Push the probe into the windrow by hand, using its two handles. 3. Create your objectives and use them in your phases, then create a campaign that links the probe to its windrow. 4. Follow live data, get alerts and export reports.",
         },
         { q: "Do I need to run cables or power on the windrow?", a: "No. The probe runs on its battery and communicates by radio: no cables and no power supply on the windrow." },
         { q: "Can I use several probes in one windrow?", a: "Yes. You use one or more probes per windrow, and you link them to their windrow in the platform." },
         {
           q: "What radio technology does the probe use?",
-          a: "Long-range, low-power radio in the 868 MHz band (EU). The transmitter is screwed directly on top of the probe, as one single piece. Data follows the path probe, gateway, secure cloud server, GreenSensor web platform.",
+          a: "Low-power LoRa radio in the 868 MHz band (EU). The transmitter is screwed directly on top of the probe, as one single piece. Data follows the path probe, gateway, secure cloud server, GreenSensor web platform.",
         },
         {
           q: "Where should I place the gateway?",
-          a: "On site, within 2 km of the probes in open field. The more obstacles there are (buildings, terrain), the shorter the real range. The gateway's internet connection is covered in the connectivity section.",
+          a: "On site, as close to the probes as possible. The more obstacles there are (buildings, terrain), the shorter the real range. The gateway's internet connection is covered in the connectivity section.",
         },
       ],
     },
@@ -182,17 +182,17 @@ const es: Extra = {
       items: [
         {
           q: "¿Cómo empezar con GreenSensor?",
-          a: "En cuatro pasos. 1. Instale la pasarela en el sitio, a menos de 2 km en campo abierto. 2. Clave la sonda a mano en la hilera, con sus dos asas. 3. Cree sus objetivos y utilícelos en sus fases; después cree una campaña que vincule la sonda a su hilera. 4. Siga los datos en directo, reciba las alertas y exporte los informes.",
+          a: "En cuatro pasos. 1. Instale la pasarela en el sitio, lo más cerca posible de las sondas. 2. Clave la sonda a mano en la hilera, con sus dos asas. 3. Cree sus objetivos y utilícelos en sus fases; después cree una campaña que vincule la sonda a su hilera. 4. Siga los datos en directo, reciba las alertas y exporte los informes.",
         },
         { q: "¿Hay que tender cables o alimentar algo en la hilera?", a: "No. La sonda funciona con batería y se comunica por radio: ni cables ni alimentación en la hilera." },
         { q: "¿Se pueden poner varias sondas en una misma hilera?", a: "Sí. Se usan una o varias sondas por hilera, y se vinculan a su hilera en la plataforma." },
         {
           q: "¿Qué tecnología de radio utiliza la sonda?",
-          a: "Una radio de largo alcance y bajo consumo, en la banda de 868 MHz (Europa). El emisor está atornillado directamente en la sonda, como una sola pieza. Los datos siguen el recorrido sonda, pasarela, servidor cloud seguro, plataforma web GreenSensor.",
+          a: "Una radio LoRa de bajo consumo, en la banda de 868 MHz (Europa). El emisor está atornillado directamente en la sonda, como una sola pieza. Los datos siguen el recorrido sonda, pasarela, servidor cloud seguro, plataforma web GreenSensor.",
         },
         {
           q: "¿Dónde colocar la pasarela?",
-          a: "En el sitio, a menos de 2 km de las sondas en campo abierto. Cuantos más obstáculos haya (edificios, relieve), menor será el alcance real. La conexión a Internet de la pasarela se detalla en la sección dedicada.",
+          a: "En el sitio, lo más cerca posible de las sondas. Cuantos más obstáculos haya (edificios, relieve), menor será el alcance real. La conexión a Internet de la pasarela se detalla en la sección dedicada.",
         },
       ],
     },
@@ -255,17 +255,17 @@ const de: Extra = {
       items: [
         {
           q: "Wie starte ich mit GreenSensor?",
-          a: "In vier Schritten. 1. Installieren Sie das Gateway vor Ort, im freien Feld höchstens 2 km entfernt. 2. Stecken Sie die Sonde mit den beiden Griffen von Hand in die Miete. 3. Legen Sie Ihre Ziele an und verwenden Sie sie in Ihren Phasen, dann erstellen Sie eine Kampagne, die die Sonde mit ihrer Miete verknüpft. 4. Verfolgen Sie die Daten live, erhalten Sie Warnungen und exportieren Sie Berichte.",
+          a: "In vier Schritten. 1. Installieren Sie das Gateway vor Ort, so nah wie möglich an den Sonden. 2. Stecken Sie die Sonde mit den beiden Griffen von Hand in die Miete. 3. Legen Sie Ihre Ziele an und verwenden Sie sie in Ihren Phasen, dann erstellen Sie eine Kampagne, die die Sonde mit ihrer Miete verknüpft. 4. Verfolgen Sie die Daten live, erhalten Sie Warnungen und exportieren Sie Berichte.",
         },
         { q: "Muss ich Kabel verlegen oder etwas mit Strom versorgen?", a: "Nein. Die Sonde läuft mit Batterie und kommuniziert per Funk: keine Kabel und keine Stromversorgung auf der Miete." },
         { q: "Kann ich mehrere Sonden in einer Miete einsetzen?", a: "Ja. Sie setzen eine oder mehrere Sonden pro Miete ein und verknüpfen sie in der Plattform mit ihrer Miete." },
         {
           q: "Welche Funktechnik nutzt die Sonde?",
-          a: "Eine stromsparende Langstreckenfunkverbindung im 868-MHz-Band (EU). Der Sender ist direkt auf die Sonde geschraubt, als ein einziges Teil. Die Daten laufen über den Weg Sonde, Gateway, sicherer Cloud-Server, GreenSensor-Webplattform.",
+          a: "Eine stromsparende LoRa-Funkverbindung im 868-MHz-Band (EU). Der Sender ist direkt auf die Sonde geschraubt, als ein einziges Teil. Die Daten laufen über den Weg Sonde, Gateway, sicherer Cloud-Server, GreenSensor-Webplattform.",
         },
         {
           q: "Wo sollte das Gateway stehen?",
-          a: "Vor Ort, im freien Feld höchstens 2 km von den Sonden entfernt. Je mehr Hindernisse es gibt (Gebäude, Gelände), desto kürzer ist die tatsächliche Reichweite. Die Internetverbindung des Gateways wird im Abschnitt zur Konnektivität erklärt.",
+          a: "Vor Ort, so nah wie möglich an den Sonden. Je mehr Hindernisse es gibt (Gebäude, Gelände), desto kürzer ist die tatsächliche Reichweite. Die Internetverbindung des Gateways wird im Abschnitt zur Konnektivität erklärt.",
         },
       ],
     },
@@ -328,17 +328,17 @@ const pt: Extra = {
       items: [
         {
           q: "Como começar com o GreenSensor?",
-          a: "Em quatro passos. 1. Instalar o gateway no local, a menos de 2 km em campo aberto. 2. Cravar a sonda à mão na leira, com as duas pegas. 3. Criar os objetivos e usá-los nas fases, depois criar uma campanha que associa a sonda à sua leira. 4. Acompanhar os dados em direto, receber os alertas e exportar os relatórios.",
+          a: "Em quatro passos. 1. Instalar o gateway no local, o mais perto possível das sondas. 2. Cravar a sonda à mão na leira, com as duas pegas. 3. Criar os objetivos e usá-los nas fases, depois criar uma campanha que associa a sonda à sua leira. 4. Acompanhar os dados em direto, receber os alertas e exportar os relatórios.",
         },
         { q: "É preciso passar cabos ou alimentar alguma coisa na leira?", a: "Não. A sonda funciona com bateria e comunica por rádio: sem cabos nem alimentação na leira." },
         { q: "Podem usar-se várias sondas na mesma leira?", a: "Sim. Utiliza uma ou várias sondas por leira e associa-as à respetiva leira na plataforma." },
         {
           q: "Que tecnologia de rádio utiliza a sonda?",
-          a: "Um rádio de longo alcance e baixo consumo, na banda de 868 MHz (Europa). O emissor está aparafusado diretamente na sonda, numa só peça. Os dados seguem o percurso sonda, gateway, servidor cloud seguro, plataforma web GreenSensor.",
+          a: "Um rádio LoRa de baixo consumo, na banda de 868 MHz (Europa). O emissor está aparafusado diretamente na sonda, numa só peça. Os dados seguem o percurso sonda, gateway, servidor cloud seguro, plataforma web GreenSensor.",
         },
         {
           q: "Onde colocar o gateway?",
-          a: "No local, a menos de 2 km das sondas em campo aberto. Quantos mais obstáculos houver (edifícios, relevo), menor será o alcance real. A ligação à Internet do gateway é detalhada na secção dedicada.",
+          a: "No local, o mais perto possível das sondas. Quantos mais obstáculos houver (edifícios, relevo), menor será o alcance real. A ligação à Internet do gateway é detalhada na secção dedicada.",
         },
       ],
     },
@@ -401,17 +401,17 @@ const ro: Extra = {
       items: [
         {
           q: "Cum încep cu GreenSensor?",
-          a: "În patru pași. 1. Instalați gateway-ul pe amplasament, la mai puțin de 2 km în câmp deschis. 2. Înfigeți sonda cu mâna în șir, folosind cele două mânere. 3. Creați obiectivele și folosiți-le în faze, apoi creați o campanie care asociază sonda cu șirul ei. 4. Urmăriți datele în direct, primiți alertele și exportați rapoartele.",
+          a: "În patru pași. 1. Instalați gateway-ul pe amplasament, cât mai aproape de sonde. 2. Înfigeți sonda cu mâna în șir, folosind cele două mânere. 3. Creați obiectivele și folosiți-le în faze, apoi creați o campanie care asociază sonda cu șirul ei. 4. Urmăriți datele în direct, primiți alertele și exportați rapoartele.",
         },
         { q: "Trebuie să trag cabluri sau să alimentez ceva pe șir?", a: "Nu. Sonda funcționează pe baterie și comunică prin radio: fără cabluri și fără alimentare pe șir." },
         { q: "Pot pune mai multe sonde în același șir?", a: "Da. Folosiți una sau mai multe sonde per șir și le asociați cu șirul lor în platformă." },
         {
           q: "Ce tehnologie radio folosește sonda?",
-          a: "Un radio cu rază lungă și consum redus, pe banda de 868 MHz (UE). Emițătorul este înșurubat direct pe sondă, dintr-o singură piesă. Datele urmează traseul sondă, gateway, server cloud securizat, platformă web GreenSensor.",
+          a: "Un radio LoRa cu consum redus, pe banda de 868 MHz (UE). Emițătorul este înșurubat direct pe sondă, dintr-o singură piesă. Datele urmează traseul sondă, gateway, server cloud securizat, platformă web GreenSensor.",
         },
         {
           q: "Unde plasez gateway-ul?",
-          a: "Pe amplasament, la mai puțin de 2 km de sonde în câmp deschis. Cu cât există mai multe obstacole (clădiri, relief), cu atât raza reală scade. Conexiunea la internet a gateway-ului este detaliată în secțiunea dedicată.",
+          a: "Pe amplasament, cât mai aproape de sonde. Cu cât există mai multe obstacole (clădiri, relief), cu atât raza reală scade. Conexiunea la internet a gateway-ului este detaliată în secțiunea dedicată.",
         },
       ],
     },

@@ -109,7 +109,7 @@ const fr: HomeCopy = {
   figures: [
     { value: "±0,5 °C", label: "Précision", caption: "Au cœur de l'andain" },
     { value: "5 ans", label: "Autonomie", caption: "Batterie remplaçable" },
-    { value: "2 km", label: "Portée radio", caption: "En champ libre" },
+    { value: "3 ans", label: "Garantie", caption: "Fabriqué en France" },
     { value: "IP68", label: "Étanchéité", caption: "Boîtier et tube inox 316L" },
   ],
   challenge: {
@@ -128,7 +128,7 @@ const fr: HomeCopy = {
     title: "Du capteur à votre écran",
     steps: [
       { name: "Sonde GreenSensor", desc: "Mesure la température au cœur de l'andain et celle de l'air. Une ou plusieurs par andain." },
-      { name: "Passerelle", desc: "Reçoit les données jusqu'à 2 km de distance, en champ libre." },
+      { name: "Passerelle", desc: "Reçoit les mesures envoyées par les sondes et les transmet à Internet." },
       { name: "Serveur cloud", desc: "Stocke les mesures en sécurité." },
       { name: "Plateforme web", desc: "Données en direct, historique et alertes." },
     ],
@@ -155,7 +155,7 @@ const fr: HomeCopy = {
       { label: "Plage de mesure", value: "-55 °C à +125 °C" },
       { label: "Précision", value: "±0,5 °C de -10 °C à +85 °C" },
       { label: "Intervalle de mesure", value: "Toutes les heures (fixe)" },
-      { label: "Portée radio", value: "2 km en champ libre, bande 868 MHz" },
+      { label: "Radio", value: "LoRa, bande 868 MHz" },
       { label: "Autonomie", value: "5 ans à une mesure par heure, batterie remplaçable" },
       { label: "Longueur / diamètre", value: "1 m, 1.5 m ou 2 m / Ø 16 mm" },
       { label: "Tube", value: "Inox 316L, deux poignées fixées et collées" },
@@ -211,7 +211,7 @@ const fr: HomeCopy = {
     probe: "Sonde",
     kpi: { campaigns: "Campagnes en cours", probes: "Sondes actives", alerts: "Alertes", title: "Tableau de bord", chart: "Évolution de la température" },
     parts: [
-      { name: "Antenne", desc: "Envoie chaque mesure à la passerelle, jusqu'à 2 km en champ libre (868 MHz)." },
+      { name: "Antenne", desc: "Envoie chaque mesure à la passerelle par radio LoRa (868 MHz)." },
       { name: "Boîtier IP68", desc: "130 × 50 × 54 mm. Il contient la batterie remplaçable (5 ans à une mesure par heure) et le capteur d'air." },
       { name: "Deux poignées", desc: "Fixées et collées sur le tube : la sonde se plante à la main." },
       { name: "Tube inox 316L", desc: "Ø 16 mm, en 1 m, 1.5 m ou 2 m. Un 2e point de mesure est possible en option sur les sondes de 2 m, à 1 m." },
@@ -263,7 +263,7 @@ const en: HomeCopy = {
   figures: [
     { value: "±0.5 °C", label: "Accuracy", caption: "In the core of the pile" },
     { value: "5 years", label: "Battery life", caption: "Replaceable battery" },
-    { value: "2 km", label: "Radio range", caption: "In open field" },
+    { value: "3 years", label: "Warranty", caption: "Made in France" },
     { value: "IP68", label: "Waterproof", caption: "Housing and 316L stainless tube" },
   ],
   challenge: {
@@ -282,7 +282,7 @@ const en: HomeCopy = {
     title: "From sensor to screen",
     steps: [
       { name: "GreenSensor probe", desc: "Measures the pile and air temperature. One or more per windrow." },
-      { name: "Gateway", desc: "Receives the data up to 2 km away, in open field." },
+      { name: "Gateway", desc: "Receives the data sent by the probes and passes it on to the Internet." },
       { name: "Cloud server", desc: "Stores the readings safely." },
       { name: "Web platform", desc: "Live data, history and alerts." },
     ],
@@ -309,7 +309,7 @@ const en: HomeCopy = {
       { label: "Measuring range", value: "-55 °C to +125 °C" },
       { label: "Accuracy", value: "±0.5 °C from -10 °C to +85 °C" },
       { label: "Reading interval", value: "Every hour (fixed)" },
-      { label: "Radio range", value: "2 km in open field, 868 MHz band" },
+      { label: "Radio", value: "LoRa, 868 MHz band" },
       { label: "Battery life", value: "5 years at one reading per hour, replaceable battery" },
       { label: "Length / diameter", value: "1 m, 1.5 m or 2 m / Ø 16 mm" },
       { label: "Tube", value: "316L stainless steel, two handles fixed and glued" },
@@ -365,7 +365,7 @@ const en: HomeCopy = {
     probe: "Probe",
     kpi: { campaigns: "Running campaigns", probes: "Active probes", alerts: "Alerts", title: "Dashboard", chart: "Temperature trend" },
     parts: [
-      { name: "Antenna", desc: "Sends each reading to the gateway, up to 2 km in open field (868 MHz)." },
+      { name: "Antenna", desc: "Sends each reading to the gateway by LoRa radio (868 MHz)." },
       { name: "IP68 housing", desc: "130 × 50 × 54 mm. Holds the replaceable battery (5 years at one reading per hour) and the air sensor." },
       { name: "Two handles", desc: "Fixed and glued on the tube: you push the probe in by hand." },
       { name: "316L stainless tube", desc: "Ø 16 mm, in 1 m, 1.5 m or 2 m. A 2nd measuring point is optional on 2 m probes, at 1 m." },
@@ -417,7 +417,7 @@ const es: HomeCopy = {
   figures: [
     { value: "±0,5 °C", label: "Precisión", caption: "En el núcleo de la hilera" },
     { value: "5 años", label: "Autonomía", caption: "Batería reemplazable" },
-    { value: "2 km", label: "Alcance radio", caption: "En campo abierto" },
+    { value: "3 años", label: "Garantía", caption: "Fabricado en Francia" },
     { value: "IP68", label: "Estanqueidad", caption: "Carcasa y tubo de acero 316L" },
   ],
   challenge: {
@@ -436,7 +436,7 @@ const es: HomeCopy = {
     title: "Del sensor a su pantalla",
     steps: [
       { name: "Sonda GreenSensor", desc: "Mide la temperatura del núcleo y la del aire. Una o varias por hilera." },
-      { name: "Pasarela", desc: "Recibe los datos hasta 2 km de distancia, en campo abierto." },
+      { name: "Pasarela", desc: "Recibe los datos enviados por las sondas y los transmite a Internet." },
       { name: "Servidor en la nube", desc: "Almacena las mediciones de forma segura." },
       { name: "Plataforma web", desc: "Datos en directo, historial y alertas." },
     ],
@@ -463,7 +463,7 @@ const es: HomeCopy = {
       { label: "Rango de medición", value: "-55 °C a +125 °C" },
       { label: "Precisión", value: "±0,5 °C de -10 °C a +85 °C" },
       { label: "Intervalo de medición", value: "Cada hora (fijo)" },
-      { label: "Alcance radio", value: "2 km en campo abierto, banda de 868 MHz" },
+      { label: "Radio", value: "LoRa, banda de 868 MHz" },
       { label: "Autonomía", value: "5 años con una medición por hora, batería reemplazable" },
       { label: "Longitud / diámetro", value: "1 m, 1,5 m o 2 m / Ø 16 mm" },
       { label: "Tubo", value: "Acero inoxidable 316L, dos asas fijadas y pegadas" },
@@ -519,7 +519,7 @@ const es: HomeCopy = {
     probe: "Sonda",
     kpi: { campaigns: "Campañas en curso", probes: "Sondas activas", alerts: "Alertas", title: "Panel", chart: "Evolución de la temperatura" },
     parts: [
-      { name: "Antena", desc: "Envía cada medición a la pasarela, hasta 2 km en campo abierto (868 MHz)." },
+      { name: "Antena", desc: "Envía cada medición a la pasarela por radio LoRa (868 MHz)." },
       { name: "Caja IP68", desc: "130 × 50 × 54 mm. Contiene la batería reemplazable (5 años con una medición por hora) y el sensor de aire." },
       { name: "Dos asas", desc: "Fijadas y pegadas al tubo: la sonda se clava a mano." },
       { name: "Tubo de acero inoxidable 316L", desc: "Ø 16 mm, de 1 m, 1,5 m o 2 m. Un 2.º punto de medición opcional en las sondas de 2 m, a 1 m." },
@@ -571,7 +571,7 @@ const de: HomeCopy = {
   figures: [
     { value: "±0,5 °C", label: "Genauigkeit", caption: "Im Kern der Miete" },
     { value: "5 Jahre", label: "Batterielaufzeit", caption: "Austauschbare Batterie" },
-    { value: "2 km", label: "Funkreichweite", caption: "Im freien Feld" },
+    { value: "3 Jahre", label: "Garantie", caption: "Hergestellt in Frankreich" },
     { value: "IP68", label: "Wasserdicht", caption: "Gehäuse und Rohr aus Edelstahl 316L" },
   ],
   challenge: {
@@ -590,7 +590,7 @@ const de: HomeCopy = {
     title: "Vom Sensor auf Ihren Bildschirm",
     steps: [
       { name: "GreenSensor-Sonde", desc: "Misst die Temperatur im Kern und die Lufttemperatur. Eine oder mehrere pro Miete." },
-      { name: "Gateway", desc: "Empfängt die Daten bis 2 km Entfernung im freien Feld." },
+      { name: "Gateway", desc: "Empfängt die von den Sonden gesendeten Daten und leitet sie ins Internet weiter." },
       { name: "Cloud-Server", desc: "Speichert die Messwerte sicher." },
       { name: "Webplattform", desc: "Live-Daten, Historie und Alarme." },
     ],
@@ -617,7 +617,7 @@ const de: HomeCopy = {
       { label: "Messbereich", value: "-55 °C bis +125 °C" },
       { label: "Genauigkeit", value: "±0,5 °C von -10 °C bis +85 °C" },
       { label: "Messintervall", value: "Stündlich (fest)" },
-      { label: "Funkreichweite", value: "2 km im freien Feld, Band 868 MHz" },
+      { label: "Funk", value: "LoRa, Band 868 MHz" },
       { label: "Batterielaufzeit", value: "5 Jahre bei einer Messung pro Stunde, austauschbare Batterie" },
       { label: "Länge / Durchmesser", value: "1 m, 1,5 m oder 2 m / Ø 16 mm" },
       { label: "Rohr", value: "Edelstahl 316L, zwei Griffe fest verklebt" },
@@ -673,7 +673,7 @@ const de: HomeCopy = {
     probe: "Sonde",
     kpi: { campaigns: "Laufende Kampagnen", probes: "Aktive Sonden", alerts: "Warnungen", title: "Übersicht", chart: "Temperaturverlauf" },
     parts: [
-      { name: "Antenne", desc: "Sendet jede Messung an das Gateway, bis zu 2 km im freien Feld (868 MHz)." },
+      { name: "Antenne", desc: "Sendet jede Messung per LoRa-Funk (868 MHz) an das Gateway." },
       { name: "IP68-Gehäuse", desc: "130 × 50 × 54 mm. Enthält die austauschbare Batterie (5 Jahre bei einer Messung pro Stunde) und den Luftsensor." },
       { name: "Zwei Griffe", desc: "Am Rohr befestigt und verklebt: Sie stecken die Sonde von Hand hinein." },
       { name: "Rohr aus Edelstahl 316L", desc: "Ø 16 mm, in 1 m, 1,5 m oder 2 m. Ein 2. Messpunkt ist bei Sonden mit 2 m optional, bei 1 m." },
@@ -725,7 +725,7 @@ const pt: HomeCopy = {
   figures: [
     { value: "±0,5 °C", label: "Precisão", caption: "No núcleo da leira" },
     { value: "5 anos", label: "Autonomia", caption: "Bateria substituível" },
-    { value: "2 km", label: "Alcance rádio", caption: "Em campo aberto" },
+    { value: "3 anos", label: "Garantia", caption: "Fabricado em França" },
     { value: "IP68", label: "Estanque", caption: "Caixa e tubo em inox 316L" },
   ],
   challenge: {
@@ -744,7 +744,7 @@ const pt: HomeCopy = {
     title: "Do sensor ao seu ecrã",
     steps: [
       { name: "Sonda GreenSensor", desc: "Mede a temperatura no núcleo e a do ar. Uma ou várias por leira." },
-      { name: "Gateway", desc: "Recebe os dados até 2 km de distância, em campo aberto." },
+      { name: "Gateway", desc: "Recebe os dados enviados pelas sondas e envia-os para a Internet." },
       { name: "Servidor cloud", desc: "Guarda as medições em segurança." },
       { name: "Plataforma web", desc: "Dados em direto, histórico e alertas." },
     ],
@@ -771,7 +771,7 @@ const pt: HomeCopy = {
       { label: "Gama de medição", value: "-55 °C a +125 °C" },
       { label: "Precisão", value: "±0,5 °C de -10 °C a +85 °C" },
       { label: "Intervalo de medição", value: "A cada hora (fixo)" },
-      { label: "Alcance rádio", value: "2 km em campo aberto, banda de 868 MHz" },
+      { label: "Rádio", value: "LoRa, banda de 868 MHz" },
       { label: "Autonomia", value: "5 anos com uma medição por hora, bateria substituível" },
       { label: "Comprimento / diâmetro", value: "1 m, 1,5 m ou 2 m / Ø 16 mm" },
       { label: "Tubo", value: "Inox 316L, duas pegas fixas e coladas" },
@@ -827,7 +827,7 @@ const pt: HomeCopy = {
     probe: "Sonda",
     kpi: { campaigns: "Campanhas em curso", probes: "Sondas ativas", alerts: "Alertas", title: "Painel", chart: "Evolução da temperatura" },
     parts: [
-      { name: "Antena", desc: "Envia cada medição à gateway, até 2 km em campo aberto (868 MHz)." },
+      { name: "Antena", desc: "Envia cada medição à gateway por rádio LoRa (868 MHz)." },
       { name: "Caixa IP68", desc: "130 × 50 × 54 mm. Contém a bateria substituível (5 anos com uma medição por hora) e o sensor de ar." },
       { name: "Duas pegas", desc: "Fixas e coladas ao tubo: a sonda crava-se à mão." },
       { name: "Tubo em aço inoxidável 316L", desc: "Ø 16 mm, em 1 m, 1,5 m ou 2 m. Um 2.º ponto de medição opcional nas sondas de 2 m, a 1 m." },
@@ -879,7 +879,7 @@ const ro: HomeCopy = {
   figures: [
     { value: "±0,5 °C", label: "Precizie", caption: "În inima șirului" },
     { value: "5 ani", label: "Autonomie", caption: "Baterie înlocuibilă" },
-    { value: "2 km", label: "Rază radio", caption: "În câmp deschis" },
+    { value: "3 ani", label: "Garanție", caption: "Fabricat în Franța" },
     { value: "IP68", label: "Etanșeitate", caption: "Carcasă și tub din inox 316L" },
   ],
   challenge: {
@@ -898,7 +898,7 @@ const ro: HomeCopy = {
     title: "De la senzor la ecranul dvs.",
     steps: [
       { name: "Sonda GreenSensor", desc: "Măsoară temperatura din inima șirului și pe cea a aerului. Una sau mai multe pe șir." },
-      { name: "Gateway", desc: "Primește datele până la 2 km distanță, în câmp deschis." },
+      { name: "Gateway", desc: "Primește datele trimise de sonde și le transmite către internet." },
       { name: "Server cloud", desc: "Stochează măsurătorile în siguranță." },
       { name: "Platformă web", desc: "Date în direct, istoric și alerte." },
     ],
@@ -925,7 +925,7 @@ const ro: HomeCopy = {
       { label: "Interval de măsurare", value: "-55 °C la +125 °C" },
       { label: "Precizie", value: "±0,5 °C de la -10 °C la +85 °C" },
       { label: "Interval de citire", value: "În fiecare oră (fix)" },
-      { label: "Rază radio", value: "2 km în câmp deschis, banda de 868 MHz" },
+      { label: "Radio", value: "LoRa, banda de 868 MHz" },
       { label: "Autonomie", value: "5 ani la o măsurătoare pe oră, baterie înlocuibilă" },
       { label: "Lungime / diametru", value: "1 m, 1,5 m sau 2 m / Ø 16 mm" },
       { label: "Tub", value: "Inox 316L, două mânere fixate și lipite" },
@@ -981,7 +981,7 @@ const ro: HomeCopy = {
     probe: "Sondă",
     kpi: { campaigns: "Campanii în curs", probes: "Sonde active", alerts: "Alerte", title: "Panou", chart: "Evoluția temperaturii" },
     parts: [
-      { name: "Antenă", desc: "Trimite fiecare măsurătoare la gateway, până la 2 km în câmp deschis (868 MHz)." },
+      { name: "Antenă", desc: "Trimite fiecare măsurătoare la gateway prin radio LoRa (868 MHz)." },
       { name: "Carcasă IP68", desc: "130 × 50 × 54 mm. Conține bateria înlocuibilă (5 ani la o măsurătoare pe oră) și senzorul de aer." },
       { name: "Două mânere", desc: "Fixate și lipite pe tub: sonda se înfige cu mâna." },
       { name: "Tub din inox 316L", desc: "Ø 16 mm, de 1 m, 1,5 m sau 2 m. Un al 2-lea punct de măsurare opțional la sondele de 2 m, la 1 m." },
